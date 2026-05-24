@@ -1,0 +1,103 @@
+---
+title: Erste Schritte
+description: Der Willkommens-Assistent in acht Schritten — vom Intervall bis zum Autostart.
+---
+
+import { Image } from 'astro:assets';
+import step1 from '../../../assets/welcome-screen/welcome-step1-welcome.png';
+import step2 from '../../../assets/welcome-screen/welcome-step2-frequency.png';
+import step3 from '../../../assets/welcome-screen/welcome-step3-display.png';
+import step4 from '../../../assets/welcome-screen/welcome-step4-schedule.png';
+import step5 from '../../../assets/welcome-screen/welcome-step5-integrations.png';
+import step6 from '../../../assets/welcome-screen/welcome-step6-privacy.png';
+import step7 from '../../../assets/welcome-screen/welcome-step7-import.png';
+import step8 from '../../../assets/welcome-screen/welcome-step8-finish.png';
+
+Beim ersten Start öffnet NowDoing einen Willkommens-Assistenten mit acht Schritten. Alles, was du hier einstellst, lässt sich später jederzeit in den Einstellungen ändern. Mit **< Back** gehst du zurück, mit **Continue** weiter.
+
+## 1. Willkommen
+
+<Image src={step1} alt="NowDoing Willkommens-Bildschirm" />
+
+Begrüßungsschritt — kein Setup nötig. Klicke **Loslegen**, um in den Assistenten einzusteigen.
+
+## 2. Wie oft soll NowDoing fragen?
+
+<Image src={step2} alt="Auswahl des Tracking-Intervalls" />
+
+Wähle, in welchem Rhythmus du gefragt werden willst, woran du gerade arbeitest. Vorgewählt sind **45 Minuten** — ein Kompromiss aus präziser Erfassung und wenig Unterbrechung.
+
+Mögliche Intervalle: 5, 10, 15, 20, 30, **45**, 60 min.
+
+Kurze Intervalle (10–15 min) liefern feinere Daten, lange (30–60 min) stören weniger. Mehr dazu unter [Tracking-Intervall](/features/tracking-interval/).
+
+## 3. Anzeige & Benachrichtigung
+
+<Image src={step3} alt="Darstellung des Prompts, Menüleisten-Anzeige und Tag-Ansicht" />
+
+Hier legst du fest, wie der Prompt erscheint und wie der Tag dargestellt wird:
+
+- **Prompt-Position** — *Popover* (an der Menüleiste) oder *Zentriert* (mittig oben, neben der Notch). Siehe [Prompt-Anzeige](/features/prompt-display/).
+- **Menüleisten-Anzeige** — *Nur Icon* oder *Icon + Live-Text* mit der aktuellen Aktivität.
+- **Tag-Ansicht** — *Gruppiert*, *Liste* oder *Tagesleiste* als Standardansicht im Popover. Siehe [Tagesleiste & Ansichten](/features/timeline/).
+- **Ton** — kurzer Hinweiston, wenn der Prompt erscheint.
+- **Pause** — Standarddauer für manuelle Pausen, einstellbar in 5-min-Schritten (5–120 min). Mehr dazu unter [Pausen](/features/breaks/).
+
+## 4. Wann arbeitest du?
+
+<Image src={step4} alt="Wochentage, Wochenziel und Feiertagsmodus" />
+
+Aktive Tage fließen ins Tagesziel ein. Außerhalb deiner Arbeitszeit zeigt NowDoing keine Abfragen.
+
+- **Wochentage** — tippe die Tage an, an denen du arbeitest.
+- **Wochenziel** — deine Zielstunden pro Woche (0–80 h).
+- **Feiertage berücksichtigen** — an Feiertagen erscheinen keine Abfragen. Wenn aktiviert, wählst du dein Land für den passenden Feiertagskalender.
+
+Details unter [Arbeitszeiten & Wochenziel](/features/working-hours/).
+
+## 5. Integrationen aktivieren
+
+<Image src={step5} alt="Integrationen: Spotlight und VS Code" />
+
+Optionale Integrationen — alles bleibt lokal auf deinem Mac.
+
+- **Notizen in Spotlight indexieren** — finde Aktivitäten und Notizen direkt über macOS Spotlight. Siehe [Spotlight](/integrations/spotlight/).
+- **VSCode-Integration** — bei Git-Branch-Wechseln öffnet NowDoing automatisch die Erfassung. Beim Aktivieren legt macOS das Sicherheits-Token verschlüsselt im Schlüsselbund ab. Bestätige die Schlüsselbund-Anfrage. Siehe [VS Code](/integrations/vscode/).
+
+Der Hinweis auf **Wiederkehrende Aktivitäten** (Standups, Daily-Checks, Meetings) ist nur informativ — Vorlagen pflegst du später unter **Einstellungen → Verwaltung → Wiederkehrend**, siehe [Wiederkehrende Aktivitäten](/features/recurring/).
+
+## 6. Deine Daten gehören dir
+
+<Image src={step6} alt="Datenschutz-Übersicht und Speicherort" />
+
+Eine Übersicht, was NowDoing mit deinen Daten macht — und was nicht:
+
+- **Nur lokal** — alle Daten liegen in `~/Library/Application Support/NowDoing`.
+- **Kein Tracking** — keine Analyse, keine Telemetrie, kein Crash-Reporting.
+- **VSCode-Integration optional** — Kommunikation läuft ausschließlich über `localhost`.
+- **Löschbar** — Daten lassen sich jederzeit in den Einstellungen entfernen.
+
+Über **Ordner ändern…** kannst du einen eigenen Speicherort wählen (z. B. iCloud Drive). Default bleibt der Standard-Speicherort.
+
+## 7. Aktivitäten übernehmen?
+
+<Image src={step7} alt="Import bestehender Aktivitäten aus Jira, Excel, Markdown oder Plain Text" />
+
+Wenn du schon eine Liste von Tickets oder Aufgaben hast, kannst du sie direkt einfügen. Unterstützte Quellen:
+
+- **Jira-Tickets** — `PROJ-123 Summary` wird zur Aktivität, das Projekt zur Gruppe.
+- **Excel / CSV** — Tab-, Komma- oder Semikolon-getrennt mit Header.
+- **Markdown-Listen** — Aufzählungen, Nummerierungen, Verschachtelungen.
+- **Plain Text** — eine Aktivität pro Zeile.
+
+Klick auf **Importieren…**, um eine Liste einzufügen. Diesen Schritt kannst du auch überspringen und später unter **Einstellungen → Verwaltung** importieren. Details unter [Aktivitäten importieren](/features/import/).
+
+## 8. Fertig & Autostart
+
+<Image src={step8} alt="Abschluss-Schritt mit Autostart-Schalter" />
+
+NowDoing ist eingerichtet. Vor dem Start:
+
+- **Bei Anmeldung starten** — empfohlen, damit der Tracker bei jedem Login automatisch in der Menüleiste liegt.
+
+Drücke **Starten**, und der Assistent schließt sich. NowDoing lebt ab jetzt in der Menüleiste — ein Klick aufs Icon öffnet das Popover, mit <kbd>⌃⌥⌘L</kbd> erreichst du den Prompt von überall.

@@ -2,6 +2,22 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-24 — first-run-rewrite
+
+- Rewrote `getting-started/first-run` (DE + EN) as `.mdx` to match the shipped eight-step welcome wizard: Welcome, Interval (default 45 min), Display & break, Workdays + holidays, Integrations (Spotlight + VS Code), Privacy + storage location, Import, Finish + autostart. Replaced the older five-section how-to that no longer matched the real onboarding flow.
+- Added inline screenshots for every step, embedded via `astro:assets` `Image`.
+- Normalized `src/assets/welcome-screen/` filenames to `welcome-step{1..8}-{slug}.png` (verified step numbers by counting active dots in the wizard footer; the user-supplied names were partly off-by-one).
+- New pages (DE + EN) for every feature surfaced in the wizard:
+  - `features/prompt-display` — popover vs centered, menu-bar mode, default day view, sound, global shortcut.
+  - `features/working-hours` — active weekdays, weekly target (0–80 h), holiday mode with country picker.
+  - `features/breaks` — manual pause, default duration (5–120 min in 5-min steps), behavior in the Timesheet.
+  - `features/recurring` — work-in-progress page; documents intent + UI location, fuller walkthrough deferred until the feature stabilizes.
+  - `features/import` — Jira / CSV / Markdown / plain-text formats, dedup behavior, what is *not* imported (times, Jira API, attachments).
+  - `integrations/spotlight` — what gets indexed, where the index lives, enable/disable, privacy.
+- Updated `features/tracking-interval` (DE + EN): default 20 min → **45 min**, expanded interval table, example uses 45-min cadence.
+- Sidebar in `astro.config.mjs` extended with all six new pages under Funktionen / Integrationen.
+- Added cross-links from `first-run.mdx` (DE + EN) into the new feature pages.
+
 ## 2026-05-24 — data-privacy-and-faq-refresh
 
 - `reference/data-privacy` (DE + EN): documented two opt-in mechanisms previously omitted — custom storage location ("Eigener Ordner wählen") and iCloud sync ("Mit iCloud synchronisieren"). Added a TestFlight section clarifying that beta builds inherit Apple's crash/usage reporting (App Store build sends nothing). Refined the "what NowDoing does not do" list so opt-ins are honestly disclosed (iCloud, loopback listener, TestFlight). Sandbox section now notes the security-scoped bookmark for custom folders.

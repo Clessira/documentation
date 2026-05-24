@@ -48,9 +48,14 @@ export default defineConfig({
           translations: { en: 'Features' },
           items: [
             { label: 'Menüleiste & Popover', translations: { en: 'Menu bar & popover' }, slug: 'features/menu-bar' },
+            { label: 'Prompt-Anzeige', translations: { en: 'Prompt display' }, slug: 'features/prompt-display' },
             { label: 'Aktivitäten', translations: { en: 'Activities' }, slug: 'features/activities' },
+            { label: 'Aktivitäten importieren', translations: { en: 'Import activities' }, slug: 'features/import' },
+            { label: 'Wiederkehrende Aktivitäten', translations: { en: 'Recurring activities' }, slug: 'features/recurring' },
             { label: 'Tagesleiste & Ansichten', translations: { en: 'Timeline & views' }, slug: 'features/timeline' },
             { label: 'Tracking-Intervall', translations: { en: 'Tracking interval' }, slug: 'features/tracking-interval' },
+            { label: 'Arbeitszeiten & Wochenziel', translations: { en: 'Working hours & target' }, slug: 'features/working-hours' },
+            { label: 'Pausen', translations: { en: 'Breaks' }, slug: 'features/breaks' },
             { label: 'CSV-Export', translations: { en: 'CSV export' }, slug: 'features/csv-export' },
           ],
         },
@@ -59,6 +64,7 @@ export default defineConfig({
           translations: { en: 'Integrations' },
           items: [
             { label: 'VS Code', slug: 'integrations/vscode' },
+            { label: 'Spotlight', slug: 'integrations/spotlight' },
           ],
         },
         {
