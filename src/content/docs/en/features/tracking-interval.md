@@ -5,34 +5,34 @@ description: How often NowDoing asks — and how to tune the interval to your rh
 
 The tracking interval controls how often NowDoing automatically asks: **"What did you just work on?"**
 
-## Default: 20 minutes
+## Default: 45 minutes
 
-On first launch the interval is **20 minutes** — a good middle ground between precision and quiet.
+On first launch the interval is **45 minutes** — a balance between precision and quiet. You set it directly in the welcome wizard.
 
 ## Change the interval
 
 Right-click the menu bar icon → **Settings → General** → **Tracking interval**.
 
-Values from **5** to **60 minutes** are available.
+Available values: **5, 10, 15, 20, 30, 45, 60 minutes**.
 
 | Interval | Effect |
 |---|---|
 | 5–10 min | Very fine-grained, frequent interruption |
-| 15–20 min | Recommended — default for solo workflow |
-| 30–45 min | Less interrupting, reminds you of the broad block |
+| 15–20 min | Fine-grained capture for tactical days |
+| 30–45 min | Recommended — default, less interrupting |
 | 60 min | Hourly overview, more of a background check-in |
 
 ## How is each entry calculated?
 
 When you confirm an activity, NowDoing writes the entry **from the previous entry (or app start) up to now** into the database.
 
-Example with a 20-minute interval:
+Example with a 45-minute interval:
 
 ```
 09:00  App start → no entry yet
-09:20  Prompt → you pick "Coding" → entry 09:00 – 09:20 (Coding)
-09:40  Prompt → "Coding" again → block is extended to 09:00 – 09:40
-10:00  Prompt → you pick "Calls" → new entry 09:40 – 10:00 (Calls)
+09:45  Prompt → you pick "Coding" → entry 09:00 – 09:45 (Coding)
+10:30  Prompt → "Coding" again → block is extended to 09:00 – 10:30
+11:15  Prompt → you pick "Calls" → new entry 10:30 – 11:15 (Calls)
 ```
 
 Confirming the same activity keeps the menu bar live counter going — the existing block stretches, a new one is not created.
