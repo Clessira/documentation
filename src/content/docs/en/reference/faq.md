@@ -7,15 +7,15 @@ description: Frequently asked questions about NowDoing.
 
 ### What does NowDoing cost?
 
-During the beta, NowDoing is **free**. At general release it'll be a **one-time purchase** — not a subscription.
+During the beta, NowDoing is **free**. For current pricing and terms see [nowdoing.app](https://nowdoing.app).
 
 ### Which platforms does NowDoing run on?
 
-**macOS only** (version 26.4+). There is deliberately no iOS, Windows, or web version — NowDoing is built specifically for the macOS menu bar experience.
+**macOS only** for now (version 26.4+). Versions for iPad, iPhone, or Apple Watch are conceivable but not on the current roadmap.
 
 ### Where is my data?
 
-Locally on your Mac at `~/Library/Application Support/NowDoing/data.json`. See [Data & privacy](/en/reference/data-privacy/).
+By default, locally on your Mac at `~/Library/Application Support/NowDoing/data.json`. You can choose a custom location or optionally enable iCloud sync. See [Data & privacy](/en/reference/data-privacy/).
 
 ## Features
 
@@ -43,7 +43,9 @@ Not built in. NowDoing does one thing: record what you do. Pomodoro apps, break 
 
 ### Can I sync across Macs?
 
-Not built in. You can put `data.json` on iCloud Drive, Dropbox, etc. — the app re-reads the file on launch. **Warning:** simultaneous writes from two devices can cause conflicts.
+Yes, optionally via **iCloud Drive**: **Settings → Data → "Sync with iCloud"**. Sync runs exclusively through your private iCloud container, with no NowDoing server. Details under [Data & privacy](/en/reference/data-privacy/).
+
+Alternatively you can point **"Choose custom folder"** at a path inside Dropbox, OneDrive, or similar. **Warning:** simultaneous writes from two devices can cause conflicts — iCloud sync is the more robust option.
 
 ### Can I export / migrate my data?
 
