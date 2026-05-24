@@ -1,44 +1,51 @@
 ---
 title: VS Code Integration
-description: Branch-Wechsel in VS Code automatisch als Aktivität in NowDoing loggen.
+description: Branch-Wechsel in VS Code lösen automatisch den NowDoing-Erfassungsdialog aus.
 ---
 
-Die **NowDoing VS Code Extension** verbindet deinen Editor mit der Mac-App. Wenn du in VS Code den Git-Branch wechselst, kann NowDoing das automatisch als Aktivität erfassen — kein manuelles Bestätigen mehr.
+Die **NowDoing VS Code Extension** verbindet deinen Editor mit der Mac-App. Wenn du in einem geöffneten Repository den Git-Branch wechselst, öffnet NowDoing automatisch den Erfassungsdialog mit dem neuen Branch-Namen vorausgefüllt. Die Kommunikation läuft ausschließlich lokal über `127.0.0.1`.
 
-## Installation
+## So richtest du sie ein
 
-1. Öffne in VS Code den **Extensions**-Tab (<kbd>⇧⌘X</kbd>).
-2. Suche nach **„NowDoing"** (Publisher: `NowDoing`).
-3. Klicke auf **„Install"**.
+1. Öffne in der Mac-App **Einstellungen → Integrationen → VSCode**, aktiviere die Integration und bestätige den Schlüsselbund-Zugriff, wenn macOS danach fragt.
+2. Klicke auf **Kopieren** neben dem Token. Notiere den Port (Standard `39847`), falls du ihn geändert hast.
+3. Installiere in VS Code die Extension **NowDoing** vom Publisher `NowDoing` aus dem Marketplace.
+4. Führe in VS Code den Befehl **NowDoing: Set Token** aus (<kbd>⇧⌘P</kbd>) und füge das Token ein.
+5. Prüfe mit **NowDoing: Test Connection**, ob die Verbindung steht — die Statusleiste zeigt dann `✓ NowDoing`.
 
-Die Extension funktioniert nur in Verbindung mit der **NowDoing Mac-App** — sie kommuniziert lokal über `127.0.0.1` mit der App.
+## Schlüsselbund-Zugriff
+
+Beim Aktivieren zeigt NowDoing zuerst einen kurzen Hinweis-Dialog „Schlüsselbund-Zugriff" — bestätige mit **Verstanden**. Direkt danach fragt macOS selbst nach Erlaubnis, weil das Token verschlüsselt im **macOS-Schlüsselbund** abgelegt wird. Klicke dort auf **Immer erlauben**, sonst muss NowDoing dich bei jedem Start erneut fragen.
+
+Lehnst du den macOS-Prompt ab, bleibt die Integration ausgeschaltet und im Status-Bereich erscheint „Schlüsselbund-Fehler" mit der Meldung von macOS. Du kannst es jederzeit erneut versuchen, indem du den Schalter aus- und wieder einschaltest.
 
 ## Wie es funktioniert
 
-Die Mac-App betreibt einen kleinen **HTTP-Listener auf der Loopback-Schnittstelle**. Die VS Code Extension beobachtet Git-Branch-Wechsel im aktuellen Workspace und schickt eine signierte Nachricht an die App.
+Die Mac-App startet bei aktivierter Integration einen kleinen HTTP-Listener, der ausschließlich an `127.0.0.1` gebunden ist. Die Extension beobachtet die Git-API von VS Code und schickt bei einem Branch-Wechsel eine signierte Nachricht an die App. Nach einer kurzen Beruhigungs-Phase (Standard 1,5 Sekunden, vermeidet Spam bei Rebases) öffnet NowDoing den Erfassungsdialog mit dem neuen Branch.
 
-- **Lokal:** Keine Daten verlassen je deinen Mac.
-- **Signiert:** Die Nachrichten sind HMAC-signiert, sodass nur deine eigene Extension die App ansprechen kann.
-- **Loopback-only:** Der Listener bindet ausschließlich an `127.0.0.1`, ist also vom Netzwerk aus nicht erreichbar.
+Jede Anfrage wird per HMAC-SHA256 mit dem geteilten Token signiert und trägt zusätzlich Zeitstempel und Nonce. NowDoing weist Anfragen mit mehr als 60 Sekunden Zeitabweichung ab — falls du „expired timestamp"- oder „signature invalid"-Fehler siehst, prüfe die Systemzeit (NTP).
 
-## Konfiguration
+## Befehle in der Command Palette
 
-In den NowDoing-Einstellungen (**Einstellungen → Debug** in der Mac-App) findest du:
+| Befehl | Was er macht |
+| --- | --- |
+| `NowDoing: Set Token` | Speichert das Token in VS Code SecretStorage. |
+| `NowDoing: Test Connection` | Prüft die Erreichbarkeit der Mac-App. |
+| `NowDoing: Reconnect` | Neuer Verbindungsversuch und Fehleranzeige. |
+| `NowDoing: Start Activity` | Aktivität per Suche starten (legt bei Bedarf eine neue an). |
+| `NowDoing: Show Output Log` | Öffnet das Diagnose-Log der Extension. |
+| `NowDoing: Open Settings` | Springt direkt zu den Extension-Einstellungen. |
 
-- **VS Code Integration aktivieren** — schaltet den Listener ein.
-- **Shared Secret** — die App generiert beim ersten Start ein Geheimnis und zeigt es an. Übertrage es in die VS Code-Settings unter `nowdoing.sharedSecret`.
-- **Port** — Standard `52345`, kannst du bei Konflikten anpassen.
+## Einstellungen der Extension
 
-In VS Code: <kbd>⌘,</kbd> → suche `nowdoing` und trage Secret + Port ein.
+| Einstellung | Standard | Beschreibung |
+| --- | --- | --- |
+| `nowdoing.enabled` | `true` | Schaltet die Benachrichtigung bei Branch-Wechseln ein oder aus. |
+| `nowdoing.port` | `39847` | Muss zum Port in der Mac-App passen. |
+| `nowdoing.debounceMs` | `1500` | Ruhezeit nach einem Branch-Wechsel, bevor benachrichtigt wird. |
 
-## Palette-Befehle
+Das Token liegt in VS Code SecretStorage unter dem Schlüssel `nowdoing.apiToken`. In der Mac-App liegt es verschlüsselt im macOS-Schlüsselbund.
 
-Zusätzlich zur automatischen Erfassung bietet die Extension manuelle Kommandos in der Command Palette (<kbd>⇧⌘P</kbd>):
+## Daten und Datenschutz
 
-- **NowDoing: Start Activity** — startet eine Aktivität, ohne den Mac-App-Popover zu öffnen.
-- **NowDoing: Stop Activity** — pausiert das Tracking.
-- **NowDoing: Show Status** — zeigt die aktuelle Aktivität in der VS Code-Statuszeile an.
-
-## Branch-Wechsel als Aktivität
-
-Standardmäßig wird der Branch-Name als Notiz angehängt; die Aktivität bleibt deine zuletzt aktive (z. B. `🛠️ Coding`). Wenn du Branches als komplett eigene Aktivitäten loggen möchtest, kannst du in der VS Code-Settings `nowdoing.branchAsActivity` aktivieren.
+Die Extension überträgt an den lokalen Listener: den Ordnernamen des Repositories, den absoluten Repository-Pfad, den neuen Branch-Namen und den vorherigen Branch-Namen. Es findet keine Netzwerkkommunikation über `127.0.0.1` hinaus statt.
