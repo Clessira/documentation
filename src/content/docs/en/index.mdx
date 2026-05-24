@@ -1,0 +1,51 @@
+---
+title: NowDoing
+description: A lightweight macOS menu bar app for honest time tracking. Local, no account, no cloud.
+template: splash
+hero:
+  tagline: What did you just work on? — Honest time tracking that lives in your menu bar.
+  image:
+    file: ../../../assets/logo.svg
+  actions:
+    - text: Get started
+      link: /en/getting-started/welcome/
+      icon: right-arrow
+      variant: primary
+    - text: nowdoing.app
+      link: https://nowdoing.app
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## In short
+
+NowDoing asks you at a configurable interval what you just worked on. You tap the matching activity, the entry is logged, you keep working. No pomodoros, no project trees, no surveillance — just honest data about your day.
+
+<CardGrid>
+  <Card title="Quick start" icon="rocket">
+    [Install](/en/getting-started/install/) and [first run](/en/getting-started/first-run/) in a few minutes.
+  </Card>
+  <Card title="Activities" icon="list-format">
+    [Create activities](/en/features/activities/), archive, color-code — your workflow, your call.
+  </Card>
+  <Card title="Day view" icon="seti:clock">
+    [Three views](/en/features/timeline/) on the day: Groups, Timeline, List.
+  </Card>
+  <Card title="VS Code" icon="seti:vscode">
+    [Log Git branch changes](/en/integrations/vscode/) automatically as activities.
+  </Card>
+  <Card title="Data" icon="approve-check">
+    [Stays on your Mac](/en/reference/data-privacy/). No cloud, no account, no telemetry.
+  </Card>
+  <Card title="CSV export" icon="document">
+    [Export](/en/features/csv-export/) day or week for invoices and reports.
+  </Card>
+</CardGrid>
+
+## What NowDoing is not
+
+- **Not a surveillance tool.** NowDoing does not watch what you do — you tell it.
+- **Not a cloud service.** No account, no server, no sync.
+- **Not a subscription.** Free during beta, one-time purchase at release.

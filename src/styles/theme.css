@@ -1,0 +1,105 @@
+/* NowDoing docs theme — aligned with nowdoing.app brand */
+
+:root {
+  /* Brand palette (matches website tokens) */
+  --nd-brand: #4f9dff;
+  --nd-brand-2: #b48cff;
+  --nd-brand-deep: #061b3a;
+
+  /* Starlight accent ramp */
+  --sl-color-accent-low: #0f2b55;
+  --sl-color-accent: #4f9dff;
+  --sl-color-accent-high: #b8d4ff;
+
+  /* Headings & typography tuning */
+  --sl-font: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui,
+    sans-serif;
+  --sl-font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+/* Dark theme — primary look, matches the marketing site */
+:root[data-theme="dark"] {
+  --sl-color-bg: #061b3a;
+  --sl-color-bg-nav: #082244;
+  --sl-color-bg-sidebar: #061b3a;
+  --sl-color-bg-inline-code: rgba(255, 255, 255, 0.06);
+
+  --sl-color-text: #e8edf6;
+  --sl-color-text-accent: #8fc0ff;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #e8edf6;
+  --sl-color-gray-2: #c4cbd8;
+  --sl-color-gray-3: #95a1b6;
+  --sl-color-gray-4: #6b7892;
+  --sl-color-gray-5: #354460;
+  --sl-color-gray-6: #1a2a48;
+  --sl-color-gray-7: #0e1f3e;
+
+  --sl-color-hairline: rgba(255, 255, 255, 0.06);
+  --sl-color-hairline-light: rgba(255, 255, 255, 0.04);
+  --sl-color-hairline-shade: rgba(255, 255, 255, 0.08);
+}
+
+/* Light theme — soft, readable */
+:root[data-theme="light"] {
+  --sl-color-bg: #fbfcfe;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #f4f6fb;
+  --sl-color-bg-inline-code: rgba(0, 8, 30, 0.05);
+
+  --sl-color-text: #0d1a33;
+  --sl-color-text-accent: #1f5fcc;
+}
+
+/* Subtle background glow on hero */
+.hero {
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -60px -20px auto -20px;
+  height: 320px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(79, 157, 255, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 90%, rgba(180, 140, 255, 0.12), transparent 60%);
+  z-index: -1;
+}
+
+/* Brand gradient for the hero title */
+.hero h1 {
+  background: linear-gradient(135deg, var(--nd-brand-2) 0%, var(--nd-brand) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+}
+
+/* Logo: round the corners so the gradient mark feels like an app icon */
+.site-title img {
+  border-radius: 8px;
+}
+
+/* Cards / call-to-action — slightly more contrast */
+.card-grid .card {
+  background: color-mix(in oklab, var(--sl-color-bg) 92%, var(--nd-brand) 8%);
+  border: 1px solid var(--sl-color-hairline-shade);
+  border-radius: 14px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.card-grid .card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--nd-brand) 50%, transparent);
+}
+
+/* Inline kbd, matches the macOS feel */
+kbd {
+  font-family: var(--sl-font-mono);
+  font-size: 0.85em;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--sl-color-bg-inline-code);
+  border: 1px solid var(--sl-color-hairline-shade);
+  box-shadow: 0 1px 0 var(--sl-color-hairline-shade);
+}

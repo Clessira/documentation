@@ -1,0 +1,51 @@
+---
+title: NowDoing
+description: Schlanke macOS-Menüleisten-App für ehrliche Zeiterfassung. Lokal, ohne Konto, ohne Cloud.
+template: splash
+hero:
+  tagline: Was hast du gerade gemacht? — Die ehrliche Zeiterfassung, die in deiner Menüleiste wohnt.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Loslegen
+      link: /getting-started/welcome/
+      icon: right-arrow
+      variant: primary
+    - text: nowdoing.app
+      link: https://nowdoing.app
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## In Kürze
+
+NowDoing fragt dich in regelmäßigen Abständen, woran du gerade arbeitest. Du tippst die Aktivität an, der Eintrag wird gespeichert, du arbeitest weiter. Keine Pomodoros, keine Projekt-Bäume, keine Überwachung — nur ehrliche Daten über deinen Tag.
+
+<CardGrid>
+  <Card title="Schnellstart" icon="rocket">
+    [Installation](/getting-started/install/) und [erste Schritte](/getting-started/first-run/) in wenigen Minuten.
+  </Card>
+  <Card title="Aktivitäten" icon="list-format">
+    [Aktivitäten anlegen](/features/activities/), archivieren, einfärben — frei nach deinem Workflow.
+  </Card>
+  <Card title="Tagesleiste" icon="seti:clock">
+    [Drei Ansichten](/features/timeline/) auf deinen Tag: Gruppen, Timeline, Liste.
+  </Card>
+  <Card title="VS Code" icon="seti:vscode">
+    [Branch-Wechsel](/integrations/vscode/) automatisch als Aktivität loggen.
+  </Card>
+  <Card title="Daten" icon="approve-check">
+    [Lokal auf deinem Mac](/reference/data-privacy/). Keine Cloud, kein Konto, kein Telemetry.
+  </Card>
+  <Card title="CSV-Export" icon="document">
+    [Exportiere](/features/csv-export/) Tag oder Woche für Rechnungen oder Reports.
+  </Card>
+</CardGrid>
+
+## Was NowDoing nicht ist
+
+- **Kein Überwachungs-Tool.** NowDoing schaut nicht zu, was du tust — du sagst es ihm.
+- **Kein Cloud-Dienst.** Es gibt kein Konto, keinen Server, keine Synchronisation.
+- **Kein Abo.** Während der Beta kostenlos, beim Release ein einmaliger Kauf.
