@@ -48,6 +48,7 @@ export default defineConfig({
           translations: { en: 'Features' },
           items: [
             { label: 'Menüleiste & Popover', translations: { en: 'Menu bar & popover' }, slug: 'features/menu-bar' },
+            { label: 'Tag-Ansicht', translations: { en: 'Day view' }, slug: 'features/day-view' },
             { label: 'Prompt-Anzeige', translations: { en: 'Prompt display' }, slug: 'features/prompt-display' },
             { label: 'Aktivitäten', translations: { en: 'Activities' }, slug: 'features/activities' },
             { label: 'Aktivitäten importieren', translations: { en: 'Import activities' }, slug: 'features/import' },

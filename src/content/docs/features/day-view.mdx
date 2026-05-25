@@ -1,0 +1,51 @@
+---
+title: Tag-Ansicht
+description: Alles, was das Popover dir zum ausgewählten Tag erzählt — von der Datumsnavigation bis zur Steuerleiste.
+---
+
+import Hotspots from '../../../components/Hotspots.astro';
+import dayView from '../../../assets/day-view/day-view-popover.png';
+
+Das Popover zeigt dir den ausgewählten Tag in voller Tiefe: was du wann getan hast, wie weit du im Tagesziel bist und welche Aktivität gerade läuft. In der Standardansicht sind die Aktivitäten nach Gruppe geordnet, jede Zeile hat einen farbigen Fortschrittsbalken.
+
+## So liest du die Ansicht
+
+<Hotspots
+  src={dayView}
+  alt="Tag-Ansicht im Popover mit Datumsnavigation, Gruppen, Tagesziel und Steuerleiste"
+  spots={[
+    { x: 2, y: 2, w: 96, h: 8, label: 1 },
+    { x: 2, y: 12, w: 96, h:6, label: 2 },
+    { x: 4, y: 44, w: 82, h: 6, label: 3 },
+    { x: 86, y: 44, w: 10, h: 6, label: 4 },
+    { x: 2, y: 78, w: 96, h: 5, label: 5 },
+    { x: 2, y: 84, w: 96, h: 4, label: 6 },
+    { x: 2, y: 91, w: 96, h: 6, label: 7 },
+  ]}
+/>
+
+1. **Datumsnavigation.** Pfeile blättern tageweise. Das Datum in der Mitte springt mit einem Klick zurück auf **Heute**. Das Kalender-Symbol rechts öffnet einen Monatspicker für gezielte Sprünge.
+2. **Gruppen-Kopfzeile.** Jede Aktivitätsgruppe zeigt ihre Tagessumme und einen Balken, dessen Breite dem Anteil an der Tagessumme entspricht. Die Farbe stammt aus der Gruppe.
+3. **Aktivitätszeile.** Unter der Gruppe eingerückt steht jede Aktivität mit gebuchter Dauer. Der Balken darunter zeigt den Anteil an der **Gruppensumme** (oder, ohne Gruppe, an der Tagessumme). Hover am linken Punkt blendet einen Play-Button ein, der die Aktivität sofort als aktuelle startet — nur am heutigen Tag.
+4. **Wochenziel-Anzeige.** Hat eine Aktivität ein Wochenstundenziel, erscheint am Zeilenende ein kleiner Ring, der den Wochenfortschritt füllt. Bei Überschreitung färbt er sich orange und ein Warndreieck erscheint daneben — du bist über dem Plan.
+5. **Tagesziel.** Der Balken vergleicht die heute erfasste Zeit mit deinem Tagesziel (`Ist / Soll`). Sobald du das Ziel oder die in den Einstellungen konfigurierten Überstunden-Schwellen überschreitest, färbt sich die Anzeige orange bzw. rot.
+6. **Tageskennzahlen.** Von links: heutige Gesamtdauer, Beginn des ersten Eintrags, Ende des letzten Eintrags und das Standort-Symbol. Ein Klick auf das Symbol schaltet den Tag zwischen Büro und Home-Office um; mit konfiguriertem Wochen-Büroziel füllt sich das Gebäude proportional zu den erreichten Tagen.
+7. **Steuerleiste.** Aufnahme-Toggle mit dem Namen der laufenden Aktivität, Pause starten oder beenden, Popover anpinnen (bleibt geöffnet, auch wenn du außerhalb klickst), Menü mit Einstellungen und Zeiterfassung, **+** legt eine Aktivität an oder fügt nachträglich einen Eintrag hinzu.
+
+## Lücken im Tag
+
+Liegen zwischen zwei Einträgen mehr als ein paar Minuten unerfasst, zeigt NowDoing unter der letzten Aktivitätszeile einen Block **Lücken** mit Beginn, Ende und Dauer jeder Lücke. NowDoing füllt sie nicht von selbst — du entscheidest, ob du sie nachträglich loggst.
+
+## Einträge bearbeiten
+
+Unter den Gruppen lässt sich der Aufklapp-Bereich **Einträge** öffnen. Dort steht jeder Zeitblock des Tages mit Start-, Ende- und Dauer-Angabe; beim Hovern erscheint ein Mülleimer zum Löschen einzelner Einträge.
+
+Für kleinere Korrekturen ohne den Aufklapp-Bereich kannst du in jeder Aktivitätszeile das `±`-Feld nutzen. Es akzeptiert Eingaben wie `+10m`, `-30m` oder `+1h30m` und verschiebt die Dauer entsprechend.
+
+## Andere Tage öffnen
+
+Mit den Pfeilen oder dem Kalender wechselst du in vergangene Tage. Vergangene Tage sind voll editierbar — der **+**-Button trägt rückwirkend einen Eintrag für den gerade angezeigten Tag ein.
+
+## Andere Ansichtsmodi
+
+Die hier gezeigte Standardansicht ist die **gruppierte** Tag-Ansicht. Im Popover stehen zwei weitere Varianten desselben Tages bereit — eine horizontale Tagesleiste und eine chronologische Liste. Wann welche Sicht passt, steht unter [Tagesleiste & Ansichten](/features/timeline/).

@@ -2,6 +2,14 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-25 — day-view-page
+
+- New page `features/day-view` (DE + EN, `.mdx`): annotated walkthrough of the popover's grouped day view — date navigation, group/activity rows with progress bars, weekly-goal donut + warning, daily target bar, day metrics (total / first start / last end / location), and the control bar (record, break, pin, menu, plus). Links to `features/timeline` for the alternative view modes.
+- New component `src/components/Hotspots.astro`: simple image overlay with absolutely-positioned numbered markers in %-coordinates; consumed by the new day-view page and reusable for future annotated screenshots.
+- `astro.config.mjs`: added `features/day-view` to the Funktionen / Features sidebar, slotted right after `features/menu-bar`.
+- `Hotspots.astro` is keyboard-toggleable (`aria-pressed`, `aria-controls`, focus-visible outline) and falls back to high-contrast canvas tokens under `forced-colors: active`; markers are `aria-hidden` so screen readers read the explicit legend instead. Toggle label switches DE/EN based on URL prefix.
+- Screenshot: `src/assets/day-view/day-view-popover.png`.
+
 ## 2026-05-25 — menubar-display-modes
 
 - `features/menu-bar` (DE + EN): replaced the "Live-Label" section with an "Anzeigemodus" / "Display mode" section that documents the four modes (Nur Icon / Icon + Text / Icon + Zeit / Icon + Text + Zeit) as a table.
