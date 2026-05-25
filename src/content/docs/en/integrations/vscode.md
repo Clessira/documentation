@@ -50,6 +50,12 @@ The values are polled from the Mac app every 10 seconds and ticked locally in be
 | `nowdoing.showElapsedTime` | `true` | Show elapsed time on the current activity in the status bar. |
 | `nowdoing.currentPollSeconds` | `10` | How often to refresh the current activity from the Mac app. |
 
+## Security
+
+- The listener lives on a Unix domain socket inside the Mac app's sandbox container (mode `0600`, readable only by your own user). No TCP port is opened.
+- Every request carries an HMAC-SHA256 signature, a timestamp, and a nonce. Requests with more than 60 seconds of clock drift are rejected.
+- The token lives only in the capability file `api-endpoint.json` (also `0600`) and, on the Mac side, encrypted in the macOS Keychain — not in VS Code settings or SecretStorage.
+
 ## Data and privacy
 
-All traffic runs locally over a Unix domain socket inside the Mac app's sandbox container. No network port is opened. The extension sends to the Mac app: the repository folder basename, the absolute repository path, the new branch name, and the previous branch name.
+The extension sends to the Mac app: the repository folder basename, the absolute repository path, the new branch name, and the previous branch name. There is no network communication.

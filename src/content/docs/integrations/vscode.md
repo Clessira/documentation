@@ -50,6 +50,12 @@ Die Werte werden alle 10 Sekunden bei der Mac-App abgefragt und zwischendurch lo
 | `nowdoing.showElapsedTime` | `true` | Verstrichene Zeit in der Statusleiste anzeigen. |
 | `nowdoing.currentPollSeconds` | `10` | Wie oft die laufende Aktivität von der Mac-App abgefragt wird. |
 
+## Sicherheit
+
+- Der Listener liegt auf einem Unix-Domain-Socket im Sandbox-Container der Mac-App (Modus `0600`, nur für deinen Benutzer lesbar). Es wird kein TCP-Port geöffnet.
+- Jede Anfrage trägt eine HMAC-SHA256-Signatur, einen Zeitstempel und eine Nonce. Mehr als 60 Sekunden Zeitabweichung werden abgewiesen.
+- Das Token liegt ausschließlich in der Capability-Datei `api-endpoint.json` (ebenfalls `0600`) und in der Mac-App verschlüsselt im macOS-Schlüsselbund — nicht in den VS-Code-Einstellungen oder im SecretStorage.
+
 ## Daten und Datenschutz
 
-Die Kommunikation läuft ausschließlich lokal über einen Unix-Domain-Socket im Sandbox-Container der Mac-App. Es wird kein Netzwerk-Port geöffnet. Übertragen werden: der Ordnername des Repositories, der absolute Repository-Pfad, der neue Branch-Name und der vorherige Branch-Name.
+Übertragen werden: der Ordnername des Repositories, der absolute Repository-Pfad, der neue Branch-Name und der vorherige Branch-Name. Es findet keine Netzwerkkommunikation statt.
