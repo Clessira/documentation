@@ -61,9 +61,9 @@ First, quit the app from the context menu and relaunch. If the problem persists:
 2. Look for entries around the time of the problem.
 3. Send us the log via [support / feedback](https://nowdoing.app).
 
-### How do I disable the live label?
+### How do I hide the text and time next to the icon?
 
-**Settings → General** → toggle off **"Live label in menu bar"**.
+**Settings → General → Menu bar display** → set to **"Icon only"**.
 
 ### Does NowDoing work with multiple Spaces / displays?
 

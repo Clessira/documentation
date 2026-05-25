@@ -2,6 +2,12 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-25 — menubar-display-modes
+
+- `features/menu-bar` (DE + EN): replaced the "Live-Label" section with an "Anzeigemodus" / "Display mode" section that documents the four modes (Nur Icon / Icon + Text / Icon + Zeit / Icon + Text + Zeit) as a table.
+- `reference/settings` (DE + EN): General-tab entry renamed from "Live Label" to "Menüleisten-Anzeige" / "Menu bar display", links to the menu-bar page.
+- `reference/faq` (DE + EN): rewrote the "disable live label" Q&A to point at the new picker and the **Nur Icon** / **Icon only** value.
+
 ## 2026-05-25 — http-api-and-sdks
 
 - New page `integrations/http-api` (DE + EN): documents the opt-in loopback HTTP listener — how to enable it in **Einstellungen → Integrationen → HTTP-API**, the port (default `39847`), the shared token, the five endpoints, and HMAC/nonce/rate-limit semantics.

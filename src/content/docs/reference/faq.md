@@ -61,9 +61,9 @@ Versuche zuerst, die App über das Kontextmenü zu beenden und neu zu starten. W
 2. Suche nach Einträgen rund um den Zeitpunkt des Problems.
 3. Schicke uns das Log bei [Support / Feedback](https://nowdoing.app).
 
-### Wie deaktiviere ich das Live-Label wieder?
+### Wie blende ich Text und Zeit neben dem Symbol wieder aus?
 
-**Einstellungen → Allgemein** → Schalter **„Live Label in der Menüleiste"** deaktivieren.
+**Einstellungen → Allgemein → Menüleisten-Anzeige** auf **„Nur Icon"** stellen.
 
 ### Funktioniert NowDoing mit mehreren Spaces / Displays?
 

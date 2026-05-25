@@ -31,11 +31,20 @@ Ein Rechtsklick (oder Ctrl-Klick) auf das Symbol öffnet ein klassisches macOS-K
 - **Pause** — pausiert das Tracking, bis du wieder aktiv bestätigst.
 - **NowDoing beenden**.
 
-## Live-Label (optional)
+## Anzeigemodus
 
-Standardmäßig zeigt NowDoing nur das Symbol. In den **Einstellungen → Allgemein** kannst du **„Live Label"** aktivieren — dann erscheint zusätzlich der Aktivitätsname und der laufende Zeitzähler neben dem Symbol.
+Unter **Einstellungen → Allgemein → Menüleisten-Anzeige** legst du fest, was neben dem Symbol erscheint, während eine Aktivität läuft. Vier Modi stehen zur Auswahl:
 
-Praktisch, wenn du oft auf andere Bildschirme schaust und sehen willst, was gerade läuft. Aber: kostet Platz in der Menüleiste, also nur empfehlenswert auf großen Monitoren.
+| Modus | Anzeige |
+| :--- | :--- |
+| **Nur Icon** | Nur das Statussymbol. |
+| **Icon + Text** | Symbol und Aktivitätsname. |
+| **Icon + Zeit** | Symbol und verstrichene Zeit der laufenden Aktivität. |
+| **Icon + Text + Zeit** | Symbol, Aktivitätsname und verstrichene Zeit. |
+
+Lange Aktivitätsnamen werden nach 15 Zeichen abgeschnitten, damit das Symbol nicht beliebig viel Platz in der Menüleiste belegt. Die Zeit wird im Format `H:MM` angezeigt.
+
+Auf engen Menüleisten — etwa MacBooks mit Notch und vielen Menübar-Apps — bleibt **Nur Icon** die platzsparendste Wahl. Auf großen Monitoren liefern die kombinierten Modi mehr Kontext, ohne dass du das Popover öffnen musst.
 
 ## Der automatische Prompt
 

@@ -31,11 +31,20 @@ A right-click (or Ctrl-click) on the icon opens a classic macOS context menu:
 - **Pause** — pauses tracking until you actively confirm again.
 - **Quit NowDoing**.
 
-## Live label (optional)
+## Display mode
 
-By default, NowDoing shows only the icon. In **Settings → General** you can enable **"Live label"** — the activity name and live counter then appear next to the icon.
+Under **Settings → General → Menu bar display** you choose what appears next to the icon while an activity is running. Four modes are available:
 
-Handy if you often look at other displays. The trade-off: it costs space in the menu bar, so it's best on large monitors.
+| Mode | Shows |
+| :--- | :--- |
+| **Icon only** | Just the status icon. |
+| **Icon + text** | Icon and activity name. |
+| **Icon + time** | Icon and the running activity's elapsed time. |
+| **Icon + text + time** | Icon, activity name, and elapsed time. |
+
+Long activity names are truncated after 15 characters so the icon doesn't eat unlimited menu-bar space. Time is shown as `H:MM`.
+
+On a crowded menu bar — notch MacBooks with lots of menu-bar apps — **Icon only** stays the most compact. On larger displays, the combined modes give you more context without opening the popover.
 
 ## The automatic prompt
 

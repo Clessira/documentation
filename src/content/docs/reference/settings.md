@@ -12,7 +12,7 @@ Die Einstellungen sind in vier Tabs gegliedert.
 Die wichtigsten Optionen für den Alltag:
 
 - **Tracking-Intervall** — wie oft NowDoing nachfragt (5–60 min). Siehe [Tracking-Intervall](/features/tracking-interval/).
-- **Live Label in der Menüleiste** — zeigt den Aktivitätsnamen + Live-Zähler neben dem Symbol an.
+- **Menüleisten-Anzeige** — wählt, was neben dem Symbol erscheint: nur Icon, Icon + Text, Icon + Zeit oder Icon + Text + Zeit. Siehe [Menüleiste & Popover](/features/menu-bar/).
 - **Bei Anmeldung starten** — fügt NowDoing zu den Login-Items hinzu.
 - **Benachrichtigungen anzeigen** — Erinnerungs-Notification, wenn der Prompt im Hintergrund anliegt.
 - **Sprache** — Folgt der macOS-Systemsprache. UI-Texte sind aktuell auf Deutsch verfügbar.
