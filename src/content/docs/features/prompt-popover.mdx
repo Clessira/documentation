@@ -1,0 +1,57 @@
+---
+title: Prompt-Popover
+description: Die kleine Abfrage „Was machst du gerade?" — Aufbau, Pinned-Quick-Picks, Notizfeld und Aktionsleiste, Schritt für Schritt.
+---
+
+import Hotspots from '../../../components/Hotspots.astro';
+import promptPopover from '../../../assets/prompt-popover/prompt-popover.png';
+
+Wenn ein Tracking-Intervall vorbei ist, fragt dich NowDoing **„Was machst du gerade?"**. Die Antwort ist drei Klicks oder ein Tastendruck weit weg — und dasselbe Popover öffnet sich auch, wenn du über das Menüleisten-Symbol oder den globalen Shortcut <kbd>⌃⌥⌘L</kbd> Aktivitäten erfassen willst.
+
+## So liest du das Popover
+
+<Hotspots
+  src={promptPopover}
+  alt="Prompt-Popover mit Überschrift, Pinned-Quick-Picks, Combobox, Notizfeld und Aktionsleiste"
+  spots={[
+    { x: 4, y: 7, w: 92, h: 14, label: 1 },
+    { x: 2, y: 23, w: 96, h: 17, label: 2 },
+    { x: 2, y: 41, w: 96, h: 18, label: 3 },
+    { x: 2, y: 62, w: 96, h: 15, label: 4 },
+    { x: 2, y: 80, w: 32, h: 18, label: 5 },
+    { x: 34, y: 80, w: 32, h: 18, label: 6 },
+    { x: 66, y: 80, w: 32, h: 18, label: 7 },
+  ]}
+/>
+
+1. **Überschrift.** „Was machst du gerade?" — fragt nach der Aktivität für das gerade abgelaufene Intervall. Hast du dein Tagesziel überschritten, erscheint hier zusätzlich ein **„Tagesziel erreicht"**-Hinweis mit Überzeit; nach einem Branch-Wechsel in VS Code steht der Branch-Name in einer zweiten Zeile (siehe [VS Code](/integrations/vscode/)).
+2. **Pinned-Quick-Picks.** Bis zu deinen häufigsten Aktivitäten in einer horizontalen Liste, jede mit Farbpunkt und kleiner **Ziffer** oben rechts. Ein Klick loggt sofort, die Ziffern **1–9** triggern dasselbe per Tastatur. Globale Shortcuts <kbd>⌃⌥⌘1</kbd> bis <kbd>⌃⌥⌘9</kbd> funktionieren auch, wenn das Popover gerade nicht im Vordergrund ist. Welche Aktivitäten hier auftauchen, legst du unter [Aktivitäten](/features/activities/) fest.
+3. **Combobox.** Suchen oder neu anlegen. Vorbelegt mit der zuletzt gebuchten Aktivität. Tippst du, filtert die Liste sofort; <kbd>↑</kbd>/<kbd>↓</kbd> navigieren, <kbd>Enter</kbd> bestätigt. Gibt es keinen Treffer, erscheint ganz unten ein **„… erstellen"**-Eintrag — eine neue Aktivität entsteht beim Bestätigen. Das **✕** rechts leert die Eingabe, das **⌄** öffnet die volle Liste.
+4. **Notiz (optional).** Freitext für Kontext zu diesem Eintrag — Ticket-Nummer, Meeting-Titel, Branch-Name. Hat die Aktivität (oder ihre Gruppe) eine **Standard-Notiz** hinterlegt, wird sie hier vorbefüllt; nach einem Branch-Wechsel in VS Code steht der Branch-Name drin. <kbd>Enter</kbd> bestätigt direkt aus dem Feld.
+5. **Verwerfen** (<kbd>Esc</kbd>). Das gerade abgelaufene Intervall wird nicht geloggt — als hättest du in der Zeit nicht getrackt. Praktisch bei Pausen, die du nicht erfassen willst. Globale Shortcuts: <kbd>⌃N</kbd> oder <kbd>⌃⌥⌘O</kbd>.
+6. **Snooze** (<kbd>⌃S</kbd>). Verschiebt die Abfrage um wenige Minuten — du wirst dann erneut gefragt, ohne dass das Intervall verworfen wird. Der genaue Wert steht in den [Einstellungen](/reference/settings/).
+7. **Bestätigen** (<kbd>Enter</kbd>). Loggt die ausgewählte oder im Suchfeld stehende Aktivität samt Notiz. Globale Shortcuts: <kbd>⌃Y</kbd> oder <kbd>⌃⌥⌘J</kbd>. Der Button ist ausgegraut, solange weder eine Aktivität gewählt noch ein neuer Name eingetippt ist.
+
+## Tastatur first
+
+Die häufigste Bedienung kommt ohne Maus aus:
+
+| Taste | Wirkung |
+|---|---|
+| **1**–**9** | Pinned-Quick-Pick an dieser Position loggen |
+| <kbd>↑</kbd> / <kbd>↓</kbd> | In der Combobox-Liste navigieren |
+| <kbd>Enter</kbd> | Markierte Aktivität bestätigen (oder neue anlegen) |
+| <kbd>Esc</kbd> | Eingabe zurücksetzen; nochmal <kbd>Esc</kbd> verwirft das Intervall |
+| <kbd>⌃S</kbd> | Snooze |
+| <kbd>⌃N</kbd> | Verwerfen |
+| <kbd>⌃Y</kbd> | Bestätigen |
+
+Globale Shortcuts (funktionieren auch, wenn ein anderes Fenster aktiv ist): <kbd>⌃⌥⌘L</kbd> öffnet das Popover, <kbd>⌃⌥⌘J</kbd> bestätigt, <kbd>⌃⌥⌘O</kbd> verwirft, <kbd>⌃⌥⌘1</kbd>–<kbd>⌃⌥⌘9</kbd> loggen direkt einen Quick-Pick. Die vollständige Übersicht steht unter [Tastaturkürzel](/reference/keyboard-shortcuts/).
+
+## Wann das Popover aufgeht
+
+- **Automatisch** am Ende jedes Tracking-Intervalls. Das Intervall steht standardmäßig auf 45 Minuten und ist unter [Tracking-Intervall](/features/tracking-interval/) konfigurierbar.
+- **Auf Knopfdruck** über das Menüleisten-Symbol oder den globalen Shortcut <kbd>⌃⌥⌘L</kbd>.
+- **Nach längerer Inaktivität** als spezielle Variante **„Was hast du die letzten X gemacht?"** — gleicher Aufbau, fragt rückwirkend nach Schlaf-, Mittagspausen- oder Wochenend-Zeiten.
+
+Wo das Popover erscheint (unter dem Menüleisten-Icon oder mittig oben am Bildschirm) und ob ein Hinweiston spielt, regelt die [Prompt-Anzeige](/features/prompt-display/).

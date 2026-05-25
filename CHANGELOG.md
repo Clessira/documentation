@@ -2,6 +2,19 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-25 — prompt-popover-page
+
+- New page `features/prompt-popover` (DE + EN, `.mdx`): annotated walkthrough of the prompt UI — headline (with daily-target / branch-hint variants), pinned quick-picks with 1–9 keyboard binding, search/create combobox, optional note (default-note + branch prefill), and the three-button action bar (Discard / Snooze / Confirm) with local + global shortcuts. Includes a keyboard-cheat-sheet table and a "When the popover appears" section covering interval-end, on-demand, and the sleep-prompt variant.
+- `astro.config.mjs`: added `features/prompt-popover` to the Funktionen / Features sidebar, slotted between `day-view` and `prompt-display`.
+- Cross-linked `features/prompt-display` (DE + EN) intro to the new page so the two pages reference each other (settings ↔ UI).
+- Screenshot expected at `src/assets/prompt-popover/prompt-popover.png` (directory created; PNG to be dropped by the user).
+
+## 2026-05-25 — settings-general-page
+
+- New page `reference/settings-general` (DE + EN, `.mdx`): hotspot-annotated walkthrough of the General settings tab — Tracking (Abfrage-Intervall, Snooze-Dauer, Anzeige-Modus, Menüleisten-Anzeige, Tag-Ansicht, Standard-Pausenlänge), Benachrichtigungen, Spotlight, and Automatischer Start. Cross-links to `features/tracking-interval`, `features/prompt-display`, `features/menu-bar`, `features/timeline`, `features/breaks`, and `integrations/spotlight`.
+- New asset `src/assets/settings/settings-general.png`: screenshot of the General tab, used by both locales via the existing `Hotspots` component.
+- `astro.config.mjs`: added `reference/settings-general` to the Referenz / Reference sidebar, right after the existing `reference/settings` overview.
+
 ## 2026-05-25 — day-view-page
 
 - New page `features/day-view` (DE + EN, `.mdx`): annotated walkthrough of the popover's grouped day view — date navigation, group/activity rows with progress bars, weekly-goal donut + warning, daily target bar, day metrics (total / first start / last end / location), and the control bar (record, break, pin, menu, plus). Links to `features/timeline` for the alternative view modes.

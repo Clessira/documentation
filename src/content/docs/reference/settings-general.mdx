@@ -1,0 +1,52 @@
+---
+title: Einstellungen · Allgemein
+description: Der Allgemein-Tab der Einstellungen — Tracking-Verhalten, Benachrichtigungen, Spotlight und Auto-Start auf einen Blick.
+---
+
+import Hotspots from '../../../components/Hotspots.astro';
+import settingsGeneral from '../../../assets/settings/settings-general.png';
+
+Der **Allgemein**-Tab versammelt die Optionen, die du im Alltag am häufigsten anfasst: wie oft NowDoing fragt, wie der Prompt erscheint, wie die Menüleiste aussieht, und ob Notizen im Spotlight-Index landen.
+
+## So liest du den Tab
+
+<Hotspots
+  src={settingsGeneral}
+  alt="Einstellungen, Allgemein-Tab mit Tracking, Benachrichtigungen, Spotlight und Automatischer Start"
+  maxWidth="640px"
+  spots={[
+    { x: 3, y: 10, w: 20, h: 4, label: 1 },
+    { x: 38, y: 6, w: 60, h: 47, label: 2 },
+    { x: 38, y: 56, w: 60, h: 16, label: 3 },
+    { x: 38, y: 77, w: 60, h: 12, label: 4 },
+    { x: 38, y: 94, w: 60, h: 5, label: 5 },
+  ]}
+/>
+
+1. **Tab-Auswahl.** Links die Tab-Liste. Der Allgemein-Tab ist aktiv und blau hinterlegt.
+2. **Tracking.** Alles rund um das regelmäßige Nachfragen und die Darstellung der Tag-Ansicht.
+3. **Benachrichtigungen.** Optionaler Ton und Stummschaltung während eines Fokus-Modus.
+4. **Spotlight.** Schaltet die Indexierung von Notizen für die macOS-Spotlight-Suche.
+5. **Automatischer Start.** Startet NowDoing nach der Anmeldung mit macOS.
+
+## Tracking
+
+- **Abfrage-Intervall** — wie oft der Prompt erscheint. Auswahl: 5, 10, 15, 20, 30, 45 oder 60 Minuten. Standard: 20 Minuten. Hintergrund unter [Tracking-Intervall](/features/tracking-interval/).
+- **Snooze-Dauer** — wenn du den Prompt verschiebst, wartet NowDoing diese Zeit, bevor er erneut erscheint. Auswahl: 1, 3, 5, 10, 15 oder 30 Minuten.
+- **Anzeige-Modus** — wo der Prompt aufpoppt. **Popover (Menüleiste)** verankert ihn am Menüleisten-Symbol; **Zentriert** zeigt ihn als schwebendes Fenster mittig oben am Bildschirm — praktisch auf Ultrawide-Monitoren. Details unter [Prompt-Anzeige](/features/prompt-display/).
+- **Menüleisten-Anzeige** — was neben dem Symbol steht: nur Icon, Icon + Text, Icon + Zeit oder Icon + Text + Zeit. Siehe [Menüleiste & Popover](/features/menu-bar/).
+- **Tag-Ansicht** — Standardform der Tagesübersicht im Popover und im Stundenzettel: gruppiert nach Aktivitätsgruppe, flache Liste oder Tagesleiste. Siehe [Tagesleiste & Ansichten](/features/timeline/).
+- **Standard-Pausenlänge** — Voreinstellung in Minuten, wenn du eine Pause manuell startest. Während der Pause läuft ein Countdown in der Menüleiste. Mehr unter [Pausen](/features/breaks/).
+
+## Benachrichtigungen
+
+- **Ton bei Abfrage abspielen** — kurzer Hinweiston, sobald der Prompt erscheint. Ohne Ton bleibt der Prompt geräuschlos.
+- **Bei macOS-Fokus (DND) unterdrücken** — solange ein Fokus-Modus aktiv ist (z. B. „Nicht stören" oder „Präsentation"), erscheint kein Prompt. NowDoing holt die Nachfrage nach, sobald der Fokus endet.
+
+## Spotlight
+
+- **Notizen in Spotlight indexieren** — gibt deine Notizen für die macOS-Spotlight-Suche frei. Ist der Schalter aus, landet nichts im Spotlight-Index. Wie die Integration arbeitet, steht unter [Spotlight](/integrations/spotlight/).
+
+## Automatischer Start
+
+- **Bei Anmeldung starten** — fügt NowDoing zu den Login-Items hinzu, damit es nach jedem Login automatisch im Hintergrund läuft.
