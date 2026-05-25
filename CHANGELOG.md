@@ -2,6 +2,14 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-25 — vscode-uds-rewrite
+
+- Rewrote `integrations/vscode` (DE + EN) for the new Unix-domain-socket + capability-file transport. Removed all references to TCP `127.0.0.1:39847`, the obsolete `nowdoing.port` setting, the `NowDoing: Set Token` command, and the token-copy/paste step.
+- New Setup is 4 steps instead of 5 and ends with `NowDoing: Test Connection`; no manual VS Code configuration anymore.
+- Added a "Statusleiste in VS Code" / "Status bar in VS Code" section documenting the connection indicator, the current-activity readout, and the elapsed-time tick — plus the two new `NowDoing: Toggle …` commands.
+- Settings table now lists `showCurrentActivity`, `showElapsedTime`, and `currentPollSeconds` and drops the legacy `nowdoing.port` row.
+- Kept the Keychain section: on the Mac side the token is still stored in the macOS Keychain, so the first-enable dialog flow is unchanged.
+
 ## 2026-05-24 — first-run-rewrite
 
 - Rewrote `getting-started/first-run` (DE + EN) as `.mdx` to match the shipped eight-step welcome wizard: Welcome, Interval (default 45 min), Display & break, Workdays + holidays, Integrations (Spotlight + VS Code), Privacy + storage location, Import, Finish + autostart. Replaced the older five-section how-to that no longer matched the real onboarding flow.
