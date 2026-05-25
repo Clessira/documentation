@@ -2,6 +2,12 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-25 — vscode-uds-rewrite
+
+- Rewrote `integrations/vscode` (DE + EN) to match the shipped extension: setup steps, status-bar readout (connection / current activity / elapsed time), toggle commands, and current settings (`showCurrentActivity`, `showElapsedTime`, `currentPollSeconds`).
+- Dropped references to the obsolete `nowdoing.port` setting and the `Set Token` command.
+- Privacy paragraph now mentions the Unix-domain-socket transport instead of a TCP port.
+
 ## 2026-05-24 — first-run-rewrite
 
 - Rewrote `getting-started/first-run` (DE + EN) as `.mdx` to match the shipped eight-step welcome wizard: Welcome, Interval (default 45 min), Display & break, Workdays + holidays, Integrations (Spotlight + VS Code), Privacy + storage location, Import, Finish + autostart. Replaced the older five-section how-to that no longer matched the real onboarding flow.
