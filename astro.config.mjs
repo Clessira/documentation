@@ -65,6 +65,8 @@ export default defineConfig({
           items: [
             { label: 'VS Code', slug: 'integrations/vscode' },
             { label: 'Spotlight', slug: 'integrations/spotlight' },
+            { label: 'HTTP-API', translations: { en: 'HTTP API' }, slug: 'integrations/http-api' },
+            { label: 'SDKs', slug: 'integrations/sdks' },
           ],
         },
         {
