@@ -4,11 +4,9 @@ Per-session log of substantive doc changes. Newest on top.
 
 ## 2026-05-25 — vscode-uds-rewrite
 
-- Rewrote `integrations/vscode` (DE + EN) for the new Unix-domain-socket + capability-file transport. Removed all references to TCP `127.0.0.1:39847`, the obsolete `nowdoing.port` setting, the `NowDoing: Set Token` command, and the token-copy/paste step.
-- New Setup is 4 steps instead of 5 and ends with `NowDoing: Test Connection`; no manual VS Code configuration anymore.
-- Added a "Statusleiste in VS Code" / "Status bar in VS Code" section documenting the connection indicator, the current-activity readout, and the elapsed-time tick — plus the two new `NowDoing: Toggle …` commands.
-- Settings table now lists `showCurrentActivity`, `showElapsedTime`, and `currentPollSeconds` and drops the legacy `nowdoing.port` row.
-- Kept the Keychain section: on the Mac side the token is still stored in the macOS Keychain, so the first-enable dialog flow is unchanged.
+- Rewrote `integrations/vscode` (DE + EN) to match the shipped extension: setup steps, status-bar readout (connection / current activity / elapsed time), toggle commands, and current settings (`showCurrentActivity`, `showElapsedTime`, `currentPollSeconds`).
+- Dropped references to the obsolete `nowdoing.port` setting and the `Set Token` command.
+- Privacy paragraph now mentions the Unix-domain-socket transport instead of a TCP port.
 
 ## 2026-05-24 — first-run-rewrite
 
