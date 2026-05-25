@@ -49,6 +49,7 @@ export default defineConfig({
           items: [
             { label: 'Menüleiste & Popover', translations: { en: 'Menu bar & popover' }, slug: 'features/menu-bar' },
             { label: 'Tag-Ansicht', translations: { en: 'Day view' }, slug: 'features/day-view' },
+            { label: 'Prompt-Popover', translations: { en: 'Prompt popover' }, slug: 'features/prompt-popover' },
             { label: 'Prompt-Anzeige', translations: { en: 'Prompt display' }, slug: 'features/prompt-display' },
             { label: 'Aktivitäten', translations: { en: 'Activities' }, slug: 'features/activities' },
             { label: 'Aktivitäten importieren', translations: { en: 'Import activities' }, slug: 'features/import' },
@@ -75,6 +76,7 @@ export default defineConfig({
           translations: { en: 'Reference' },
           items: [
             { label: 'Einstellungen', translations: { en: 'Settings' }, slug: 'reference/settings' },
+            { label: 'Einstellungen · Allgemein', translations: { en: 'Settings · General' }, slug: 'reference/settings-general' },
             { label: 'Tastaturkürzel', translations: { en: 'Keyboard shortcuts' }, slug: 'reference/keyboard-shortcuts' },
             { label: 'Daten & Datenschutz', translations: { en: 'Data & privacy' }, slug: 'reference/data-privacy' },
             { label: 'FAQ', slug: 'reference/faq' },

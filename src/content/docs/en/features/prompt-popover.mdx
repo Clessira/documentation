@@ -1,0 +1,57 @@
+---
+title: Prompt popover
+description: The small "What are you doing right now?" prompt — headline, pinned quick-picks, note field and action bar, step by step.
+---
+
+import Hotspots from '../../../../components/Hotspots.astro';
+import promptPopover from '../../../../assets/prompt-popover/prompt-popover.png';
+
+When a tracking interval ends, NowDoing asks **"What are you doing right now?"**. The answer is three clicks or one keystroke away — and the same popover opens when you log an activity manually via the menu bar icon or the global shortcut <kbd>⌃⌥⌘L</kbd>.
+
+## How to read the popover
+
+<Hotspots
+  src={promptPopover}
+  alt="Prompt popover with headline, pinned quick-picks, combobox, note field and action bar"
+  spots={[
+    { x: 4, y: 7, w: 92, h: 14, label: 1 },
+    { x: 2, y: 23, w: 96, h: 17, label: 2 },
+    { x: 2, y: 41, w: 96, h: 18, label: 3 },
+    { x: 2, y: 62, w: 96, h: 15, label: 4 },
+    { x: 2, y: 80, w: 32, h: 18, label: 5 },
+    { x: 34, y: 80, w: 32, h: 18, label: 6 },
+    { x: 66, y: 80, w: 32, h: 18, label: 7 },
+  ]}
+/>
+
+1. **Headline.** "What are you doing right now?" — asks about the activity for the interval that just ended. When you've already passed your daily target a **"Daily target reached"** hint appears with the overtime; after a Git branch switch in VS Code the branch name shows up on a second line (see [VS Code](/en/integrations/vscode/)).
+2. **Pinned quick-picks.** Up to your most-used activities in a horizontal row, each with its color dot and a small **number badge** in the top right. A click logs immediately; the digits **1–9** trigger the same from the keyboard. Global shortcuts <kbd>⌃⌥⌘1</kbd>–<kbd>⌃⌥⌘9</kbd> work even when the popover isn't focused. Which activities show up here is set under [Activities](/en/features/activities/).
+3. **Combobox.** Search or create. Pre-filled with the most recently logged activity. As you type the list filters live; <kbd>↑</kbd>/<kbd>↓</kbd> navigate, <kbd>Enter</kbd> confirms. With no match, a **"Create …"** row appears at the bottom — confirming creates the new activity. The **✕** clears the input, the **⌄** opens the full list.
+4. **Note (optional).** Free text for context on this entry — ticket number, meeting title, branch name. When the activity (or its group) has a **default note** set, it's pre-filled here; after a branch switch in VS Code the branch name lands here. <kbd>Enter</kbd> confirms straight from the field.
+5. **Discard** (<kbd>Esc</kbd>). The just-ended interval is not logged — as if you hadn't tracked during that time. Useful for breaks you don't want recorded. Global shortcuts: <kbd>⌃N</kbd> or <kbd>⌃⌥⌘O</kbd>.
+6. **Snooze** (<kbd>⌃S</kbd>). Defers the prompt by a few minutes — you're asked again without losing the interval. The exact value lives in [Settings](/en/reference/settings/).
+7. **Confirm** (<kbd>Enter</kbd>). Logs the selected activity (or the one typed into the field) together with the note. Global shortcuts: <kbd>⌃Y</kbd> or <kbd>⌃⌥⌘J</kbd>. The button stays dimmed until either an activity is chosen or a new name is typed.
+
+## Keyboard first
+
+The common path needs no mouse:
+
+| Key | Action |
+|---|---|
+| **1**–**9** | Log the pinned quick-pick at that position |
+| <kbd>↑</kbd> / <kbd>↓</kbd> | Navigate the combobox list |
+| <kbd>Enter</kbd> | Confirm the highlighted activity (or create a new one) |
+| <kbd>Esc</kbd> | Reset the input; press <kbd>Esc</kbd> again to discard the interval |
+| <kbd>⌃S</kbd> | Snooze |
+| <kbd>⌃N</kbd> | Discard |
+| <kbd>⌃Y</kbd> | Confirm |
+
+Global shortcuts (work even when another window is in front): <kbd>⌃⌥⌘L</kbd> opens the popover, <kbd>⌃⌥⌘J</kbd> confirms, <kbd>⌃⌥⌘O</kbd> discards, <kbd>⌃⌥⌘1</kbd>–<kbd>⌃⌥⌘9</kbd> log a quick-pick directly. The full table lives under [Keyboard shortcuts](/en/reference/keyboard-shortcuts/).
+
+## When the popover appears
+
+- **Automatically** at the end of each tracking interval. The interval defaults to 45 minutes and is configurable under [Tracking interval](/en/features/tracking-interval/).
+- **On demand** via the menu bar icon or the global shortcut <kbd>⌃⌥⌘L</kbd>.
+- **After a longer stretch of inactivity** as the special variant **"What did you do for the last X?"** — same layout, asks retroactively about sleep, lunch breaks or weekend time.
+
+Where the popover appears (anchored to the menu bar icon or centered at the top of the screen) and whether a sound plays is controlled by [Prompt display](/en/features/prompt-display/).

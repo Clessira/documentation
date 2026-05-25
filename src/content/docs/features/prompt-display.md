@@ -3,7 +3,7 @@ title: Prompt-Anzeige
 description: Wo der Prompt erscheint, wie die Menüleiste aussieht und welche Tag-Ansicht standardmäßig öffnet.
 ---
 
-NowDoing kennt zwei Orte für den Prompt **„Was hast du gerade gemacht?"** und drei Stellschrauben für die Anzeige außenherum. Eingestellt wird alles unter **Einstellungen → Allgemein** — oder im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 3.
+NowDoing kennt zwei Orte für den Prompt **„Was hast du gerade gemacht?"** und drei Stellschrauben für die Anzeige außenherum. Eingestellt wird alles unter **Einstellungen → Allgemein** — oder im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 3. Was *im* Prompt steht und wie er bedient wird, beschreibt [Prompt-Popover](/features/prompt-popover/).
 
 ## Prompt-Position
 
