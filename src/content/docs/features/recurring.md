@@ -3,26 +3,40 @@ title: Wiederkehrende Aktivitäten
 description: Vorlagen für Standups, Daily-Checks oder Meetings — NowDoing füllt fehlende Einträge automatisch.
 ---
 
-:::caution[In Arbeit]
-Diese Funktion ist im Willkommens-Assistenten angekündigt, die UI lebt unter **Einstellungen → Verwaltung → Wiederkehrend**. Eine ausführliche Anleitung folgt, sobald die Funktion ausgereift ist.
-:::
-
-## Die Idee
-
-Bestimmte Aktivitäten tauchen jeden Tag oder jede Woche auf — Standup um 9:30, Daily-Check, wöchentliches Team-Meeting. Statt sie jedes Mal manuell zu pinnen, legst du eine **Vorlage** an: Aktivität, Wochentag, Uhrzeit, Dauer.
-
-NowDoing kann dann fehlende Einträge automatisch aus der Vorlage ergänzen — du musst beim Prompt nur noch bestätigen.
+Manche Aktivitäten fallen jeden Tag oder jede Woche an: Daily Standup um 9:15, Lunch, der wöchentliche Team-Sync. Mit **wiederkehrenden Vorlagen** definierst du sie einmal und wendest sie auf Tage an, denen die entsprechenden Einträge noch fehlen.
 
 ## Wo das lebt
 
-**Einstellungen → Verwaltung → Wiederkehrend**.
+**Verwaltung → Wiederkehrend** (oder **Einstellungen → Verwaltung → Wiederkehrend**). Alles passiert inline in der UI — du legst Vorlagen direkt an, editierst und löschst sie. **Keine** JSON-Dateien, keine Konfigs.
 
-Du legst dort fest:
+## Vorlage anlegen
 
-- Welche Aktivität die Vorlage erzeugt.
-- An welchen Wochentagen sie greift.
-- Start- und Endzeit.
+Pro Vorlage definierst du:
 
-## Status
+| Feld | Beschreibung |
+|---|---|
+| **Aktivität** | aus deiner Liste, siehe [Aktivitäten](/features/activities/) |
+| **Wochentage** | z. B. Mo–Fr, oder einzelne Tage |
+| **Startzeit / Endzeit** | woraus die Dauer abgeleitet wird |
+| **Dauer** | alternativ direkt eintragen |
+| **Standard-Notiz** | optional, wird in den Eintrag übernommen |
 
-Genaue Bedienschritte und Edge Cases dokumentieren wir, sobald die Funktion stabil ist. Bis dahin: ausprobieren, Feedback an [hello@nowdoing.app](mailto:hello@nowdoing.app).
+Speichern legt die Vorlage an — ab dann ist sie für die ausgewählten Wochentage verfügbar.
+
+## Anwenden auf einen Tag
+
+Vorlagen werden auf einen konkreten Tag angewendet und legen die hinterlegten Einträge an. Typisch nutzt du das für Standups, Daily-Checks, regelmäßige Meetings oder Pausen-Slots — alles, was du sonst jeden Morgen manuell tippen oder anheften würdest.
+
+Beim Prompt entlastet die Vorlage das [Prompt-Popover](/features/prompt-popover/): der Eintrag steht schon, du bestätigst nur noch.
+
+## Idempotenz
+
+Vorlagen legen **nur fehlende** Einträge an. Existiert zur gleichen Zeit bereits ein Eintrag, bleibt er unverändert. Du kannst dieselbe Vorlage mehrfach auf denselben Tag anwenden — kein Duplikat, kein Risiko.
+
+## Verwalten
+
+Jede Vorlage ist nachträglich editierbar. Gelöschte Vorlagen wirken sich **nicht** auf bereits angelegte Einträge aus — die Historie bleibt unangetastet.
+
+## Verhältnis zu manueller Erfassung
+
+Vorlagen ersetzen die manuelle Erfassung nicht, sie unterstützen sie. Fällt der Standup mal aus oder dauert doppelt so lange, trägst du wie gewohnt manuell ein — am nächsten Tag greift die Vorlage wieder. Für den Bezug zum täglichen Soll siehe [Arbeitszeiten](/features/working-hours/).

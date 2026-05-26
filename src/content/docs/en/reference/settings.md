@@ -15,7 +15,7 @@ The everyday options:
 - **Menu bar display** — choose what appears next to the icon: icon only, icon + text, icon + time, or icon + text + time. See [Menu bar & popover](/en/features/menu-bar/).
 - **Launch at login** — adds NowDoing to your login items.
 - **Show notifications** — reminder notification when the prompt sits in the background.
-- **Language** — follows the macOS system language. UI strings are currently available in German.
+- **Language** — follows the macOS system language (German or English). Details in [Language & localization](/en/reference/localization/).
 
 ## Organize
 

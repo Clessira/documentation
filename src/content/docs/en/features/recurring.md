@@ -3,26 +3,40 @@ title: Recurring activities
 description: Templates for standups, daily checks, or meetings — NowDoing fills in missing entries automatically.
 ---
 
-:::caution[Work in progress]
-The welcome wizard mentions this feature; the UI lives under **Settings → Management → Recurring**. A full walkthrough follows once the feature stabilizes.
-:::
-
-## The idea
-
-Some activities happen every day or every week — a 9:30 standup, a daily check-in, a weekly team meeting. Instead of pinning them every time, you set up a **template**: activity, weekday, time, duration.
-
-NowDoing can then auto-fill missing entries from that template — you just confirm at the prompt.
+Some activities happen every day or every week: the 9:15 standup, lunch, the weekly team sync. With **recurring templates** you define them once and apply them to days that are still missing the matching entries.
 
 ## Where it lives
 
-**Settings → Management → Recurring**.
+**Management → Recurring** (or **Settings → Management → Recurring**). Everything happens inline in the UI — you add, edit, and delete templates directly. **No** JSON files, no configs.
 
-You define:
+## Create a template
 
-- Which activity the template creates.
-- Which weekdays it applies to.
-- Start and end time.
+For each template you define:
 
-## Status
+| Field | Description |
+|---|---|
+| **Activity** | from your list, see [Activities](/en/features/activities/) |
+| **Weekdays** | e.g. Mon–Fri, or individual days |
+| **Start / end time** | duration is derived from these |
+| **Duration** | enter directly as an alternative |
+| **Default note** | optional, copied into the entry |
 
-Step-by-step usage and edge cases will land once the feature is stable. Until then: try it, send feedback to [hello@nowdoing.app](mailto:hello@nowdoing.app).
+Save and the template is live for the selected weekdays.
+
+## Apply to a day
+
+Templates are applied to a specific day and create the configured entries. Typical uses: standups, daily checks, recurring meetings, break slots — anything you'd otherwise type or pin every morning.
+
+At prompt time, the template takes load off the [prompt popover](/en/features/prompt-popover/): the entry is already there, you just confirm.
+
+## Idempotency
+
+Templates only create **missing** entries. If an entry already exists at the same time, it stays untouched. You can apply the same template to the same day multiple times — no duplicates, no risk.
+
+## Manage
+
+Every template stays editable. Deleting a template **does not** affect entries it has already created — your history is untouched.
+
+## Relationship to manual logging
+
+Templates don't replace manual logging, they support it. If a standup is cancelled or runs twice as long, you log manually as usual — the template kicks in again the next day. For how this relates to your daily target, see [Working hours](/en/features/working-hours/).

@@ -22,6 +22,14 @@ A short click opens the popover. Inside:
 
 Click outside — the popover dismisses itself.
 
+## Pin the popover
+
+When you want the popover to stay visible longer — during a meeting, or while you cross-reference something in the browser — click the 📌 **pin** icon in the control bar at the bottom. The popover then **stays open even when you click outside**; clicking the icon again restores the default behaviour.
+
+While pinned, the popover keeps its position relative to the status icon and stays visible across app switches — handy for adding notes during tracking or keeping the timeline in view.
+
+Pinning only affects the current session. The next left-click on the status icon opens the popover in the normal click-to-dismiss mode again.
+
 ## Right-click — context menu
 
 A right-click (or Ctrl-click) on the icon opens a classic macOS context menu:

@@ -15,7 +15,7 @@ Die wichtigsten Optionen für den Alltag:
 - **Menüleisten-Anzeige** — wählt, was neben dem Symbol erscheint: nur Icon, Icon + Text, Icon + Zeit oder Icon + Text + Zeit. Siehe [Menüleiste & Popover](/features/menu-bar/).
 - **Bei Anmeldung starten** — fügt NowDoing zu den Login-Items hinzu.
 - **Benachrichtigungen anzeigen** — Erinnerungs-Notification, wenn der Prompt im Hintergrund anliegt.
-- **Sprache** — Folgt der macOS-Systemsprache. UI-Texte sind aktuell auf Deutsch verfügbar.
+- **Sprache** — Folgt der macOS-Systemsprache (Deutsch oder Englisch). Details unter [Sprache & Lokalisierung](/reference/localization/).
 
 ## Organisieren
 
