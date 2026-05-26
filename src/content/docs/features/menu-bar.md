@@ -22,6 +22,14 @@ Ein kurzer Klick auf das Symbol öffnet das Popover. Darin findest du:
 
 Klick außerhalb des Popovers — es schließt sich automatisch.
 
+## Popover anpinnen
+
+Brauchst du das Popover länger sichtbar — etwa während eines Meetings, oder weil du parallel im Browser nachschlägst —, klick in der Steuerleiste unten auf das 📌-**Pin**-Symbol. Das Popover bleibt dann **offen, auch wenn du außerhalb klickst**; ein erneuter Klick auf das Symbol gibt das Standardverhalten wieder frei.
+
+Im angepinnten Zustand behält das Popover seine Position relativ zum Statussymbol. Es bleibt über App-Wechsel hinweg sichtbar — ideal, um beim Tracking schnell Notizen zu ergänzen oder die Tagesleiste im Blick zu haben.
+
+Das Anpinnen wirkt nur auf die jeweils geöffnete Sitzung — beim nächsten Linksklick auf das Statussymbol startet das Popover wieder im normalen, klick-zum-Schließen-Modus.
+
 ## Rechtsklick — Kontextmenü
 
 Ein Rechtsklick (oder Ctrl-Klick) auf das Symbol öffnet ein klassisches macOS-Kontextmenü:

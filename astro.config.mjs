@@ -89,6 +89,8 @@ export default defineConfig({
             { label: 'Tastaturkürzel', translations: { en: 'Keyboard shortcuts' }, slug: 'reference/keyboard-shortcuts' },
             { label: 'Daten & Datenschutz', translations: { en: 'Data & privacy' }, slug: 'reference/data-privacy' },
             { label: 'Backups & Wiederherstellung', translations: { en: 'Backups & restore' }, slug: 'reference/backups' },
+            { label: 'Sprache & Lokalisierung', translations: { en: 'Language & localization' }, slug: 'reference/localization' },
+            { label: 'Barrierefreiheit', translations: { en: 'Accessibility' }, slug: 'reference/accessibility' },
             { label: 'Lizenz', translations: { en: 'License' }, slug: 'reference/license' },
             { label: 'FAQ', slug: 'reference/faq' },
           ],
