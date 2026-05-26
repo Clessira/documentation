@@ -1,0 +1,126 @@
+---
+title: CLI
+description: Den nowdoing-Befehl im Terminal nutzen, um Tracking zu starten, Einträge nachzutragen und den Tagesstand abzufragen.
+---
+
+NowDoing bringt einen kleinen Terminal-Befehl mit: **`nowdoing`**. Damit startest und stoppst du Tracking, trägst Zeit nach, fragst den heutigen Stand ab — alles ohne die App in den Vordergrund zu holen.
+
+Der Befehl spricht intern mit der laufenden Mac-App über die [AppleScript-Schnittstelle](/integrations/applescript/). Die App muss also laufen (Menüleisten-Icon sichtbar).
+
+## Installieren
+
+In der Mac-App: **Einstellungen → Integrationen → CLI → Install in PATH**. NowDoing legt den Befehl nach `~/.local/bin/nowdoing` und zeigt dir im Status-Bereich, ob `~/.local/bin` schon im `PATH` ist. Falls nicht, hängt die App dir den passenden `export`-Schnipsel für deine Shell aus, den du in `~/.zshrc` (oder `~/.bashrc`) übernimmst.
+
+**Deinstallieren** geht im selben Bereich über **Deinstallieren**.
+
+Nach einem App-Update genügt ein erneutes **Install in PATH**, um die CLI auf den Stand der App zu bringen.
+
+## Befehle
+
+```text
+nowdoing start <activity> [--create-if-missing]
+nowdoing stop
+nowdoing log <activity> --duration <minutes|Xm|Xh|XhYm> [--note <text>] [--create-if-missing]
+nowdoing today
+nowdoing status
+nowdoing help
+```
+
+### `start`
+
+Startet das Tracking für eine vorhandene Aktivität:
+
+```sh
+nowdoing start "Refactor"
+```
+
+Mit `--create-if-missing` legt NowDoing die Aktivität an, falls sie nicht existiert:
+
+```sh
+nowdoing start "PROJ-123 Review" --create-if-missing
+```
+
+Der Name muss exakt mit einer **aktiven** Aktivität übereinstimmen — archivierte werden ignoriert.
+
+### `stop`
+
+Beendet die laufende Sitzung:
+
+```sh
+nowdoing stop
+```
+
+Wenn nichts läuft, ist der Aufruf trotzdem erfolgreich (no-op).
+
+### `log`
+
+Trägt einen Zeitblock **rückwirkend** nach. Die Dauer kann als Minuten oder in Kurzform geschrieben werden:
+
+```sh
+nowdoing log "Standup" --duration 15
+nowdoing log "Deep Work" --duration 1h30m --note "API-Refactor"
+nowdoing log "Pairing" --duration 2h --create-if-missing
+```
+
+Akzeptierte Dauer-Formate: `30` (Minuten), `45m`, `2h`, `1h30m`. Der Eintrag endet **jetzt** und beginnt entsprechend früher.
+
+### `today`
+
+Gibt die heute insgesamt erfasste Zeit in Stunden aus:
+
+```sh
+$ nowdoing today
+3.75
+```
+
+Die Ausgabe ist eine Dezimalzahl — praktisch für Shell-Pipelines.
+
+### `status`
+
+Gibt einen kompakten Statusblock aus:
+
+```sh
+$ nowdoing status
+isTracking=true
+currentActivity=Refactor
+todayHours=3.75
+```
+
+Drei Zeilen im `key=value`-Format — direkt mit `grep` / `awk` weiterverarbeitbar.
+
+## Beispiele
+
+**Mittagspause als Eintrag nachtragen:**
+
+```sh
+nowdoing log "Mittag" --duration 45m --create-if-missing
+```
+
+**Aktive Aktivität in der Shell-Prompt anzeigen:**
+
+```sh
+nowdoing status | awk -F= '/currentActivity/ {print $2}'
+```
+
+**Tracking per Hotkey aus dem Terminal-Multiplexer starten:**
+
+```sh
+nowdoing start "Tickets" --create-if-missing && tmux display-message "tracking gestartet"
+```
+
+## Fehler & Exit-Codes
+
+`nowdoing` beendet sich mit Exit-Code `0` bei Erfolg und `1` bei Fehlern. Typische Ursachen:
+
+- **`Activity '…' not found`** — Aktivität fehlt oder ist archiviert. Mit `--create-if-missing` lösen.
+- **`TrackingManager not available`** — Mac-App läuft nicht. Starte sie und versuche es erneut.
+- **`NowDoing is locked: no valid license installed`** — Lizenz fehlt oder ist abgelaufen. Sichtbar in **Einstellungen → Lizenz**.
+- **AppleScript-Berechtigung** — beim ersten Aufruf fragt macOS, ob das Terminal NowDoing steuern darf. Mit **OK** bestätigen. Falls versehentlich abgelehnt, in **Systemeinstellungen → Datenschutz & Sicherheit → Automation** wieder erlauben.
+
+## Was die CLI **nicht** kann
+
+- Aktivitäten umbenennen, archivieren oder löschen — das geht nur in der App.
+- Einträge **bearbeiten** oder **löschen** — `log` legt nur neue Einträge an.
+- Den Erfassungsdialog programmatisch öffnen — dafür gibt es die [HTTP-API](/integrations/http-api/) (`POST /branch-changed`).
+
+Wenn du mehr Kontrolle brauchst (z. B. Suche nach Aktivitäten, Branch-Wechsel-Hook), nimm die [HTTP-API](/integrations/http-api/) oder eines der [SDKs](/integrations/sdks/).

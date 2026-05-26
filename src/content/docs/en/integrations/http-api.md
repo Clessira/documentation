@@ -16,15 +16,56 @@ The status area shows `Aktiv auf 127.0.0.1:<port>` (Active on …) once the list
 
 ## Endpoints
 
-The server exposes five endpoints. Every request must be signed (see below); for your own tools, the easiest path is one of the [SDKs](/en/integrations/sdks/), which handle the signing for you.
+The server exposes eight endpoints. Every request must be signed (see below); for your own tools, the easiest path is one of the [SDKs](/en/integrations/sdks/), which handle the signing for you.
 
 | Method + path              | Purpose |
 | -------------------------- | ------- |
 | `GET /healthcheck`         | Check the connection without triggering anything. |
 | `GET /current`             | Read the current activity (or `null` when nothing is running). |
+| `GET /status`              | Compact status block: tracking flag, break flag, current activity, seconds tracked today. |
 | `GET /activities/search`   | Search activities by name. |
 | `POST /activities/start`   | Start an activity (optionally creating it). |
+| `POST /activities/stop`    | End the running session. Idempotent — no error if nothing is running. |
+| `POST /entries`            | Log a time block after the fact (duration in minutes, optional note). |
 | `POST /branch-changed`     | Report a branch switch — opens the tracking prompt with the branch prefilled. |
+
+### `GET /status`
+
+Response:
+
+```json
+{
+  "ok": true,
+  "result": {
+    "isTracking": true,
+    "isOnBreak": false,
+    "currentActivity": { "activityID": "…", "activityName": "Refactor" },
+    "todaySeconds": 13500
+  }
+}
+```
+
+`currentActivity` is `null` when nothing is running. `todaySeconds` is the total time tracked today in seconds — formatting is left to the client.
+
+### `POST /entries`
+
+Body:
+
+```json
+{
+  "activityID": "uuid",   // optional, alternatively:
+  "name": "Standup",      // optional (one of the two is required)
+  "durationMinutes": 15,  // > 0, required
+  "note": "…",            // optional
+  "createIfMissing": false // optional, defaults to false
+}
+```
+
+The response contains the new entry ID, the activity data and a `created` flag — `true` when the activity was freshly created for this request.
+
+## License gate
+
+Without a valid license, every endpoint except `/healthcheck` responds with **`423 Locked`** and body `{"error":"license locked"}`. That way reachability can still be probed while the app is locked, without productive verbs going through unintentionally.
 
 ## Security
 

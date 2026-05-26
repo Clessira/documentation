@@ -34,17 +34,23 @@ const client = new NowDoingClient();
 
 await client.healthcheck();
 
-const current = await client.getCurrent();
-if (current === null) {
-  console.log("Nichts läuft gerade.");
-} else {
-  console.log(`Läuft: ${current.activityName} (seit ${current.startedAt})`);
-}
+const status = await client.getStatus();
+console.log(
+  status.isTracking
+    ? `${status.currentActivity?.activityName} läuft (${status.todaySeconds}s heute)`
+    : "Nichts läuft gerade.",
+);
 
-const started = await client.startActivity({
-  name: "Refactor",
+await client.startActivity({ name: "Refactor", createIfMissing: true });
+
+await client.logEntry({
+  name: "Standup",
+  durationMinutes: 15,
+  note: "Daily",
   createIfMissing: true,
 });
+
+await client.stopActivity();
 
 await client.notifyBranchChange({
   branch: "feature/sdk-rewrite",
@@ -71,13 +77,21 @@ from nowdoing import NowDoingClient
 with NowDoingClient() as client:
     client.healthcheck()
 
-    current = client.get_current()
-    if current is None:
-        print("Nichts läuft gerade.")
+    status = client.get_status()
+    if status.is_tracking and status.current_activity:
+        print(f"{status.current_activity.activity_name} läuft ({status.today_seconds}s heute)")
     else:
-        print(f"Läuft: {current.activity_name} (seit {current.started_at})")
+        print("Nichts läuft gerade.")
 
     client.start_activity(name="Refactor", create_if_missing=True)
+    client.log_entry(
+        name="Standup",
+        duration_minutes=15,
+        note="Daily",
+        create_if_missing=True,
+    )
+    client.stop_activity()
+
     client.notify_branch_change(
         branch="feature/sdk-rewrite",
         repo="nowdoingmac",
@@ -101,14 +115,17 @@ asyncio.run(main())
 
 ## API-Übersicht
 
-Beide SDKs decken dieselben fünf Endpunkte ab:
+Beide SDKs decken dieselben acht Endpunkte ab:
 
-| Methode (JS / Python)                           | Endpunkt                  |
-| ----------------------------------------------- | ------------------------- |
-| `healthcheck()` / `healthcheck()`               | `GET  /healthcheck`       |
-| `getCurrent()` / `get_current()`                | `GET  /current`           |
-| `searchActivities(q)` / `search_activities(q)`  | `GET  /activities/search` |
-| `startActivity({…})` / `start_activity(…)`      | `POST /activities/start`  |
+| Methode (JS / Python)                           | Endpunkt                   |
+| ----------------------------------------------- | -------------------------- |
+| `healthcheck()` / `healthcheck()`               | `GET  /healthcheck`        |
+| `getCurrent()` / `get_current()`                | `GET  /current`            |
+| `getStatus()` / `get_status()`                  | `GET  /status`             |
+| `searchActivities(q)` / `search_activities(q)`  | `GET  /activities/search`  |
+| `startActivity({…})` / `start_activity(…)`      | `POST /activities/start`   |
+| `stopActivity()` / `stop_activity()`            | `POST /activities/stop`    |
+| `logEntry({…})` / `log_entry(…)`                | `POST /entries`            |
 | `notifyBranchChange({…})` / `notify_branch_change(…)` | `POST /branch-changed` |
 
 ## Fehler
@@ -117,10 +134,11 @@ Alle HTTP-Fehler werden auf typisierte Exceptions abgebildet, die von `NowDoingE
 
 | Status | Klasse                       | Typische Ursache |
 | -----: | ---------------------------- | ---------------- |
-|    400 | `NowDoingValidationError`    | Ungültiger Request (z. B. leerer Branch). |
+|    400 | `NowDoingValidationError`    | Ungültiger Request (z. B. leerer Branch, `durationMinutes ≤ 0`). |
 |    401 | `NowDoingAuthError`          | Falsches/fehlendes Token oder Signatur. |
-|    404 | `NowDoingNotFoundError`      | Aktivitäts-UUID unbekannt. |
+|    404 | `NowDoingNotFoundError`      | Aktivitäts-UUID/-Name unbekannt. |
 |    409 | `NowDoingReplayError`        | Nonce in den letzten 180 s schon benutzt. |
+|    423 | `NowDoingHttpError`          | NowDoing ist gesperrt (keine gültige Lizenz). |
 |    503 | `NowDoingUnavailableError`   | Endpunkt-Handler nicht verdrahtet. |
 |  sonst | `NowDoingHttpError`          | Alles andere (inkl. 5xx). |
 

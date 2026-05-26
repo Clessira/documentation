@@ -16,15 +16,56 @@ Der Status-Bereich zeigt `Aktiv auf 127.0.0.1:<port>`, sobald der Listener läuf
 
 ## Endpunkte
 
-Der Server beantwortet fünf Endpunkte. Alle Anfragen müssen signiert sein (siehe unten); für eigene Tools nimmst du am besten eines der [SDKs](/integrations/sdks/), die das Signieren erledigen.
+Der Server beantwortet acht Endpunkte. Alle Anfragen müssen signiert sein (siehe unten); für eigene Tools nimmst du am besten eines der [SDKs](/integrations/sdks/), die das Signieren erledigen.
 
 | Methode + Pfad             | Zweck |
 | -------------------------- | ----- |
 | `GET /healthcheck`         | Verbindung prüfen, ohne etwas auszulösen. |
 | `GET /current`             | Aktuelle Aktivität abfragen (oder `null`, wenn nichts läuft). |
+| `GET /status`              | Kompakter Statusblock: Tracking-Flag, Pause-Flag, laufende Aktivität, heute erfasste Sekunden. |
 | `GET /activities/search`   | Aktivitäten nach Namen durchsuchen. |
 | `POST /activities/start`   | Aktivität starten (optional neu anlegen). |
+| `POST /activities/stop`    | Laufende Sitzung beenden. Idempotent — kein Fehler, wenn nichts läuft. |
+| `POST /entries`            | Zeitblock rückwirkend nachtragen (Dauer in Minuten, optionale Notiz). |
 | `POST /branch-changed`     | Branch-Wechsel melden — öffnet den Erfassungsdialog mit dem Branch vorausgefüllt. |
+
+### `GET /status`
+
+Antwort:
+
+```json
+{
+  "ok": true,
+  "result": {
+    "isTracking": true,
+    "isOnBreak": false,
+    "currentActivity": { "activityID": "…", "activityName": "Refactor" },
+    "todaySeconds": 13500
+  }
+}
+```
+
+`currentActivity` ist `null`, wenn gerade nichts läuft. `todaySeconds` zählt die heute insgesamt erfasste Zeit in Sekunden — die Formatierung bleibt dem Client überlassen.
+
+### `POST /entries`
+
+Body:
+
+```json
+{
+  "activityID": "uuid",   // optional, alternativ:
+  "name": "Standup",      // optional (eines von beiden ist Pflicht)
+  "durationMinutes": 15,  // > 0, Pflicht
+  "note": "…",            // optional
+  "createIfMissing": false // optional, default false
+}
+```
+
+Antwort enthält die neu angelegte Eintrags-ID, die Aktivitäts-Daten und ein `created`-Flag, das `true` ist, wenn die Aktivität für diese Anfrage frisch angelegt wurde.
+
+## Lizenz-Gate
+
+Ohne gültige Lizenz antwortet jeder Endpoint außer `/healthcheck` mit **`423 Locked`** und Body `{"error":"license locked"}`. So lässt sich Erreichbarkeit auch im gesperrten Zustand prüfen, ohne dass produktive Verben ungewollt durchgehen.
 
 ## Sicherheit
 

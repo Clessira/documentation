@@ -2,6 +2,18 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-26 — http-api-stop-status-entries
+
+- `integrations/http-api` (DE + EN): expanded endpoint table from five to eight (`GET /status`, `POST /activities/stop`, `POST /entries`). Added response/body samples for `/status` and `/entries`. New "Lizenz-Gate" / "License gate" section documenting **`423 Locked`** for every endpoint except `/healthcheck` when no license is installed.
+- `integrations/sdks` (DE + EN): added `stopActivity` / `stop_activity`, `getStatus` / `get_status`, `logEntry` / `log_entry` to the JS and Python quickstart examples and to the API-overview table. Error table gained the `423 → NowDoingHttpError` row and the 400 cause now mentions `durationMinutes ≤ 0`.
+- `integrations/applescript` (DE + EN): added error code `5` (generic internal error) to the error-code table — surfaced when the underlying service rejects with a non-domain-mapped status.
+
+## 2026-05-26 — cli-and-applescript
+
+- New page `integrations/cli` (DE + EN): documents the `nowdoing` terminal command — install path via **Settings → Integrations → CLI → Install in PATH**, the five commands (`start`, `stop`, `log`, `today`, `status`), duration shorthand (`Xm`/`Xh`/`XhYm`), pipeline-friendly output, error codes and feature scope. Explicitly does **not** mention internal Makefile targets — Mac app is closed source.
+- New page `integrations/applescript` (DE + EN): documents the AppleScript scripting suite — `start tracking`, `stop tracking`, `log entry`, `today hours`, `tracking status` verbs plus the four read-only `application` properties (`is tracking`, `current activity`, `today hours`, `is on break`) and the `activity` / `time entry` classes. Includes `osascript` and Apple Shortcuts usage, Automation-permission notes, and error-code table (`1`–`5`).
+- `astro.config.mjs`: added both pages to the Integrationen / Integrations sidebar group, in the order CLI → AppleScript → HTTP-API → SDKs.
+
 ## 2026-05-26 — openapi-license-popover-focus
 
 - New page `integrations/specs` (DE + EN): integrator's reference for the `openapi.yaml` (OpenAPI 3.1) and `data-schema.json` (JSON Schema 2020-12) files. Covers what each spec describes, render + client-generation snippets via `@redocly/cli` and `openapi-generator-cli`, `ajv-cli` save-file validation, a GitHub Actions CI snippet that lints the OpenAPI and validates `data.json` fixtures, and the per-spec versioning rules. Links to specs at `nowdoing.app/specs/*`.

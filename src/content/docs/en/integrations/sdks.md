@@ -34,17 +34,23 @@ const client = new NowDoingClient();
 
 await client.healthcheck();
 
-const current = await client.getCurrent();
-if (current === null) {
-  console.log("Nothing running.");
-} else {
-  console.log(`On: ${current.activityName} (since ${current.startedAt})`);
-}
+const status = await client.getStatus();
+console.log(
+  status.isTracking
+    ? `${status.currentActivity?.activityName} running (${status.todaySeconds}s today)`
+    : "Nothing running.",
+);
 
-const started = await client.startActivity({
-  name: "Refactor",
+await client.startActivity({ name: "Refactor", createIfMissing: true });
+
+await client.logEntry({
+  name: "Standup",
+  durationMinutes: 15,
+  note: "Daily",
   createIfMissing: true,
 });
+
+await client.stopActivity();
 
 await client.notifyBranchChange({
   branch: "feature/sdk-rewrite",
@@ -71,13 +77,21 @@ from nowdoing import NowDoingClient
 with NowDoingClient() as client:
     client.healthcheck()
 
-    current = client.get_current()
-    if current is None:
-        print("Nothing running.")
+    status = client.get_status()
+    if status.is_tracking and status.current_activity:
+        print(f"{status.current_activity.activity_name} running ({status.today_seconds}s today)")
     else:
-        print(f"On: {current.activity_name} (since {current.started_at})")
+        print("Nothing running.")
 
     client.start_activity(name="Refactor", create_if_missing=True)
+    client.log_entry(
+        name="Standup",
+        duration_minutes=15,
+        note="Daily",
+        create_if_missing=True,
+    )
+    client.stop_activity()
+
     client.notify_branch_change(
         branch="feature/sdk-rewrite",
         repo="nowdoingmac",
@@ -101,15 +115,18 @@ asyncio.run(main())
 
 ## API overview
 
-Both SDKs cover the same five endpoints:
+Both SDKs cover the same eight endpoints:
 
-| Method (JS / Python)                                  | Endpoint                  |
-| ----------------------------------------------------- | ------------------------- |
-| `healthcheck()` / `healthcheck()`                     | `GET  /healthcheck`       |
-| `getCurrent()` / `get_current()`                      | `GET  /current`           |
-| `searchActivities(q)` / `search_activities(q)`        | `GET  /activities/search` |
-| `startActivity({…})` / `start_activity(…)`            | `POST /activities/start`  |
-| `notifyBranchChange({…})` / `notify_branch_change(…)` | `POST /branch-changed`    |
+| Method (JS / Python)                                  | Endpoint                   |
+| ----------------------------------------------------- | -------------------------- |
+| `healthcheck()` / `healthcheck()`                     | `GET  /healthcheck`        |
+| `getCurrent()` / `get_current()`                      | `GET  /current`            |
+| `getStatus()` / `get_status()`                        | `GET  /status`             |
+| `searchActivities(q)` / `search_activities(q)`        | `GET  /activities/search`  |
+| `startActivity({…})` / `start_activity(…)`            | `POST /activities/start`   |
+| `stopActivity()` / `stop_activity()`                  | `POST /activities/stop`    |
+| `logEntry({…})` / `log_entry(…)`                      | `POST /entries`            |
+| `notifyBranchChange({…})` / `notify_branch_change(…)` | `POST /branch-changed`     |
 
 ## Errors
 
@@ -117,10 +134,11 @@ All HTTP failures map to typed exceptions that inherit from `NowDoingError`:
 
 | Status | Class                        | Typical cause |
 | -----: | ---------------------------- | ------------- |
-|    400 | `NowDoingValidationError`    | Bad payload (e.g. empty branch). |
+|    400 | `NowDoingValidationError`    | Bad payload (e.g. empty branch, `durationMinutes ≤ 0`). |
 |    401 | `NowDoingAuthError`          | Wrong or missing token, or bad signature. |
-|    404 | `NowDoingNotFoundError`      | Activity UUID unknown. |
+|    404 | `NowDoingNotFoundError`      | Activity UUID or name unknown. |
 |    409 | `NowDoingReplayError`        | Nonce already used in the last 180 s. |
+|    423 | `NowDoingHttpError`          | NowDoing is locked (no valid license). |
 |    503 | `NowDoingUnavailableError`   | Endpoint handler not wired in the app. |
 |  other | `NowDoingHttpError`          | Anything else (incl. 5xx). |
 
