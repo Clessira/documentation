@@ -51,7 +51,7 @@ export default defineConfig({
             { label: 'Tag-Ansicht', translations: { en: 'Day view' }, slug: 'features/day-view' },
             { label: 'Prompt-Popover', translations: { en: 'Prompt popover' }, slug: 'features/prompt-popover' },
             { label: 'Prompt-Anzeige', translations: { en: 'Prompt display' }, slug: 'features/prompt-display' },
-            { label: 'Aktivitäten', translations: { en: 'Activities' }, slug: 'features/activities' },
+            { label: 'Aktivitäten & Gruppen', translations: { en: 'Activities & groups' }, slug: 'features/activities' },
             { label: 'Aktivitäten importieren', translations: { en: 'Import activities' }, slug: 'features/import' },
             { label: 'Wiederkehrende Aktivitäten', translations: { en: 'Recurring activities' }, slug: 'features/recurring' },
             { label: 'Tagesleiste & Ansichten', translations: { en: 'Timeline & views' }, slug: 'features/timeline' },

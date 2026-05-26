@@ -2,6 +2,11 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-26 — activities-and-groups-rewrite
+
+- `features/activities` (DE + EN): full rewrite to reflect the actual UI under **Einstellungen → Aktivitäten**. Added sections for the tree list (groups / ungrouped / archive), drag-and-drop, inline rename, the activity-settings sheet (general / goals / notes & billing / timer / archive), pinning, group create / edit / delete (with the ungroup-confirmation alert), and the duration field for past-day backfill. Removed the previously-claimed inline edit of an entry's start/end time and the "change activity" action — neither exists in the current UI; only delete-via-hover-trash does.
+- `astro.config.mjs`: sidebar entry renamed `Aktivitäten` → `Aktivitäten & Gruppen` (EN: `Activities & groups`).
+
 ## 2026-05-26 — global-prompt-hotkeys
 
 - `reference/keyboard-shortcuts` (DE + EN): new "Im Prompt (global)" / "In the prompt (global)" section documenting the focus-immune ⌃⌥⌘ chord (L open, J confirm, O discard, 1–9 pinned), the single-modifier variants when the prompt is frontmost (⌃Y / ⌃N / ⌃S), and the unmodified 1–9 / letter behaviour. Mentions configurability via **Einstellungen → Tastatur** / **Settings → Keyboard**. Replaced the outdated roadmap note with the actual capability; renamed the App-Menu section to disambiguate from the new global section.
