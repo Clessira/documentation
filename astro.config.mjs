@@ -69,6 +69,7 @@ export default defineConfig({
             { label: 'Spotlight', slug: 'integrations/spotlight' },
             { label: 'HTTP-API', translations: { en: 'HTTP API' }, slug: 'integrations/http-api' },
             { label: 'SDKs', slug: 'integrations/sdks' },
+            { label: 'Spezifikationen', translations: { en: 'Specs' }, slug: 'integrations/specs' },
           ],
         },
         {
@@ -79,6 +80,7 @@ export default defineConfig({
             { label: 'Einstellungen · Allgemein', translations: { en: 'Settings · General' }, slug: 'reference/settings-general' },
             { label: 'Tastaturkürzel', translations: { en: 'Keyboard shortcuts' }, slug: 'reference/keyboard-shortcuts' },
             { label: 'Daten & Datenschutz', translations: { en: 'Data & privacy' }, slug: 'reference/data-privacy' },
+            { label: 'Lizenz', translations: { en: 'License' }, slug: 'reference/license' },
             { label: 'FAQ', slug: 'reference/faq' },
           ],
         },

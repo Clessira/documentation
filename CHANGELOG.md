@@ -2,6 +2,13 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-26 — openapi-license-popover-focus
+
+- New page `integrations/specs` (DE + EN): integrator's reference for the `openapi.yaml` (OpenAPI 3.1) and `data-schema.json` (JSON Schema 2020-12) files. Covers what each spec describes, render + client-generation snippets via `@redocly/cli` and `openapi-generator-cli`, `ajv-cli` save-file validation, a GitHub Actions CI snippet that lints the OpenAPI and validates `data.json` fixtures, and the per-spec versioning rules. Links to specs at `nowdoing.app/specs/*`.
+- New page `reference/license` (DE + EN): the Ed25519-signed license system — activation window with paste + drag-and-drop, the Settings → Lizenz hero card with badges (Aktiv / Lifetime / N-Tage / max version), license payload fields, invalidation reasons (expiry / version cap / bad signature), what's blocked while locked (menu bar, hotkey, right-click menu, HTTP API, Shortcuts/AppleScript via `licenseLocked`, macOS Services), and the local UserDefaults storage location.
+- Updated `features/prompt-popover` (DE + EN, `.mdx`): added a "Fokus beim Öffnen" / "Focus on open" section describing the new hotkey-only focus-steal behavior — popover takes key focus, digits/letters reach it directly, and the previously frontmost app is restored on close. Menu-bar clicks and scheduled prompts remain non-activating.
+- `astro.config.mjs`: registered `integrations/specs` (Spezifikationen / Specs) under Integrationen and `reference/license` (Lizenz / License) under Referenz.
+
 ## 2026-05-25 — prompt-popover-page
 
 - New page `features/prompt-popover` (DE + EN, `.mdx`): annotated walkthrough of the prompt UI — headline (with daily-target / branch-hint variants), pinned quick-picks with 1–9 keyboard binding, search/create combobox, optional note (default-note + branch prefill), and the three-button action bar (Discard / Snooze / Confirm) with local + global shortcuts. Includes a keyboard-cheat-sheet table and a "When the popover appears" section covering interval-end, on-demand, and the sleep-prompt variant.
