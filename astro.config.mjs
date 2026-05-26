@@ -56,8 +56,10 @@ export default defineConfig({
             { label: 'Wiederkehrende Aktivitäten', translations: { en: 'Recurring activities' }, slug: 'features/recurring' },
             { label: 'Tagesleiste & Ansichten', translations: { en: 'Timeline & views' }, slug: 'features/timeline' },
             { label: 'Tracking-Intervall', translations: { en: 'Tracking interval' }, slug: 'features/tracking-interval' },
+            { label: 'Intelligenz', translations: { en: 'Intelligence' }, slug: 'features/intelligenz' },
             { label: 'Arbeitszeiten & Wochenziel', translations: { en: 'Working hours & target' }, slug: 'features/working-hours' },
             { label: 'Pausen', translations: { en: 'Breaks' }, slug: 'features/breaks' },
+            { label: 'Widgets', slug: 'features/widgets' },
             { label: 'CSV-Export', translations: { en: 'CSV export' }, slug: 'features/csv-export' },
           ],
         },
@@ -67,6 +69,7 @@ export default defineConfig({
           items: [
             { label: 'VS Code', slug: 'integrations/vscode' },
             { label: 'Spotlight', slug: 'integrations/spotlight' },
+            { label: 'App Intents & Dienste', translations: { en: 'App Intents & Services' }, slug: 'integrations/app-intents' },
             { label: 'CLI', slug: 'integrations/cli' },
             { label: 'AppleScript', slug: 'integrations/applescript' },
             { label: 'HTTP-API', translations: { en: 'HTTP API' }, slug: 'integrations/http-api' },
