@@ -18,7 +18,30 @@ NowDoing ist so designt, dass du selten die Maus brauchst. Die wichtigsten Short
 | Stundenzettel öffnen | <kbd>⌘1</kbd> |
 | Zwischen Ansichten wechseln | <kbd>⌘2</kbd> / <kbd>⌘3</kbd> / <kbd>⌘4</kbd> |
 
-## Globale Shortcuts (App-fokussiert)
+## Im Prompt (global)
+
+Diese Shortcuts greifen, sobald die Tracking-Abfrage offen ist — auch wenn eine andere App den Fokus hat. Du musst nicht erst zu NowDoing wechseln.
+
+| Aktion | Shortcut |
+|---|---|
+| Abfrage von überall öffnen | <kbd>⌃⌥⌘L</kbd> |
+| Vorschlag bestätigen | <kbd>⌃⌥⌘J</kbd> |
+| Intervall verwerfen | <kbd>⌃⌥⌘O</kbd> |
+| Angepinnte Aktivität 1–9 buchen | <kbd>⌃⌥⌘1</kbd> … <kbd>⌃⌥⌘9</kbd> |
+
+Wenn die Abfrage im Vordergrund liegt, kannst du außerdem mit nur einem Modifier arbeiten:
+
+| Aktion | Shortcut |
+|---|---|
+| Vorschlag bestätigen | <kbd>⌃Y</kbd> |
+| Intervall verwerfen | <kbd>⌃N</kbd> |
+| Snooze (später erneut fragen) | <kbd>⌃S</kbd> |
+
+Solange kein Textfeld den Fokus hat, kannst du gepinnte Aktivitäten auch direkt mit <kbd>1</kbd>–<kbd>9</kbd> buchen. Tippst du einen Buchstaben, springt der Fokus ins Suchfeld und filtert deine Aktivitäten — die Maus brauchst du nicht.
+
+Das Tastenkürzel zum Öffnen ist über **Einstellungen → Tastatur** konfigurierbar.
+
+## App-Menü (NowDoing fokussiert)
 
 | Aktion | Shortcut |
 |---|---|
@@ -35,5 +58,3 @@ NowDoing ist so designt, dass du selten die Maus brauchst. Die wichtigsten Short
 | Heute | <kbd>⌘T</kbd> |
 | Tag/Woche umschalten | <kbd>⌘D</kbd> / <kbd>⌘W</kbd> |
 | CSV exportieren | <kbd>⌘E</kbd> |
-
-> Hinweis: Globale Hotkeys, die auch funktionieren, wenn NowDoing nicht im Vordergrund ist, sind aktuell nicht konfigurierbar — das ist ein häufig gewünschtes Feature und steht auf der Roadmap.

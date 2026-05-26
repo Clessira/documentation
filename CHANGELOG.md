@@ -2,6 +2,10 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-26 — global-prompt-hotkeys
+
+- `reference/keyboard-shortcuts` (DE + EN): new "Im Prompt (global)" / "In the prompt (global)" section documenting the focus-immune ⌃⌥⌘ chord (L open, J confirm, O discard, 1–9 pinned), the single-modifier variants when the prompt is frontmost (⌃Y / ⌃N / ⌃S), and the unmodified 1–9 / letter behaviour. Mentions configurability via **Einstellungen → Tastatur** / **Settings → Keyboard**. Replaced the outdated roadmap note with the actual capability; renamed the App-Menu section to disambiguate from the new global section.
+
 ## 2026-05-26 — http-api-stop-status-entries
 
 - `integrations/http-api` (DE + EN): expanded endpoint table from five to eight (`GET /status`, `POST /activities/stop`, `POST /entries`). Added response/body samples for `/status` and `/entries`. New "Lizenz-Gate" / "License gate" section documenting **`423 Locked`** for every endpoint except `/healthcheck` when no license is installed.
