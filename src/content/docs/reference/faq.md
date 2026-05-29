@@ -11,7 +11,7 @@ Während der Beta-Phase ist NowDoing **kostenlos**. Aktuelle Preise und Konditio
 
 ### Auf welchen Plattformen läuft NowDoing?
 
-Aktuell nur **macOS** (ab Version 26.4). Versionen für iPad, iPhone oder Apple Watch sind denkbar, stehen aber gerade nicht auf der Roadmap.
+Aktuell nur **macOS** (ab Version 26.4). Begleit-Apps für iPhone, iPad und Apple Watch sind in Entwicklung, aber noch nicht verfügbar.
 
 ### Wo sind meine Daten?
 
@@ -43,9 +43,9 @@ Nein, nicht eingebaut. NowDoing macht eine Sache: aufzeichnen, was du tust. Pomo
 
 ### Kann ich zwischen mehreren Macs synchronisieren?
 
-Ja, optional über **iCloud Drive**: **Einstellungen → Daten → „Mit iCloud synchronisieren"**. Die Synchronisation läuft ausschließlich über deinen privaten iCloud-Container, ohne NowDoing-Server. Details unter [Daten & Datenschutz](/reference/data-privacy/).
+Ja, optional über **iCloud Drive**: **Einstellungen → Speicher & Backups → „Mit iCloud synchronisieren"**. Die Synchronisation läuft ausschließlich über deinen privaten iCloud-Container, ohne NowDoing-Server. Details unter [Daten & Datenschutz](/reference/data-privacy/).
 
-Alternativ kannst du unter **„Eigener Ordner wählen"** einen Pfad in Dropbox, OneDrive o. Ä. angeben. **Achtung:** Bei gleichzeitigem Schreiben von zwei Geräten kann es zu Konflikten kommen — iCloud-Sync ist robuster.
+Alternativ kannst du unter **„Eigener Ordner wählen"** einen Pfad in Dropbox, OneDrive o. Ä. angeben. **Achtung:** Solche Anbieter synchronisieren immer die ganze Datei — schreiben zwei Geräte gleichzeitig, kann das zu Konflikten oder verlorenen Änderungen führen. iCloud-Sync ist robuster und führt Änderungen Eintrag für Eintrag zusammen, statt die Datei zu ersetzen.
 
 ### Kann ich meine Daten exportieren / migrieren?
 

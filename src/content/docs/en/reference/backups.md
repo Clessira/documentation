@@ -32,9 +32,9 @@ Pick the storage location under **Settings → Storage & Backups → Location** 
 
 ## iCloud sync
 
-Toggle it under **Settings → Storage & Backups → iCloud sync**. When enabled, NowDoing migrates the local file once into the iCloud container; when disabled, it migrates back — no data loss either way. **iCloud Drive** must be enabled in System Settings. Snapshots in the `backups/` folder also land in the iCloud container.
+Toggle it under **Settings → Storage & Backups → "Sync with iCloud"**. When enabled, NowDoing migrates the local file once into the iCloud container; when disabled, it migrates back — no data loss either way. **iCloud Drive** must be enabled in System Settings. Snapshots in the `backups/` folder also land in the iCloud container.
 
-If another Mac writes to the same file, NowDoing detects the external change and reloads.
+If another Mac writes to the same file, NowDoing detects the external change and **merges it entry by entry into your local state** (most recent edit wins, deletions stay deleted) — local changes that hadn't synced yet aren't lost.
 
 **iCloud + custom folder at the same time?** As long as iCloud sync is on, iCloud takes precedence; the custom folder sits idle. This prevents conflicts from two sources.
 
