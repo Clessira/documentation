@@ -11,7 +11,7 @@ During the beta, NowDoing is **free**. For current pricing and terms see [nowdoi
 
 ### Which platforms does NowDoing run on?
 
-**macOS only** for now (version 26.4+). Versions for iPad, iPhone, or Apple Watch are conceivable but not on the current roadmap.
+**macOS only** for now (version 26.4+). Companion apps for iPhone, iPad, and Apple Watch are in development but not yet available.
 
 ### Where is my data?
 
@@ -43,9 +43,9 @@ Not built in. NowDoing does one thing: record what you do. Pomodoro apps, break 
 
 ### Can I sync across Macs?
 
-Yes, optionally via **iCloud Drive**: **Settings → Data → "Sync with iCloud"**. Sync runs exclusively through your private iCloud container, with no NowDoing server. Details under [Data & privacy](/en/reference/data-privacy/).
+Yes, optionally via **iCloud Drive**: **Settings → Storage & Backups → "Sync with iCloud"**. Sync runs exclusively through your private iCloud container, with no NowDoing server. Details under [Data & privacy](/en/reference/data-privacy/).
 
-Alternatively you can point **"Choose custom folder"** at a path inside Dropbox, OneDrive, or similar. **Warning:** simultaneous writes from two devices can cause conflicts — iCloud sync is the more robust option.
+Alternatively you can point **"Choose custom folder"** at a path inside Dropbox, OneDrive, or similar. **Warning:** these providers sync whole files, so simultaneous writes from two devices can cause conflicts or lost changes. iCloud sync is more robust — it merges changes entry by entry instead of replacing the file.
 
 ### Can I export / migrate my data?
 

@@ -32,9 +32,9 @@ Den Speicherort wählst du unter **Einstellungen → Speicher & Backups → Spei
 
 ## iCloud-Sync
 
-Aktivierbar unter **Einstellungen → Speicher & Backups → iCloud-Sync**. Beim Einschalten migriert NowDoing die lokale Datei einmalig in den iCloud-Container, beim Ausschalten zurück — ohne Datenverlust. Voraussetzung ist ein in den Systemeinstellungen aktives **iCloud Drive**. Auch die Snapshots im `backups/`-Ordner liegen dann im iCloud-Container.
+Aktivierbar unter **Einstellungen → Speicher & Backups → „Mit iCloud synchronisieren"**. Beim Einschalten migriert NowDoing die lokale Datei einmalig in den iCloud-Container, beim Ausschalten zurück — ohne Datenverlust. Voraussetzung ist ein in den Systemeinstellungen aktives **iCloud Drive**. Auch die Snapshots im `backups/`-Ordner liegen dann im iCloud-Container.
 
-Schreibt ein anderer Mac an derselben Datei, erkennt NowDoing die externe Änderung und lädt sie nach.
+Schreibt ein anderer Mac an derselben Datei, erkennt NowDoing die externe Änderung und **führt sie Eintrag für Eintrag mit deinem lokalen Stand zusammen** (jüngste Änderung gewinnt, Gelöschtes bleibt gelöscht) — noch nicht synchronisierte lokale Änderungen gehen dabei nicht verloren.
 
 **iCloud + eigener Ordner gleichzeitig?** Solange iCloud-Sync aktiv ist, hat iCloud Vorrang; der eigene Ordner liegt dann brach. Das verhindert Konflikte aus zwei Quellen.
 

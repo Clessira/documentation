@@ -2,6 +2,16 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-05-29 — app-sync-accuracy-review
+
+- Cross-device/iCloud-sync accuracy pass after comparing the docs against the Mac app's CHANGELOG/source (analysis + a 4-role doc review: architect / developer / user / designer). No new pages — companion iPhone/iPad and Apple Watch apps exist in the codebase but aren't released, so they are deliberately *not* documented yet.
+- `reference/data-privacy` + `reference/backups` (DE + EN): rewrote the iCloud-sync conflict text to match the 2026-05-28 remote-merge fix — an incoming remote change is now merged into the in-memory state **entry by entry** (most recent edit per entry wins, deletions stay deleted) instead of clobbering local edits. Dropped the old "can produce iCloud conflicts" warning; corrected the overstated "neither Mac overwrites the other" to the accurate per-entry-LWW behaviour (different entries both survive; same entry → newest wins).
+- `reference/faq` (DE + EN): platform answer no longer says iPad/iPhone/Watch are "not on the roadmap" — now "companion apps … in development but not yet available". Tightened the custom-folder (Dropbox/OneDrive) warning and contrasted it with iCloud's per-entry merge.
+- `index` (DE + EN): removed the self-contradictory "no cloud / keine Cloud" claims (hero card + meta description + "what NowDoing is not" bullet) now that optional iCloud sync exists; reframed as "no cloud service of our own … optional sync runs only through your own private Apple iCloud".
+- `getting-started/first-run` (DE + EN): the storage step no longer suggests reaching iCloud by pointing the *custom folder* at iCloud Drive (that path is whole-file, no merge) — points to the dedicated iCloud-sync toggle instead.
+- Terminology/consistency: standardized the toggle path to **Einstellungen → Speicher & Backups → „Mit iCloud synchronisieren"** / **Settings → Storage & Backups → "Sync with iCloud"** across data-privacy/backups/faq (was split between "Daten →" and "iCloud-Sync"); replaced DB-ish "Datensatz/record by record" with "Eintrag/entry by entry"; fixed DE "Telemetry" → "Telemetrie".
+- Verified: `npm run build` green (77 pages); DE/EN parity preserved on every edited page.
+
 ## 2026-05-26 — activities-and-groups-rewrite
 
 - `features/activities` (DE + EN): full rewrite to reflect the actual UI under **Einstellungen → Aktivitäten**. Added sections for the tree list (groups / ungrouped / archive), drag-and-drop, inline rename, the activity-settings sheet (general / goals / notes & billing / timer / archive), pinning, group create / edit / delete (with the ungroup-confirmation alert), and the duration field for past-day backfill. Removed the previously-claimed inline edit of an entry's start/end time and the "change activity" action — neither exists in the current UI; only delete-via-hover-trash does.

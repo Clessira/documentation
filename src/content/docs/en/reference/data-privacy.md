@@ -25,13 +25,13 @@ That's all. No hidden tracking store, no telemetry caches.
 
 ## iCloud sync (optional, off by default)
 
-If you want it, NowDoing can sync your `data.json` between multiple Macs via your private **iCloud Drive**. You enable it under **Settings → Data → "Sync with iCloud"**.
+If you want it, NowDoing can sync your `data.json` between multiple Macs via your private **iCloud Drive**. You enable it under **Settings → Storage & Backups → "Sync with iCloud"**.
 
 While iCloud sync is on:
 
 - The file lives in your Apple ID's iCloud ubiquity container instead of the local app container.
 - There is **no NowDoing server**. Sync runs exclusively over Apple's iCloud infrastructure — data does not pass through us.
-- Editing on two Macs at the same time can produce iCloud conflicts. NowDoing writes atomically but has no control over Apple's sync ordering.
+- If you edit on two Macs at the same time, **no entries are lost**: NowDoing combines both states entry by entry. Changes to different entries both survive; if both Macs change the same entry, the most recent change wins, and deletions stay deleted.
 - iCloud sync and "custom folder" are mutually exclusive: while iCloud is active, the chosen folder is not used.
 
 ## What NowDoing does **not** do
