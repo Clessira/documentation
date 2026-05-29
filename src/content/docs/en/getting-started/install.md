@@ -5,7 +5,7 @@ description: Install NowDoing on your Mac — TestFlight, system requirements, p
 
 ## System requirements
 
-- macOS **26.4** or later
+- macOS **26.0** or later
 - Apple Silicon or Intel Mac
 - About 30 MB free disk space
 

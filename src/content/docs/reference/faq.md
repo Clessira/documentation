@@ -11,7 +11,7 @@ Während der Beta-Phase ist NowDoing **kostenlos**. Aktuelle Preise und Konditio
 
 ### Auf welchen Plattformen läuft NowDoing?
 
-Aktuell nur **macOS** (ab Version 26.4). Begleit-Apps für iPhone, iPad und Apple Watch sind in Entwicklung, aber noch nicht verfügbar.
+Aktuell nur **macOS** (ab Version 26.0). Begleit-Apps für iPhone, iPad und Apple Watch sind in Entwicklung, aber noch nicht verfügbar.
 
 ### Wo sind meine Daten?
 
