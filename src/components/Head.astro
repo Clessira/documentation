@@ -1,0 +1,85 @@
+---
+// Custom <head> override for Starlight.
+// Renders the default Starlight head, then adds:
+//   1. Open Graph / Twitter social-card meta (so shared doc links get a
+//      preview image instead of a blank card).
+//   2. TechArticle JSON-LD per page for rich results.
+// Registered via `components.Head` in astro.config.mjs.
+import Default from '@astrojs/starlight/components/Head.astro';
+
+// Starlight route data is absent on non-Starlight routes (e.g. the internal
+// 404). Fall back to the default head untouched in that case.
+const route = Astro.locals.starlightRoute;
+const data = route?.entry?.data;
+const siteTitle = data?.title ?? 'NowDoing';
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og-image.png', Astro.site).href;
+const title = data?.title ?? siteTitle;
+const description = data?.description ?? siteTitle;
+
+// Home/splash pages describe the product; content pages are TechArticles.
+const isSplash = data?.template === 'splash';
+
+const jsonLd = isSplash
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'NowDoing',
+      url: 'https://docs.nowdoing.app/',
+      description,
+      inLanguage: Astro.currentLocale ?? 'de',
+      publisher: {
+        '@type': 'Organization',
+        name: 'NowDoing',
+        url: 'https://nowdoing.app/',
+      },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: title,
+      description,
+      inLanguage: Astro.currentLocale ?? 'de',
+      url: canonical,
+      mainEntityOfPage: canonical,
+      ...(data?.lastUpdated
+        ? { dateModified: new Date(data.lastUpdated).toISOString() }
+        : {}),
+      author: {
+        '@type': 'Organization',
+        name: 'NowDoing',
+        url: 'https://nowdoing.app/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'NowDoing',
+        url: 'https://nowdoing.app/',
+      },
+      isPartOf: {
+        '@type': 'WebSite',
+        name: 'NowDoing Dokumentation',
+        url: 'https://docs.nowdoing.app/',
+      },
+    };
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+{data && (
+  <>
+    {/*
+      Starlight already emits og:title/description/type/url/locale and
+      twitter:card. We only add what's missing — chiefly the social-card
+      image — plus per-page structured data.
+    */}
+    <meta property="og:site_name" content="NowDoing" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </>
+)}

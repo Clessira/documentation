@@ -1,11 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://docs.nowdoing.app',
   integrations: [
+    // Emit /sitemap-index.xml + /sitemap-0.xml covering every doc page.
+    // Starlight already injects per-page hreflang alternates into <head>.
+    sitemap(),
     starlight({
       title: 'NowDoing',
       description:
@@ -96,6 +100,10 @@ export default defineConfig({
           ],
         },
       ],
+      components: {
+        // Inject OG/Twitter social cards + per-page TechArticle JSON-LD.
+        Head: './src/components/Head.astro',
+      },
       editLink: {
         baseUrl: 'https://github.com/NowDoingApp/documentation/edit/main/',
       },
