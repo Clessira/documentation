@@ -3,7 +3,7 @@ title: Aktivitäten & Gruppen
 description: Aktivitäten anlegen, ordnen, einfärben, gruppieren, anheften und archivieren — die Bausteine deiner Zeiterfassung.
 ---
 
-Eine **Aktivität** in NowDoing ist alles, was du tracken möchtest: `Coding`, `📞 Calls`, `Mittagspause`, `Lesen`. Aktivitäten haben einen Namen (Emojis sind Teil davon), eine optionale Farbe und können in **Gruppen** zusammengefasst werden — eine Ebene, mehr nicht.
+Eine **Aktivität** in Clessira ist alles, was du tracken möchtest: `Coding`, `📞 Calls`, `Mittagspause`, `Lesen`. Aktivitäten haben einen Namen (Emojis sind Teil davon), eine optionale Farbe und können in **Gruppen** zusammengefasst werden — eine Ebene, mehr nicht.
 
 ## Eine Aktivität anlegen
 

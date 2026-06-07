@@ -3,7 +3,7 @@ title: Menüleiste & Popover
 description: Wie das Menüleisten-Symbol, das Popover und die kontextsensitive Anzeige funktionieren.
 ---
 
-NowDoing lebt komplett in der macOS-Menüleiste — kein Dock-Icon, kein Finder-Eintrag, kein Vollbild-Fenster, das deinen Workflow unterbricht.
+Clessira lebt komplett in der macOS-Menüleiste — kein Dock-Icon, kein Finder-Eintrag, kein Vollbild-Fenster, das deinen Workflow unterbricht.
 
 ## Das Statussymbol
 
@@ -37,7 +37,7 @@ Ein Rechtsklick (oder Ctrl-Klick) auf das Symbol öffnet ein klassisches macOS-K
 - **Stundenzettel** — öffnet das Fenster mit Tages- und Wochenansicht.
 - **Einstellungen** — alle Optionen.
 - **Pause** — pausiert das Tracking, bis du wieder aktiv bestätigst.
-- **NowDoing beenden**.
+- **Clessira beenden**.
 
 ## Anzeigemodus
 

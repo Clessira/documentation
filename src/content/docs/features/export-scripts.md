@@ -3,7 +3,7 @@ title: Export-Skripte
 description: JavaScript-Editor mit Sandbox für eigene Exportformate — CSV-Varianten, JSON, Markdown-Reports, Abrechnungs-Payloads.
 ---
 
-Wenn der eingebaute [CSV-Export](/features/csv-export/) nicht reicht, kannst du in NowDoing **eigene Export-Skripte in JavaScript** schreiben. Damit lassen sich beliebige Formate erzeugen: CSV-Varianten, JSON, JSON Lines, Markdown-Tagesnotizen, HTML-Reports oder Abrechnungs-Payloads für dein Buchhaltungssystem.
+Wenn der eingebaute [CSV-Export](/features/csv-export/) nicht reicht, kannst du in Clessira **eigene Export-Skripte in JavaScript** schreiben. Damit lassen sich beliebige Formate erzeugen: CSV-Varianten, JSON, JSON Lines, Markdown-Tagesnotizen, HTML-Reports oder Abrechnungs-Payloads für dein Buchhaltungssystem.
 
 ## Editor öffnen
 

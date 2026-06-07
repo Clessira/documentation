@@ -3,7 +3,7 @@ title: Activities & Groups
 description: Create, arrange, color, group, pin and archive — the building blocks of your time tracking.
 ---
 
-An **activity** in NowDoing is anything you want to track: `Coding`, `📞 Calls`, `Lunch`, `Reading`. Activities have a name (emojis are part of it), an optional color, and can be bundled into **groups** — one level deep, no nesting.
+An **activity** in Clessira is anything you want to track: `Coding`, `📞 Calls`, `Lunch`, `Reading`. Activities have a name (emojis are part of it), an optional color, and can be bundled into **groups** — one level deep, no nesting.
 
 ## Create an activity
 

@@ -3,13 +3,13 @@ title: Spotlight
 description: Aktivitäten und Notizen direkt über macOS Spotlight finden — alles lokal, kein Netzwerk.
 ---
 
-NowDoing kann seine Aktivitäten und Notizen für die **macOS-Spotlight-Suche** indexieren. Damit sind Notizen wie „PROJ-123" oder „Standup" direkt über <kbd>⌘ Space</kbd> erreichbar — ohne die App vorher zu öffnen.
+Clessira kann seine Aktivitäten und Notizen für die **macOS-Spotlight-Suche** indexieren. Damit sind Notizen wie „PROJ-123" oder „Standup" direkt über <kbd>⌘ Space</kbd> erreichbar — ohne die App vorher zu öffnen.
 
 ## Aktivieren
 
 Im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 5 — oder jederzeit unter **Einstellungen → Integrationen → Notizen in Spotlight indexieren**.
 
-Beim Aktivieren legt NowDoing einen lokalen Index in `~/Library/Application Support/NowDoing` an. Spotlight liest diesen Index direkt — es findet keine Kommunikation mit einem Server statt.
+Beim Aktivieren legt Clessira einen lokalen Index in `~/Library/Application Support/Clessira` an. Spotlight liest diesen Index direkt — es findet keine Kommunikation mit einem Server statt.
 
 ## Was wird indexiert?
 
@@ -24,7 +24,7 @@ Nicht indexiert werden Zeiteinträge, Stundenzettel-Daten oder einzelne Tages-Lo
 Ein Treffer öffnet die App und springt direkt zur passenden Aktivität. Wenn du in Spotlight keinen Treffer siehst, hilft meistens:
 
 1. Index in den Einstellungen aus- und wieder einschalten.
-2. macOS-Spotlight unter **Systemeinstellungen → Spotlight** prüfen, ob NowDoing als Quelle erlaubt ist.
+2. macOS-Spotlight unter **Systemeinstellungen → Spotlight** prüfen, ob Clessira als Quelle erlaubt ist.
 
 ## Deaktivieren
 

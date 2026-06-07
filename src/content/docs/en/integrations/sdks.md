@@ -3,18 +3,18 @@ title: SDKs
 description: Official client libraries for the HTTP API in JavaScript/TypeScript and Python.
 ---
 
-If you want to wire your own tools into NowDoing, the official SDKs take care of HMAC signing, nonce handling, and error mapping. There are two packages — both are thin wrappers around the [HTTP API](/en/integrations/http-api/):
+If you want to wire your own tools into Clessira, the official SDKs take care of HMAC signing, nonce handling, and error mapping. There are two packages — both are thin wrappers around the [HTTP API](/en/integrations/http-api/):
 
-- **`@nowdoing/sdk`** on [npm](https://www.npmjs.com/package/@nowdoing/sdk) — TypeScript, ESM + CJS, runs on Node ≥ 20, Bun, and Deno.
-- **`nowdoing-sdk`** on PyPI — Python ≥ 3.10, with both a sync and an async client; the only runtime dependency is `httpx`.
+- **`@clessira/sdk`** on [npm](https://www.npmjs.com/package/@clessira/sdk) — TypeScript, ESM + CJS, runs on Node ≥ 20, Bun, and Deno.
+- **`clessira-sdk`** on PyPI — Python ≥ 3.10, with both a sync and an async client; the only runtime dependency is `httpx`.
 
 ## Prerequisite
 
 Both SDKs talk over the HTTP API, so you need to enable it first — see [HTTP API](/en/integrations/http-api/). Pass the token and port to the constructor, or set them as environment variables:
 
 ```sh
-export NOWDOING_TOKEN="…"
-export NOWDOING_PORT=39847   # optional, default
+export CLESSIRA_TOKEN="…"
+export CLESSIRA_PORT=39847   # optional, default
 ```
 
 ## JavaScript / TypeScript
@@ -22,15 +22,15 @@ export NOWDOING_PORT=39847   # optional, default
 Install:
 
 ```sh
-npm install @nowdoing/sdk
+npm install @clessira/sdk
 ```
 
 Example:
 
 ```ts
-import { NowDoingClient } from "@nowdoing/sdk";
+import { ClessiraClient } from "@clessira/sdk";
 
-const client = new NowDoingClient();
+const client = new ClessiraClient();
 
 await client.healthcheck();
 
@@ -54,7 +54,7 @@ await client.stopActivity();
 
 await client.notifyBranchChange({
   branch: "feature/sdk-rewrite",
-  repo: "nowdoingmac",
+  repo: "clessiramac",
   previousBranch: "main",
 });
 ```
@@ -66,15 +66,15 @@ Browser usage is intentionally unsupported — the listener binds to loopback, a
 Install:
 
 ```sh
-pip install nowdoing-sdk
+pip install clessira-sdk
 ```
 
 Sync client:
 
 ```python
-from nowdoing import NowDoingClient
+from clessira import ClessiraClient
 
-with NowDoingClient() as client:
+with ClessiraClient() as client:
     client.healthcheck()
 
     status = client.get_status()
@@ -94,19 +94,19 @@ with NowDoingClient() as client:
 
     client.notify_branch_change(
         branch="feature/sdk-rewrite",
-        repo="nowdoingmac",
+        repo="clessiramac",
         previous_branch="main",
     )
 ```
 
-For async, use `AsyncNowDoingClient`:
+For async, use `AsyncClessiraClient`:
 
 ```python
 import asyncio
-from nowdoing import AsyncNowDoingClient
+from clessira import AsyncClessiraClient
 
 async def main() -> None:
-    async with AsyncNowDoingClient() as client:
+    async with AsyncClessiraClient() as client:
         current = await client.get_current()
         print(current)
 
@@ -130,18 +130,18 @@ Both SDKs cover the same eight endpoints:
 
 ## Errors
 
-All HTTP failures map to typed exceptions that inherit from `NowDoingError`:
+All HTTP failures map to typed exceptions that inherit from `ClessiraError`:
 
 | Status | Class                        | Typical cause |
 | -----: | ---------------------------- | ------------- |
-|    400 | `NowDoingValidationError`    | Bad payload (e.g. empty branch, `durationMinutes ≤ 0`). |
-|    401 | `NowDoingAuthError`          | Wrong or missing token, or bad signature. |
-|    404 | `NowDoingNotFoundError`      | Activity UUID or name unknown. |
-|    409 | `NowDoingReplayError`        | Nonce already used in the last 180 s. |
-|    423 | `NowDoingHttpError`          | NowDoing is locked (no valid license). |
-|    503 | `NowDoingUnavailableError`   | Endpoint handler not wired in the app. |
-|  other | `NowDoingHttpError`          | Anything else (incl. 5xx). |
+|    400 | `ClessiraValidationError`    | Bad payload (e.g. empty branch, `durationMinutes ≤ 0`). |
+|    401 | `ClessiraAuthError`          | Wrong or missing token, or bad signature. |
+|    404 | `ClessiraNotFoundError`      | Activity UUID or name unknown. |
+|    409 | `ClessiraReplayError`        | Nonce already used in the last 180 s. |
+|    423 | `ClessiraHttpError`          | Clessira is locked (no valid license). |
+|    503 | `ClessiraUnavailableError`   | Endpoint handler not wired in the app. |
+|  other | `ClessiraHttpError`          | Anything else (incl. 5xx). |
 
 ## Source
 
-Both SDKs live in the [`NowDoingApp/sdk`](https://github.com/NowDoingApp/sdk) monorepo and are published to npm / PyPI from GitHub Actions on tag. File bugs and feature requests there.
+Both SDKs live in the [`ClessiraApp/sdk`](https://github.com/ClessiraApp/sdk) monorepo and are published to npm / PyPI from GitHub Actions on tag. File bugs and feature requests there.

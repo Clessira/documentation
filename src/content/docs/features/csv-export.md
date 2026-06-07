@@ -3,7 +3,7 @@ title: CSV-Export
 description: Tag oder Woche als CSV exportieren — Excel-kompatibel, mit UTF-8-BOM und Semikolon.
 ---
 
-NowDoing kann deinen Tag oder deine Woche als **CSV** exportieren — z. B. um Stunden in eine Rechnung zu übernehmen oder einen Wochenreport zu erstellen.
+Clessira kann deinen Tag oder deine Woche als **CSV** exportieren — z. B. um Stunden in eine Rechnung zu übernehmen oder einen Wochenreport zu erstellen.
 
 ## Export starten
 

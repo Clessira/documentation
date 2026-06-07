@@ -1,21 +1,21 @@
 ---
 title: Language & localization
-description: How NowDoing picks up language, region, date and time format from your macOS settings.
+description: How Clessira picks up language, region, date and time format from your macOS settings.
 ---
 
-NowDoing is **fully bilingual**: German (primary) and English. Every user-facing string is translated — menu bar, popover, settings, timesheet, widgets, the AppleScript dictionary, and the voice phrases.
+Clessira is **fully bilingual**: German (primary) and English. Every user-facing string is translated — menu bar, popover, settings, timesheet, widgets, the AppleScript dictionary, and the voice phrases.
 
 ## How the language is chosen
 
-The UI language follows your **macOS system language** automatically. If your Mac is set to English, NowDoing runs in English; if it's set to German, NowDoing runs in German. There is **no** dedicated language switcher inside the app — by design, so that language and region always match the rest of your system.
+The UI language follows your **macOS system language** automatically. If your Mac is set to English, Clessira runs in English; if it's set to German, Clessira runs in German. There is **no** dedicated language switcher inside the app — by design, so that language and region always match the rest of your system.
 
 ## Switching the language
 
-macOS offers a per-app language setting. To change NowDoing:
+macOS offers a per-app language setting. To change Clessira:
 
 1. Open **System Settings → General → Language & Region → Applications**.
-2. Select **NowDoing** and pick the language you want.
-3. **Restart** NowDoing — the change takes effect at the next launch.
+2. Select **Clessira** and pick the language you want.
+3. **Restart** Clessira — the change takes effect at the next launch.
 
 ## Region: date, time, week start
 
@@ -33,7 +33,7 @@ Format details also come from **macOS System Settings** under *Language & Region
 
 ## If something isn't translated
 
-That's a bug — please report it to [hello@nowdoing.app](mailto:hello@nowdoing.app). A missing translation falls back to the English source string automatically, so the UI is never empty.
+That's a bug — please report it to [hello@clessira.app](mailto:hello@clessira.app). A missing translation falls back to the English source string automatically, so the UI is never empty.
 
 ## Under the hood
 

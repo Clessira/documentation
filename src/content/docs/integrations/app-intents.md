@@ -1,9 +1,9 @@
 ---
 title: App Intents & Services
-description: NowDoing in Kurzbefehlen, Spotlight, Siri und im macOS-Services-Menü.
+description: Clessira in Kurzbefehlen, Spotlight, Siri und im macOS-Services-Menü.
 ---
 
-NowDoing stellt **sieben App Intents** und **drei macOS-Services** bereit. Damit lässt sich Tracking aus der Shortcuts-App, aus Spotlight, per Siri und direkt aus dem Kontextmenü beliebiger Apps starten — ohne dass NowDoing in den Vordergrund kommt.
+Clessira stellt **sieben App Intents** und **drei macOS-Services** bereit. Damit lässt sich Tracking aus der Shortcuts-App, aus Spotlight, per Siri und direkt aus dem Kontextmenü beliebiger Apps starten — ohne dass Clessira in den Vordergrund kommt.
 
 Wenn du lieber Skripte schreibst, sieh dir [AppleScript](/integrations/applescript/) oder das [CLI](/integrations/cli/) an. Die HTTP-API für externe Tools ist unter [HTTP-API](/integrations/http-api/) beschrieben.
 
@@ -29,25 +29,25 @@ Für die häufigsten Aktionen sind voreingestellte deutsche und englische Phrase
 
 | Phrase | Aktion |
 |---|---|
-| „Starte Tracking in NowDoing" | Öffnet Aktivitäts-Auswahl |
-| „Pause NowDoing" | Pause umschalten |
-| „Stoppe Tracking in NowDoing" | Tracking stoppen |
-| „Wie viele Stunden heute in NowDoing" | Heutige Stunden vorlesen |
-| "Start tracking in NowDoing" | Activity picker (EN) |
-| "Pause NowDoing" / "Stop NowDoing" | Toggle pause / stop |
-| "How many hours today in NowDoing" | Today's hours (EN) |
+| „Starte Tracking in Clessira" | Öffnet Aktivitäts-Auswahl |
+| „Pause Clessira" | Pause umschalten |
+| „Stoppe Tracking in Clessira" | Tracking stoppen |
+| „Wie viele Stunden heute in Clessira" | Heutige Stunden vorlesen |
+| "Start tracking in Clessira" | Activity picker (EN) |
+| "Pause Clessira" / "Stop Clessira" | Toggle pause / stop |
+| "How many hours today in Clessira" | Today's hours (EN) |
 
-Diese Phrasen funktionieren mit Siri (sofern aktiviert) und in der globalen Spotlight-Eingabe. Du kannst sie in **Kurzbefehle.app → App-Kurzbefehle → NowDoing** umbenennen oder eigene anlegen.
+Diese Phrasen funktionieren mit Siri (sofern aktiviert) und in der globalen Spotlight-Eingabe. Du kannst sie in **Kurzbefehle.app → App-Kurzbefehle → Clessira** umbenennen oder eigene anlegen.
 
 ### Verfügbarkeit prüfen
 
-Tauchen die Intents nicht auf, öffne **Kurzbefehle.app**, in der Seitenleiste **App-Kurzbefehle** wählen und nach **NowDoing** scrollen. macOS indiziert neu installierte Apps manchmal mit Verzögerung — ein Neustart hilft notfalls.
+Tauchen die Intents nicht auf, öffne **Kurzbefehle.app**, in der Seitenleiste **App-Kurzbefehle** wählen und nach **Clessira** scrollen. macOS indiziert neu installierte Apps manchmal mit Verzögerung — ein Neustart hilft notfalls.
 
 ## macOS-Services
 
-Im Kontextmenü jeder Standard-App (Mail, Notizen, TextEdit, Safari, …) erscheinen unter **Dienste** drei NowDoing-Einträge, sobald Text markiert ist:
+Im Kontextmenü jeder Standard-App (Mail, Notizen, TextEdit, Safari, …) erscheinen unter **Dienste** drei Clessira-Einträge, sobald Text markiert ist:
 
-### „Als Notiz in NowDoing loggen"
+### „Als Notiz in Clessira loggen"
 
 Hängt den markierten Text als **Notiz** an den jüngsten Eintrag der aktuellen Aktivität an. Existiert noch kein Eintrag, aber Tracking läuft, wird ein kleiner Eintrag mit der Notiz angelegt.
 
@@ -55,7 +55,7 @@ Praktisch für: Ticket-Beschreibungen aus dem Browser, Slack-Zitate, Meeting-Not
 
 ### „Als neue Aktivität anlegen"
 
-Macht aus dem markierten Text eine **neue Aktivität**. NowDoing prüft vorher case-insensitive, ob diese Aktivität schon existiert, und meldet sich per Systembenachrichtigung, falls ja.
+Macht aus dem markierten Text eine **neue Aktivität**. Clessira prüft vorher case-insensitive, ob diese Aktivität schon existiert, und meldet sich per Systembenachrichtigung, falls ja.
 
 ### „Tracking starten"
 

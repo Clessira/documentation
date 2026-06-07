@@ -1,21 +1,21 @@
 ---
 title: Sprache & Lokalisierung
-description: Wie NowDoing Sprache, Region, Datums- und Zeitformat aus deinen macOS-Einstellungen übernimmt.
+description: Wie Clessira Sprache, Region, Datums- und Zeitformat aus deinen macOS-Einstellungen übernimmt.
 ---
 
-NowDoing ist **vollständig zweisprachig**: Deutsch (primär) und Englisch. Übersetzt sind alle benutzerseitigen Strings — Menüleiste, Popover, Einstellungen, Stundenzettel, Widgets, das AppleScript-Wörterbuch und die Voice-Phrasen.
+Clessira ist **vollständig zweisprachig**: Deutsch (primär) und Englisch. Übersetzt sind alle benutzerseitigen Strings — Menüleiste, Popover, Einstellungen, Stundenzettel, Widgets, das AppleScript-Wörterbuch und die Voice-Phrasen.
 
 ## Wie die Sprache gewählt wird
 
-Die UI-Sprache folgt automatisch der **macOS-Systemsprache**. Steht dein Mac auf Deutsch, läuft NowDoing auf Deutsch; steht er auf Englisch, läuft es auf Englisch. Einen eigenen Sprach-Schalter gibt es in der App **nicht** — bewusst, damit Sprache und Region immer mit dem Rest deines Systems übereinstimmen.
+Die UI-Sprache folgt automatisch der **macOS-Systemsprache**. Steht dein Mac auf Deutsch, läuft Clessira auf Deutsch; steht er auf Englisch, läuft es auf Englisch. Einen eigenen Sprach-Schalter gibt es in der App **nicht** — bewusst, damit Sprache und Region immer mit dem Rest deines Systems übereinstimmen.
 
 ## Sprache wechseln
 
-macOS bietet seit Ventura eine Per-App-Sprache. Du wechselst NowDoing wie folgt:
+macOS bietet seit Ventura eine Per-App-Sprache. Du wechselst Clessira wie folgt:
 
 1. **Systemeinstellungen → Allgemein → Sprache & Region → Apps** öffnen.
-2. **NowDoing** auswählen und die gewünschte Sprache festlegen.
-3. NowDoing **neu starten** — die Einstellung wirkt ab dem nächsten Start.
+2. **Clessira** auswählen und die gewünschte Sprache festlegen.
+3. Clessira **neu starten** — die Einstellung wirkt ab dem nächsten Start.
 
 ## Region: Datum, Zeit, Wochenstart
 
@@ -33,7 +33,7 @@ Auch [CSV-Exporte](/features/csv-export/) verwenden die System-Locale, sodass Ex
 
 ## Wenn etwas nicht übersetzt ist
 
-Das ist ein Bug — gerne melden an [hello@nowdoing.app](mailto:hello@nowdoing.app). Eine fehlende Übersetzung fällt automatisch auf den englischen Originaltext zurück, sodass die UI nie leer bleibt.
+Das ist ein Bug — gerne melden an [hello@clessira.app](mailto:hello@clessira.app). Eine fehlende Übersetzung fällt automatisch auf den englischen Originaltext zurück, sodass die UI nie leer bleibt.
 
 ## Technisch
 

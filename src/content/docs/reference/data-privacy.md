@@ -3,14 +3,14 @@ title: Daten & Datenschutz
 description: Wo deine Daten liegen, was die App sendet und was nicht — die zentrale Versprechen-Seite.
 ---
 
-**Deine Daten bleiben standardmäßig auf deinem Mac.** Das ist nicht Marketing-Phrase, sondern die Grundlage, auf der NowDoing gebaut ist. Alles, was diese Standard-Annahme verändert, ist **opt-in** und auf dieser Seite einzeln aufgeführt.
+**Deine Daten bleiben standardmäßig auf deinem Mac.** Das ist nicht Marketing-Phrase, sondern die Grundlage, auf der Clessira gebaut ist. Alles, was diese Standard-Annahme verändert, ist **opt-in** und auf dieser Seite einzeln aufgeführt.
 
 ## Speicherort
 
-NowDoing speichert alle Daten in einer einzigen JSON-Datei. Standardmäßig liegt sie im App-Container:
+Clessira speichert alle Daten in einer einzigen JSON-Datei. Standardmäßig liegt sie im App-Container:
 
 ```
-~/Library/Application Support/NowDoing/data.json
+~/Library/Application Support/Clessira/data.json
 ```
 
 Du kannst den Speicherort unter **Einstellungen → Daten → „Eigener Ordner wählen"** auf ein beliebiges Verzeichnis umstellen — etwa einen Ordner in einem Cloud-Drive, auf einem verschlüsselten Volume oder einem externen Laufwerk. Die Datei selbst bleibt unverändert, nur ihr Ort ändert sich. Bei Auswahl wird die bestehende Datei einmalig an den neuen Ort kopiert; ab dann wird ausschließlich dort gelesen und geschrieben.
@@ -25,18 +25,18 @@ Das ist alles. Kein versteckter Tracking-Speicher, keine Telemetry-Caches.
 
 ## iCloud-Sync (optional, standardmäßig aus)
 
-Wenn du es willst, kann NowDoing deine `data.json` über deinen privaten **iCloud Drive** zwischen mehreren Macs synchronisieren. Aktiviert wird das unter **Einstellungen → Speicher & Backups → „Mit iCloud synchronisieren"**.
+Wenn du es willst, kann Clessira deine `data.json` über deinen privaten **iCloud Drive** zwischen mehreren Macs synchronisieren. Aktiviert wird das unter **Einstellungen → Speicher & Backups → „Mit iCloud synchronisieren"**.
 
 Bei aktivem iCloud-Sync:
 
 - Die Datei liegt im iCloud-Ubiquity-Container deines Apple-Accounts statt im lokalen App-Container.
-- Es gibt **keinen NowDoing-Server**. Sync läuft ausschließlich über Apples iCloud-Infrastruktur — die Daten gehen nicht an uns.
-- Bearbeitest du auf zwei Macs gleichzeitig, **gehen keine Einträge verloren**: NowDoing führt beide Stände Eintrag für Eintrag zusammen. Änderungen an verschiedenen Einträgen bleiben beide erhalten; ändern beide Macs denselben Eintrag, gewinnt die zuletzt gemachte Änderung, und Gelöschtes bleibt gelöscht.
+- Es gibt **keinen Clessira-Server**. Sync läuft ausschließlich über Apples iCloud-Infrastruktur — die Daten gehen nicht an uns.
+- Bearbeitest du auf zwei Macs gleichzeitig, **gehen keine Einträge verloren**: Clessira führt beide Stände Eintrag für Eintrag zusammen. Änderungen an verschiedenen Einträgen bleiben beide erhalten; ändern beide Macs denselben Eintrag, gewinnt die zuletzt gemachte Änderung, und Gelöschtes bleibt gelöscht.
 - iCloud-Sync und „Eigener Ordner" schließen sich aus: solange iCloud aktiv ist, wird der gewählte Ordner nicht verwendet.
 
-## Was NowDoing **nicht** tut
+## Was Clessira **nicht** tut
 
-- ❌ Kein Konto, keine Anmeldung bei NowDoing.
+- ❌ Kein Konto, keine Anmeldung bei Clessira.
 - ❌ Keine eigenen Server, kein Backend.
 - ❌ Kein eigenes Analytics, kein eigenes Crash-Reporting an einen externen Dienst.
 - ❌ Kein Zugriff auf Bildschirminhalte, Tastatureingaben oder andere Apps.
@@ -52,7 +52,7 @@ Mehr dazu unter [VS Code Integration](/integrations/vscode/).
 
 ## TestFlight-Beta-Builds
 
-Wenn du NowDoing als **Beta über Apples TestFlight** installierst, gelten Apples Standard-Bedingungen für TestFlight: Apple kann Absturzberichte und grundlegende Nutzungs-Metriken an uns als Entwickler weiterreichen. Das ist Apple-Infrastruktur, kein NowDoing-eigenes Telemetry-System — und ausschließlich relevant, solange du eine TestFlight-Build benutzt. Die normale Version aus dem Mac App Store sendet nichts.
+Wenn du Clessira als **Beta über Apples TestFlight** installierst, gelten Apples Standard-Bedingungen für TestFlight: Apple kann Absturzberichte und grundlegende Nutzungs-Metriken an uns als Entwickler weiterreichen. Das ist Apple-Infrastruktur, kein Clessira-eigenes Telemetry-System — und ausschließlich relevant, solange du eine TestFlight-Build benutzt. Die normale Version aus dem Mac App Store sendet nichts.
 
 ## Backups
 
@@ -65,7 +65,7 @@ Beim Import einer Backup-Datei werden vorhandene Daten ersetzt — die App fragt
 
 ## Sandboxing & Hardened Runtime
 
-NowDoing läuft mit aktiviertem **App Sandbox** und **Hardened Runtime**. Das bedeutet:
+Clessira läuft mit aktiviertem **App Sandbox** und **Hardened Runtime**. Das bedeutet:
 
 - Die App hat **keinen Zugriff** auf Dateien außerhalb ihres eigenen Containers — ausgenommen der von dir explizit gewählte Eigene-Ordner-Pfad, der über ein Security-Scoped Bookmark freigegeben ist.
 - Kein Zugriff auf andere Apps, Bildschirminhalte oder Tastatur-Events.
@@ -75,4 +75,4 @@ Die einzigen abgefragten Rechte sind **Benachrichtigungen** (für den Erinnerung
 
 ## App-Sterben / Datenverlust
 
-Falls beim Schreiben ein Fehler auftritt (z. B. Festplatte voll), erscheint in den **Einstellungen → Daten** ein rotes Banner mit dem Fehler-Detail. NowDoing benutzt **atomare Schreibvorgänge**: entweder die ganze Datei wird ersetzt, oder nichts ändert sich — eine halbe, kaputte Datei kann nicht entstehen.
+Falls beim Schreiben ein Fehler auftritt (z. B. Festplatte voll), erscheint in den **Einstellungen → Daten** ein rotes Banner mit dem Fehler-Detail. Clessira benutzt **atomare Schreibvorgänge**: entweder die ganze Datei wird ersetzt, oder nichts ändert sich — eine halbe, kaputte Datei kann nicht entstehen.

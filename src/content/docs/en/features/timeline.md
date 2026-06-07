@@ -3,7 +3,7 @@ title: Timeline & views
 description: Three views on your day — Groups, Timeline, List — and when to use which.
 ---
 
-NowDoing offers **three views** on today inside the popover. Switch between them with the tabs at the top.
+Clessira offers **three views** on today inside the popover. Switch between them with the tabs at the top.
 
 ## Groups
 
@@ -43,7 +43,7 @@ The **List** is the chronological, detail-precise view: every entry with start, 
 13:15 – ...    ✉️   Email          running
 ```
 
-Gaps are **shown explicitly** — NowDoing does not back-fill them. So you keep visibility on what you actually tracked vs. what you didn't.
+Gaps are **shown explicitly** — Clessira does not back-fill them. So you keep visibility on what you actually tracked vs. what you didn't.
 
 This view also lets you edit or delete individual entries directly.
 

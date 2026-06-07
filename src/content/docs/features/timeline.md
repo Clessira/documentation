@@ -3,7 +3,7 @@ title: Tagesleiste & Ansichten
 description: Drei Sichten auf deinen Tag — Gruppen, Tagesleiste, Liste — und wann du welche brauchst.
 ---
 
-NowDoing bietet im Popover **drei Ansichten** auf den heutigen Tag. Du wechselst zwischen ihnen über die Tabs am oberen Rand des Popovers.
+Clessira bietet im Popover **drei Ansichten** auf den heutigen Tag. Du wechselst zwischen ihnen über die Tabs am oberen Rand des Popovers.
 
 ## Gruppen
 
@@ -43,7 +43,7 @@ Die **Liste** ist die chronologische, detailgenaue Sicht: jeder Eintrag mit Star
 13:15 – ...    ✉️   E-Mail         läuft
 ```
 
-Lücken werden **explizit angezeigt** — NowDoing füllt sie nicht automatisch auf. So bleibt sichtbar, was du wirklich getrackt hast und was nicht.
+Lücken werden **explizit angezeigt** — Clessira füllt sie nicht automatisch auf. So bleibt sichtbar, was du wirklich getrackt hast und was nicht.
 
 In dieser Ansicht kannst du einzelne Einträge direkt bearbeiten oder löschen.
 

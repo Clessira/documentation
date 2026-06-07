@@ -1,8 +1,8 @@
-# NowDoing — Documentation
+# Clessira — Documentation
 
-User-facing docs for the NowDoing macOS app, built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
+User-facing docs for the Clessira macOS app, built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
 
-Lives at `docs.nowdoing.app` (planned). Two languages:
+Lives at `docs.clessira.app` (planned). Two languages:
 
 - **`de`** — canonical (default locale, no URL prefix)
 - **`en`** — mirror under `/en/`
@@ -42,7 +42,7 @@ The sidebar in `astro.config.mjs` is the source of truth for the page tree. Addi
 
 Palette + logo align with the marketing site (`website/`):
 
-- `--nd-brand` `#4f9dff` (blue) → `--nd-brand-2` `#b48cff` (purple) gradient
+- `--cl-brand` `#4f9dff` (blue) → `--cl-brand-2` `#b48cff` (purple) gradient
 - Deep navy background `#061b3a` in dark mode
 - Logo is the gradient app mark with the rotating arc
 

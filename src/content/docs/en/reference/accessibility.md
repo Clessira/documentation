@@ -1,9 +1,9 @@
 ---
 title: Accessibility
-description: How NowDoing integrates with VoiceOver, keyboard navigation, dynamic text sizes and the macOS accessibility settings.
+description: How Clessira integrates with VoiceOver, keyboard navigation, dynamic text sizes and the macOS accessibility settings.
 ---
 
-NowDoing is tuned to the built-in macOS accessibility features. Instead of inventing its own switches, the app follows what you configure under `System Settings → Accessibility` — set it once, NowDoing adapts.
+Clessira is tuned to the built-in macOS accessibility features. Instead of inventing its own switches, the app follows what you configure under `System Settings → Accessibility` — set it once, Clessira adapts.
 
 ## VoiceOver
 
@@ -23,7 +23,7 @@ The currently focused element is always visibly marked — the macOS system acce
 
 ## Dynamic text sizes
 
-NowDoing respects the **macOS system text size** (`System Settings → Displays → Larger Text`). Tables, lists and popovers scale with it; the layout adapts without truncating content.
+Clessira respects the **macOS system text size** (`System Settings → Displays → Larger Text`). Tables, lists and popovers scale with it; the layout adapts without truncating content.
 
 ## Reduced motion
 
@@ -39,7 +39,7 @@ The **"Today's hours"** App Intent lets Siri read your daily total out loud — 
 
 ## Accessibility settings at a glance
 
-| macOS setting | Effect in NowDoing |
+| macOS setting | Effect in Clessira |
 | :--- | :--- |
 | VoiceOver (<kbd>⌘F5</kbd>) | Labels, hints and custom actions on every element. |
 | Keyboard navigation | Full operation via Tab, arrow keys and shortcuts. |
@@ -52,6 +52,6 @@ The **"Today's hours"** App Intent lets Siri read your daily total out loud — 
 
 The heatmap visualizations (month view in the timesheet, heatmap widget) remain primarily graphical. As an alternative, there is always a textual list with the same data — for instance the list view of the day or the pivot view in the timesheet.
 
-Feedback on gaps or wishes: [hello@nowdoing.app](mailto:hello@nowdoing.app).
+Feedback on gaps or wishes: [hello@clessira.app](mailto:hello@clessira.app).
 
 See also [Menu bar & popover](/en/features/menu-bar/) and the sibling page [Localization](/en/reference/localization/).

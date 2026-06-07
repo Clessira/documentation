@@ -1,13 +1,13 @@
 ---
 title: Welcome
-description: What NowDoing is, who it's for, and how this documentation is organized.
+description: What Clessira is, who it's for, and how this documentation is organized.
 ---
 
-NowDoing is a lightweight macOS menu bar app that helps you track your day honestly — without watching over your shoulder.
+Clessira is a lightweight macOS menu bar app that helps you track your day honestly — without watching over your shoulder.
 
 ## The idea
 
-Most time-tracking tools want to force a workflow on you: projects, tasks, time cards, categories. NowDoing flips it. Instead of organizing yourself up front, it asks you every 20 minutes (or your preferred interval): **what did you just work on?**
+Most time-tracking tools want to force a workflow on you: projects, tasks, time cards, categories. Clessira flips it. Instead of organizing yourself up front, it asks you every 20 minutes (or your preferred interval): **what did you just work on?**
 
 You tap an activity, the entry lands in today's log, you keep working. At the end of the day, you see where your time actually went.
 

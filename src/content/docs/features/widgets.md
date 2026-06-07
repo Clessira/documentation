@@ -1,14 +1,14 @@
 ---
 title: Widgets
-description: NowDoing in der macOS-Mitteilungszentrale und auf dem Schreibtisch — vier Widgets für Übersicht und Schnellzugriff.
+description: Clessira in der macOS-Mitteilungszentrale und auf dem Schreibtisch — vier Widgets für Übersicht und Schnellzugriff.
 ---
 
-NowDoing liefert vier **WidgetKit-Widgets**, die du in der macOS-Mitteilungszentrale, auf dem Sperrbildschirm oder seit macOS Sonoma direkt auf dem Schreibtisch platzieren kannst. Alle Widgets lesen ihre Daten über eine **AppGroup** aus dem App-Sandbox-Container — sie sind immer aktuell und brauchen keine Netzwerkverbindung.
+Clessira liefert vier **WidgetKit-Widgets**, die du in der macOS-Mitteilungszentrale, auf dem Sperrbildschirm oder seit macOS Sonoma direkt auf dem Schreibtisch platzieren kannst. Alle Widgets lesen ihre Daten über eine **AppGroup** aus dem App-Sandbox-Container — sie sind immer aktuell und brauchen keine Netzwerkverbindung.
 
 ## Widget hinzufügen
 
 1. Rechtsklick auf den Schreibtisch (oder Klick aufs Datum oben rechts) → **Widgets bearbeiten…**
-2. Im Sucher **„NowDoing"** eingeben.
+2. Im Sucher **„Clessira"** eingeben.
 3. Größe wählen, an die gewünschte Stelle ziehen.
 
 Du kannst dasselbe Widget mehrfach platzieren — z. B. einen *Now Tracking*-Streifen in der Mitteilungszentrale und einen *Heatmap*-Block auf dem Desktop.
@@ -25,7 +25,7 @@ Gut für: schneller Tagesüberblick ohne Popover.
 
 Zeigt **laufende Aktivität** und **verstrichene Zeit** als Live-Timeline. Aktualisiert sich, solange ein Eintrag läuft, alle 60 Sekunden.
 
-Tipp: Klick aufs Widget öffnet NowDoing direkt mit dem Popover.
+Tipp: Klick aufs Widget öffnet Clessira direkt mit dem Popover.
 
 ### Quick Log (mittel)
 
@@ -48,8 +48,8 @@ Klick auf einen Tag öffnet die Detailansicht im Stundenzettel.
 | Quick Log | Bei Aktivitäts- oder Pin-Änderungen |
 | Heatmap | Mehrmals täglich + nach Logging |
 
-macOS kann die Frequenz weiter drosseln, wenn dein Mac im Energiesparmodus läuft oder das Widget länger nicht sichtbar war — das ist eine Systemvorgabe, kein NowDoing-Verhalten.
+macOS kann die Frequenz weiter drosseln, wenn dein Mac im Energiesparmodus läuft oder das Widget länger nicht sichtbar war — das ist eine Systemvorgabe, kein Clessira-Verhalten.
 
 ## Daten & Datenschutz
 
-Widgets greifen ausschließlich lokal auf den gemeinsamen AppGroup-Container zu (`group.com.mattes.nowdoing`). Es werden **keine Netzwerkanfragen** gestellt, keine Telemetrie übermittelt, und keine externen Dienste eingebunden. Wenn du iCloud-Sync aktiv hast, werden die Daten unverändert aus der bereits synchronisierten Datei gelesen.
+Widgets greifen ausschließlich lokal auf den gemeinsamen AppGroup-Container zu (`group.com.mattes.clessira`). Es werden **keine Netzwerkanfragen** gestellt, keine Telemetrie übermittelt, und keine externen Dienste eingebunden. Wenn du iCloud-Sync aktiv hast, werden die Daten unverändert aus der bereits synchronisierten Datei gelesen.
