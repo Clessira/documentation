@@ -5,7 +5,7 @@ description: Clessira auf deinem Mac installieren — TestFlight, Systemanforder
 
 ## Systemanforderungen
 
-- macOS **26.4** oder neuer
+- macOS **26.0** oder neuer
 - Apple Silicon oder Intel-Mac
 - Ungefähr 30 MB freier Speicher
 

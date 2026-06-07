@@ -11,7 +11,7 @@ During the beta, Clessira is **free**. For current pricing and terms see [clessi
 
 ### Which platforms does Clessira run on?
 
-**macOS only** for now (version 26.4+). Companion apps for iPhone, iPad, and Apple Watch are in development but not yet available.
+**macOS only** for now (version 26.0+). Companion apps for iPhone, iPad, and Apple Watch are in development but not yet available.
 
 ### Where is my data?
 
