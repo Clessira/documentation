@@ -1,9 +1,9 @@
 ---
 title: Pausen
-description: Manuell pausieren, Standarddauer einstellen — wann NowDoing keine Einträge anlegt.
+description: Manuell pausieren, Standarddauer einstellen — wann Clessira keine Einträge anlegt.
 ---
 
-NowDoing kennt zwei Arten von Pausen: eine **manuelle Pause**, die du selbst startest, und eine **Standarddauer**, die für die manuelle Pause vorgeschlagen wird. Eingestellt wird die Dauer unter **Einstellungen → Allgemein → Pause** oder im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 3.
+Clessira kennt zwei Arten von Pausen: eine **manuelle Pause**, die du selbst startest, und eine **Standarddauer**, die für die manuelle Pause vorgeschlagen wird. Eingestellt wird die Dauer unter **Einstellungen → Allgemein → Pause** oder im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 3.
 
 ## Manuell pausieren
 

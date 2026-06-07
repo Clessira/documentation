@@ -1,9 +1,9 @@
 ---
 title: Tastaturkürzel
-description: Alle Tastaturkürzel von NowDoing auf einen Blick.
+description: Alle Tastaturkürzel von Clessira auf einen Blick.
 ---
 
-NowDoing ist so designt, dass du selten die Maus brauchst. Die wichtigsten Shortcuts:
+Clessira ist so designt, dass du selten die Maus brauchst. Die wichtigsten Shortcuts:
 
 ## Im Popover
 
@@ -20,7 +20,7 @@ NowDoing ist so designt, dass du selten die Maus brauchst. Die wichtigsten Short
 
 ## Im Prompt (global)
 
-Diese Shortcuts greifen, sobald die Tracking-Abfrage offen ist — auch wenn eine andere App den Fokus hat. Du musst nicht erst zu NowDoing wechseln.
+Diese Shortcuts greifen, sobald die Tracking-Abfrage offen ist — auch wenn eine andere App den Fokus hat. Du musst nicht erst zu Clessira wechseln.
 
 | Aktion | Shortcut |
 |---|---|
@@ -41,13 +41,13 @@ Solange kein Textfeld den Fokus hat, kannst du gepinnte Aktivitäten auch direkt
 
 Das Tastenkürzel zum Öffnen ist über **Einstellungen → Tastatur** konfigurierbar.
 
-## App-Menü (NowDoing fokussiert)
+## App-Menü (Clessira fokussiert)
 
 | Aktion | Shortcut |
 |---|---|
 | Einstellungen | <kbd>⌘,</kbd> |
 | Stundenzettel | <kbd>⌘1</kbd> |
-| NowDoing beenden | <kbd>⌘Q</kbd> |
+| Clessira beenden | <kbd>⌘Q</kbd> |
 
 ## Im Stundenzettel-Fenster
 

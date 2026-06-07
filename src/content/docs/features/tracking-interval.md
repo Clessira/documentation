@@ -1,9 +1,9 @@
 ---
 title: Tracking-Intervall
-description: Wie oft NowDoing nachfragt — und wie du das Intervall zu deinem Arbeitsrhythmus passend einstellst.
+description: Wie oft Clessira nachfragt — und wie du das Intervall zu deinem Arbeitsrhythmus passend einstellst.
 ---
 
-Das Tracking-Intervall bestimmt, wie oft NowDoing dich automatisch fragt: **„Was hast du gerade gemacht?"**
+Das Tracking-Intervall bestimmt, wie oft Clessira dich automatisch fragt: **„Was hast du gerade gemacht?"**
 
 ## Standard: 45 Minuten
 
@@ -24,7 +24,7 @@ Verfügbare Werte: **5, 10, 15, 20, 30, 45, 60 Minuten**.
 
 ## Wie wird der Eintrag berechnet?
 
-Bestätigst du eine Aktivität, schreibt NowDoing den Eintrag **vom letzten Eintrag (oder App-Start) bis jetzt** in die Datenbank.
+Bestätigst du eine Aktivität, schreibt Clessira den Eintrag **vom letzten Eintrag (oder App-Start) bis jetzt** in die Datenbank.
 
 Beispiel mit 45-Minuten-Intervall:
 

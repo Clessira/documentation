@@ -1,13 +1,13 @@
 ---
 title: Arbeitszeiten & Wochenziel
-description: Aktive Wochentage, Wochenstundenziel und Feiertagsmodus — außerhalb deiner Arbeitszeit fragt NowDoing nicht.
+description: Aktive Wochentage, Wochenstundenziel und Feiertagsmodus — außerhalb deiner Arbeitszeit fragt Clessira nicht.
 ---
 
-Damit NowDoing dich nicht am Sonntag um 11 Uhr nach deiner Aktivität fragt, kennt es deine Arbeitstage und (optional) Feiertage. Eingestellt wird alles unter **Einstellungen → Allgemein → Arbeitszeit** — oder direkt im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 4.
+Damit Clessira dich nicht am Sonntag um 11 Uhr nach deiner Aktivität fragt, kennt es deine Arbeitstage und (optional) Feiertage. Eingestellt wird alles unter **Einstellungen → Allgemein → Arbeitszeit** — oder direkt im [Willkommens-Assistenten](/getting-started/first-run/) bei Schritt 4.
 
 ## Wochentage
 
-Tippe die Tage an, an denen du arbeitest. NowDoing zeigt **außerhalb dieser Tage keinen Prompt** und nimmt sie auch nicht ins Tagesziel auf.
+Tippe die Tage an, an denen du arbeitest. Clessira zeigt **außerhalb dieser Tage keinen Prompt** und nimmt sie auch nicht ins Tagesziel auf.
 
 Vorgewählt sind **Montag bis Freitag**. Du kannst jede beliebige Kombination wählen — auch ein 6-Tage-Wochenende, falls das deinem Rhythmus entspricht.
 
@@ -17,13 +17,13 @@ Deine **Zielstunden pro Woche** (0–80 h). Das Ziel verteilt sich gleichmäßig
 
 Beispiel: 40 h Wochenziel bei 5 aktiven Tagen = 8 h Tagesziel.
 
-Setzt du das Wochenziel auf **0**, deaktiviert NowDoing die Zielanzeige im Stundenzettel.
+Setzt du das Wochenziel auf **0**, deaktiviert Clessira die Zielanzeige im Stundenzettel.
 
 ## Feiertage berücksichtigen
 
-Aktivierst du **Feiertage berücksichtigen**, behandelt NowDoing den jeweiligen Feiertag wie einen inaktiven Tag: kein Prompt, kein Tagesziel.
+Aktivierst du **Feiertage berücksichtigen**, behandelt Clessira den jeweiligen Feiertag wie einen inaktiven Tag: kein Prompt, kein Tagesziel.
 
-Beim Aktivieren wählst du dein Land. Verfügbar sind die gängigen Feiertagskalender (Deutschland, Österreich, Schweiz, USA, UK …). NowDoing aktualisiert den Kalender automatisch zum Jahreswechsel.
+Beim Aktivieren wählst du dein Land. Verfügbar sind die gängigen Feiertagskalender (Deutschland, Österreich, Schweiz, USA, UK …). Clessira aktualisiert den Kalender automatisch zum Jahreswechsel.
 
 Regionale Feiertage (z. B. Bayern vs. Berlin) folgen dem Standardkalender des Landes — sehr lokale Feiertage sind dabei nicht abgedeckt. Wenn dir ein Tag wichtig ist, deaktiviere ihn einfach manuell über die Pause-Funktion.
 

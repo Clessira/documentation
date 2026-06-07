@@ -1,13 +1,13 @@
 ---
 title: License
-description: How NowDoing verifies a license, how you enter one through the activation window, and how to manage it in the settings tab.
+description: How Clessira verifies a license, how you enter one through the activation window, and how to manage it in the settings tab.
 ---
 
-NowDoing is unlocked with a signed license key. Verification runs entirely on your Mac — the key is checked against a public key embedded in the app, no request goes out to a server.
+Clessira is unlocked with a signed license key. Verification runs entirely on your Mac — the key is checked against a public key embedded in the app, no request goes out to a server.
 
 ## Activate your license
 
-On first launch (or whenever no valid license is on file) NowDoing shows a compact activation window with a medallion, a key field and a drop zone. While that window is open, the menu bar icon, the global shortcut, the right-click menu and all external integrations are disabled.
+On first launch (or whenever no valid license is on file) Clessira shows a compact activation window with a medallion, a key field and a drop zone. While that window is open, the menu bar icon, the global shortcut, the right-click menu and all external integrations are disabled.
 
 To activate:
 
@@ -61,7 +61,7 @@ The signature is Ed25519, verification runs through macOS's `CryptoKit` APIs.
 
 Three reasons:
 
-- **Expiry.** When `expires` is in the past, the license expires. NowDoing re-checks hourly and on every gated access — so it also catches a license that expires mid-session or a clock that was manually rolled back.
+- **Expiry.** When `expires` is in the past, the license expires. Clessira re-checks hourly and on every gated access — so it also catches a license that expires mid-session or a clock that was manually rolled back.
 - **Version cap exceeded.** If the license carries `maxVersion`, it only applies to that major line. Updating the app to a higher major locks it again until you enter a new license.
 - **Bad signature.** The license was modified, corrupted or forged. Those keys land directly in the "License invalid" card with the reason as a subtitle.
 
@@ -73,7 +73,7 @@ While no valid license is active, these paths are off-limits:
 
 - Left-click on the menu bar icon (goes straight to the activation window).
 - The global prompt hotkey and the ⌃⌥⌘1–9 pinned quick-picks.
-- Right-click menu except "Enter license…", "About NowDoing" and "Quit".
+- Right-click menu except "Enter license…", "About Clessira" and "Quit".
 - VS Code branch switches via the [HTTP API](/en/integrations/http-api/) (answer `401`).
 - Commands from Shortcuts and AppleScript (`licenseLocked` error).
 - macOS Services menu.
@@ -82,4 +82,4 @@ Data and settings stay untouched throughout. As soon as a valid license is on fi
 
 ## Where the key is stored
 
-The entered key lives in the app's UserDefaults (`~/Library/Containers/app.nowdoing/Data/Library/Preferences/`). It's re-verified at every launch and once an hour in the background. The app never sends the key over the network — verification is a pure offline operation.
+The entered key lives in the app's UserDefaults (`~/Library/Containers/app.clessira/Data/Library/Preferences/`). It's re-verified at every launch and once an hour in the background. The app never sends the key over the network — verification is a pure offline operation.

@@ -1,24 +1,24 @@
 ---
 title: AppleScript
-description: Drive NowDoing from AppleScript — from scripts, Shortcuts, Alfred, Raycast or directly via osascript.
+description: Drive Clessira from AppleScript — from scripts, Shortcuts, Alfred, Raycast or directly via osascript.
 ---
 
-NowDoing ships with its own **AppleScript interface**. Any source that speaks macOS Automation can trigger tracking actions: Apple Shortcuts, Alfred, Raycast, Keyboard Maestro, custom `.scpt` files, or `osascript` from the terminal.
+Clessira ships with its own **AppleScript interface**. Any source that speaks macOS Automation can trigger tracking actions: Apple Shortcuts, Alfred, Raycast, Keyboard Maestro, custom `.scpt` files, or `osascript` from the terminal.
 
-The interface is also what the bundled [`nowdoing` CLI](/en/integrations/cli/) calls internally.
+The interface is also what the bundled [`clessira` CLI](/en/integrations/cli/) calls internally.
 
 ## Requirements
 
 - The Mac app is running (menu-bar icon visible).
-- A valid license is installed — without one, every command rejects with error `4` (`NowDoing is locked`).
-- On the first call, macOS asks whether the calling program may control NowDoing. Confirm with **OK**. Change it later under **System Settings → Privacy & Security → Automation**.
+- A valid license is installed — without one, every command rejects with error `4` (`Clessira is locked`).
+- On the first call, macOS asks whether the calling program may control Clessira. Confirm with **OK**. Change it later under **System Settings → Privacy & Security → Automation**.
 
 ## Open the dictionary
 
 To see the full scripting dictionary, open it in **Script Editor**:
 
 1. Launch Script Editor (`/System/Applications/Utilities/Script Editor.app`).
-2. **File → Open Dictionary…** → **NowDoing**.
+2. **File → Open Dictionary…** → **Clessira**.
 
 You'll see every verb, property and class with descriptions.
 
@@ -29,15 +29,15 @@ You'll see every verb, property and class with descriptions.
 Starts tracking for an activity.
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   start tracking "Refactor"
 end tell
 ```
 
-With `createIfMissing`, NowDoing creates the activity if it doesn't exist yet:
+With `createIfMissing`, Clessira creates the activity if it doesn't exist yet:
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   start tracking "PROJ-123 Review" createIfMissing true
 end tell
 ```
@@ -49,7 +49,7 @@ Return value: `true` on success. Name matching is against **active** (non-archiv
 Ends the running session.
 
 ```applescript
-tell application "NowDoing" to stop tracking
+tell application "Clessira" to stop tracking
 ```
 
 If nothing is running, the call still succeeds.
@@ -59,7 +59,7 @@ If nothing is running, the call still succeeds.
 Logs a time block after the fact. The entry ends **now** and starts `duration` minutes earlier.
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   log entry activity "Standup" duration 15
 end tell
 ```
@@ -67,7 +67,7 @@ end tell
 With an optional note and auto-create:
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   log entry activity "Deep Work" duration 90 ¬
     note "API refactor" createIfMissing true
 end tell
@@ -80,7 +80,7 @@ end tell
 Returns today's total tracked time as decimal hours:
 
 ```applescript
-tell application "NowDoing" to today hours
+tell application "Clessira" to today hours
 -- → 3.75
 ```
 
@@ -89,7 +89,7 @@ tell application "NowDoing" to today hours
 Returns a compact status string in the format `isTracking|currentActivity|todayHours`:
 
 ```applescript
-tell application "NowDoing" to tracking status
+tell application "Clessira" to tracking status
 -- → "true|Refactor|3.75"
 ```
 
@@ -109,7 +109,7 @@ The `application` class exposes four read-only properties:
 Example:
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   if is tracking then
     return "Active: " & current activity & " (" & (today hours as text) & "h today)"
   else
@@ -132,11 +132,11 @@ Both classes are registered as **readable elements** on `application` — useful
 Every verb can be called directly via `osascript`:
 
 ```sh
-osascript -e 'tell application "NowDoing" to start tracking "Refactor" createIfMissing true'
-osascript -e 'tell application "NowDoing" to today hours'
+osascript -e 'tell application "Clessira" to start tracking "Refactor" createIfMissing true'
+osascript -e 'tell application "Clessira" to today hours'
 ```
 
-If you do this often, the [`nowdoing` CLI](/en/integrations/cli/) is more convenient — it handles quoting and the duration shorthand for you.
+If you do this often, the [`clessira` CLI](/en/integrations/cli/) is more convenient — it handles quoting and the duration shorthand for you.
 
 ## Apple Shortcuts
 
@@ -147,18 +147,18 @@ In Shortcuts, you can drive the verbs via the **Run AppleScript** action:
 3. Paste a script, e.g.:
 
    ```applescript
-   tell application "NowDoing"
+   tell application "Clessira"
      start tracking "Focus" createIfMissing true
    end tell
    ```
 
 4. On the first run, macOS will ask for Automation permission.
 
-This lets you hook hotkeys, Focus modes or NFC tags up to NowDoing actions.
+This lets you hook hotkeys, Focus modes or NFC tags up to Clessira actions.
 
 ## Error codes
 
-When a verb fails, NowDoing sets a `script error number`:
+When a verb fails, Clessira sets a `script error number`:
 
 | Code | Meaning |
 | ---: | ------- |

@@ -3,7 +3,7 @@ title: Prompt display
 description: Where the prompt appears, how the menu bar looks, and which day view opens by default.
 ---
 
-NowDoing has two places for the **"What did you just work on?"** prompt and three knobs for everything around it. All of it lives under **Settings → General** — or in the [welcome wizard](/en/getting-started/first-run/) at step 3. What sits *inside* the prompt and how to drive it is documented in [Prompt popover](/en/features/prompt-popover/).
+Clessira has two places for the **"What did you just work on?"** prompt and three knobs for everything around it. All of it lives under **Settings → General** — or in the [welcome wizard](/en/getting-started/first-run/) at step 3. What sits *inside* the prompt and how to drive it is documented in [Prompt popover](/en/features/prompt-popover/).
 
 ## Prompt position
 

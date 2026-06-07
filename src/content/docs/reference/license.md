@@ -1,13 +1,13 @@
 ---
 title: Lizenz
-description: Wie NowDoing eine Lizenz prüft, sie über das Aktivierungs-Fenster eingibst und im Einstellungs-Tab verwaltest.
+description: Wie Clessira eine Lizenz prüft, sie über das Aktivierungs-Fenster eingibst und im Einstellungs-Tab verwaltest.
 ---
 
-NowDoing wird mit einem signierten Lizenzschlüssel freigeschaltet. Die Prüfung läuft vollständig auf deinem Mac — der Schlüssel wird gegen einen in der App eingebetteten öffentlichen Schlüssel verifiziert, es geht kein Request an einen Server.
+Clessira wird mit einem signierten Lizenzschlüssel freigeschaltet. Die Prüfung läuft vollständig auf deinem Mac — der Schlüssel wird gegen einen in der App eingebetteten öffentlichen Schlüssel verifiziert, es geht kein Request an einen Server.
 
 ## Lizenz aktivieren
 
-Beim ersten Start (oder solange keine gültige Lizenz hinterlegt ist) zeigt NowDoing ein kompaktes Aktivierungs-Fenster mit Medaillon, Eingabefeld und Drop-Zone. Solange dieses Fenster offen ist, sind Menüleisten-Icon, globaler Shortcut, Rechtsklick-Menü und alle externen Integrationen deaktiviert.
+Beim ersten Start (oder solange keine gültige Lizenz hinterlegt ist) zeigt Clessira ein kompaktes Aktivierungs-Fenster mit Medaillon, Eingabefeld und Drop-Zone. Solange dieses Fenster offen ist, sind Menüleisten-Icon, globaler Shortcut, Rechtsklick-Menü und alle externen Integrationen deaktiviert.
 
 So aktivierst du:
 
@@ -61,7 +61,7 @@ Die Signatur ist Ed25519, die Verifikation läuft über die `CryptoKit`-API von 
 
 Drei Gründe sind möglich:
 
-- **Ablauf.** Erreicht `expires` die aktuelle Systemzeit, läuft die Lizenz ab. NowDoing prüft das stündlich erneut und außerdem bei jedem gesperrten Zugriff — so erwischt der Check auch eine Lizenz, die mitten in der Session abläuft oder eine Uhr, die manuell zurückgestellt wurde.
+- **Ablauf.** Erreicht `expires` die aktuelle Systemzeit, läuft die Lizenz ab. Clessira prüft das stündlich erneut und außerdem bei jedem gesperrten Zugriff — so erwischt der Check auch eine Lizenz, die mitten in der Session abläuft oder eine Uhr, die manuell zurückgestellt wurde.
 - **Versions-Limit überschritten.** Trägt die Lizenz `maxVersion`, gilt sie nur für die genannte Major-Version. Ein App-Update auf eine höhere Major-Linie sperrt die App, bis du eine neue Lizenz einträgst.
 - **Signatur stimmt nicht.** Die Lizenz wurde verändert, korrumpiert oder ist gefälscht. Solche Schlüssel landen direkt in der „Lizenz ungültig"-Karte mit dem Grund als Untertitel.
 
@@ -73,7 +73,7 @@ Solange keine gültige Lizenz aktiv ist, sind diese Wege blockiert:
 
 - Linksklick aufs Menüleisten-Icon (führt direkt zum Aktivierungs-Fenster).
 - Globaler Prompt-Hotkey und die ⌃⌥⌘1–9 Pinned-Quick-Picks.
-- Rechtsklick-Menü außer „Lizenz eingeben…", „Über NowDoing" und „Beenden".
+- Rechtsklick-Menü außer „Lizenz eingeben…", „Über Clessira" und „Beenden".
 - VS-Code-Branch-Wechsel über die [HTTP-API](/integrations/http-api/) (Antwort `401`).
 - Befehle aus *Kurzbefehle* und AppleScript (`licenseLocked`-Fehler).
 - macOS-Services-Menü.
@@ -82,4 +82,4 @@ Daten und Einstellungen bleiben dabei unangetastet. Sobald eine gültige Lizenz 
 
 ## Wo der Schlüssel gespeichert wird
 
-Der eingegebene Schlüssel liegt in den UserDefaults der App (`~/Library/Containers/app.nowdoing/Data/Library/Preferences/`). Bei jedem Start und einmal pro Stunde im Hintergrund wird er erneut geprüft. Die App sendet den Schlüssel nie ins Netz — die Verifikation ist eine reine Offline-Operation.
+Der eingegebene Schlüssel liegt in den UserDefaults der App (`~/Library/Containers/app.clessira/Data/Library/Preferences/`). Bei jedem Start und einmal pro Stunde im Hintergrund wird er erneut geprüft. Die App sendet den Schlüssel nie ins Netz — die Verifikation ist eine reine Offline-Operation.

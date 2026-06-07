@@ -1,6 +1,6 @@
 ---
 title: Wiederkehrende Aktivitäten
-description: Vorlagen für Standups, Daily-Checks oder Meetings — NowDoing füllt fehlende Einträge automatisch.
+description: Vorlagen für Standups, Daily-Checks oder Meetings — Clessira füllt fehlende Einträge automatisch.
 ---
 
 Manche Aktivitäten fallen jeden Tag oder jede Woche an: Daily Standup um 9:15, Lunch, der wöchentliche Team-Sync. Mit **wiederkehrenden Vorlagen** definierst du sie einmal und wendest sie auf Tage an, denen die entsprechenden Einträge noch fehlen.

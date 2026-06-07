@@ -1,24 +1,24 @@
 ---
 title: AppleScript
-description: NowDoing per AppleScript steuern — aus Skripten, Shortcuts, Alfred, Raycast oder direkt via osascript.
+description: Clessira per AppleScript steuern — aus Skripten, Shortcuts, Alfred, Raycast oder direkt via osascript.
 ---
 
-NowDoing bringt eine eigene **AppleScript-Schnittstelle** mit. Damit lassen sich Tracking-Aktionen aus jeder Quelle auslösen, die mit macOS-Automation spricht — Apple Shortcuts, Alfred, Raycast, Keyboard Maestro, eigene `.scpt`-Dateien oder `osascript` aus dem Terminal.
+Clessira bringt eine eigene **AppleScript-Schnittstelle** mit. Damit lassen sich Tracking-Aktionen aus jeder Quelle auslösen, die mit macOS-Automation spricht — Apple Shortcuts, Alfred, Raycast, Keyboard Maestro, eigene `.scpt`-Dateien oder `osascript` aus dem Terminal.
 
-Die Schnittstelle ist auch das, was die mitgelieferte [`nowdoing` CLI](/integrations/cli/) intern aufruft.
+Die Schnittstelle ist auch das, was die mitgelieferte [`clessira` CLI](/integrations/cli/) intern aufruft.
 
 ## Voraussetzungen
 
 - Die Mac-App läuft (Menüleisten-Icon sichtbar).
-- Eine gültige Lizenz ist eingespielt — ohne Lizenz lehnen alle Befehle mit Fehler `4` (`NowDoing is locked`) ab.
-- Beim ersten Aufruf fragt macOS, ob das aufrufende Programm NowDoing steuern darf. Mit **OK** bestätigen. Korrektur später unter **Systemeinstellungen → Datenschutz & Sicherheit → Automation**.
+- Eine gültige Lizenz ist eingespielt — ohne Lizenz lehnen alle Befehle mit Fehler `4` (`Clessira is locked`) ab.
+- Beim ersten Aufruf fragt macOS, ob das aufrufende Programm Clessira steuern darf. Mit **OK** bestätigen. Korrektur später unter **Systemeinstellungen → Datenschutz & Sicherheit → Automation**.
 
 ## Dictionary anzeigen
 
 Das vollständige Scripting-Dictionary kannst du im **Script-Editor** öffnen:
 
 1. Script-Editor starten (`/System/Applications/Utilities/Script Editor.app`).
-2. **Ablage → Dictionary öffnen…** → **NowDoing**.
+2. **Ablage → Dictionary öffnen…** → **Clessira**.
 
 Dort siehst du alle Verben, Eigenschaften und Klassen inklusive Beschreibung.
 
@@ -29,15 +29,15 @@ Dort siehst du alle Verben, Eigenschaften und Klassen inklusive Beschreibung.
 Startet das Tracking für eine Aktivität.
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   start tracking "Refactor"
 end tell
 ```
 
-Mit `createIfMissing` legt NowDoing die Aktivität an, wenn sie noch nicht existiert:
+Mit `createIfMissing` legt Clessira die Aktivität an, wenn sie noch nicht existiert:
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   start tracking "PROJ-123 Review" createIfMissing true
 end tell
 ```
@@ -49,7 +49,7 @@ Rückgabewert: `true` bei Erfolg. Vergleiche mit `name` werden gegen **aktive** 
 Beendet die laufende Sitzung.
 
 ```applescript
-tell application "NowDoing" to stop tracking
+tell application "Clessira" to stop tracking
 ```
 
 Wenn nichts läuft, ist der Aufruf trotzdem erfolgreich.
@@ -59,7 +59,7 @@ Wenn nichts läuft, ist der Aufruf trotzdem erfolgreich.
 Trägt einen Zeitblock rückwirkend nach. Der Eintrag endet **jetzt** und beginnt entsprechend `duration` Minuten früher.
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   log entry activity "Standup" duration 15
 end tell
 ```
@@ -67,7 +67,7 @@ end tell
 Mit optionaler Notiz und automatischem Anlegen:
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   log entry activity "Deep Work" duration 90 ¬
     note "API-Refactor" createIfMissing true
 end tell
@@ -80,7 +80,7 @@ end tell
 Liefert die heute insgesamt erfasste Zeit als Dezimal-Stunden:
 
 ```applescript
-tell application "NowDoing" to today hours
+tell application "Clessira" to today hours
 -- → 3.75
 ```
 
@@ -89,7 +89,7 @@ tell application "NowDoing" to today hours
 Liefert einen kompakten Status-String im Format `isTracking|currentActivity|todayHours`:
 
 ```applescript
-tell application "NowDoing" to tracking status
+tell application "Clessira" to tracking status
 -- → "true|Refactor|3.75"
 ```
 
@@ -109,7 +109,7 @@ Auf der `application`-Klasse stehen vier nur-lesbare Eigenschaften:
 Beispiel:
 
 ```applescript
-tell application "NowDoing"
+tell application "Clessira"
   if is tracking then
     return "Aktiv: " & current activity & " (" & (today hours as text) & "h heute)"
   else
@@ -132,11 +132,11 @@ Aktuell sind beide Klassen als **lesbare Elemente** auf der `application` regist
 Jedes Verb lässt sich direkt mit `osascript` aufrufen:
 
 ```sh
-osascript -e 'tell application "NowDoing" to start tracking "Refactor" createIfMissing true'
-osascript -e 'tell application "NowDoing" to today hours'
+osascript -e 'tell application "Clessira" to start tracking "Refactor" createIfMissing true'
+osascript -e 'tell application "Clessira" to today hours'
 ```
 
-Wenn du das öfter brauchst, ist die [`nowdoing` CLI](/integrations/cli/) bequemer — sie übernimmt das Quoten und die Dauer-Kurzform.
+Wenn du das öfter brauchst, ist die [`clessira` CLI](/integrations/cli/) bequemer — sie übernimmt das Quoten und die Dauer-Kurzform.
 
 ## Apple Shortcuts
 
@@ -147,18 +147,18 @@ In Shortcuts lassen sich die Verben über **„AppleScript ausführen"** ansteue
 3. Skript einfügen, z. B.:
 
    ```applescript
-   tell application "NowDoing"
+   tell application "Clessira"
      start tracking "Fokus" createIfMissing true
    end tell
    ```
 
 4. Beim ersten Lauf bestätigt macOS die Automation-Berechtigung.
 
-So lassen sich Hotkeys, Focus-Modi oder NFC-Tags an NowDoing-Aktionen koppeln.
+So lassen sich Hotkeys, Focus-Modi oder NFC-Tags an Clessira-Aktionen koppeln.
 
 ## Fehlercodes
 
-Schlägt ein Verb fehl, setzt NowDoing eine `script error number`:
+Schlägt ein Verb fehl, setzt Clessira eine `script error number`:
 
 | Code | Bedeutung |
 | ---: | --------- |

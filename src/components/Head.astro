@@ -11,7 +11,7 @@ import Default from '@astrojs/starlight/components/Head.astro';
 // 404). Fall back to the default head untouched in that case.
 const route = Astro.locals.starlightRoute;
 const data = route?.entry?.data;
-const siteTitle = data?.title ?? 'NowDoing';
+const siteTitle = data?.title ?? 'Clessira';
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL('/og-image.png', Astro.site).href;
@@ -25,14 +25,14 @@ const jsonLd = isSplash
   ? {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'NowDoing',
-      url: 'https://docs.nowdoing.app/',
+      name: 'Clessira',
+      url: 'https://docs.clessira.app/',
       description,
       inLanguage: Astro.currentLocale ?? 'de',
       publisher: {
         '@type': 'Organization',
-        name: 'NowDoing',
-        url: 'https://nowdoing.app/',
+        name: 'Clessira',
+        url: 'https://clessira.app/',
       },
     }
   : {
@@ -48,18 +48,18 @@ const jsonLd = isSplash
         : {}),
       author: {
         '@type': 'Organization',
-        name: 'NowDoing',
-        url: 'https://nowdoing.app/',
+        name: 'Clessira',
+        url: 'https://clessira.app/',
       },
       publisher: {
         '@type': 'Organization',
-        name: 'NowDoing',
-        url: 'https://nowdoing.app/',
+        name: 'Clessira',
+        url: 'https://clessira.app/',
       },
       isPartOf: {
         '@type': 'WebSite',
-        name: 'NowDoing Dokumentation',
-        url: 'https://docs.nowdoing.app/',
+        name: 'Clessira Dokumentation',
+        url: 'https://docs.clessira.app/',
       },
     };
 ---
@@ -73,7 +73,7 @@ const jsonLd = isSplash
       twitter:card. We only add what's missing — chiefly the social-card
       image — plus per-page structured data.
     */}
-    <meta property="og:site_name" content="NowDoing" />
+    <meta property="og:site_name" content="Clessira" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />

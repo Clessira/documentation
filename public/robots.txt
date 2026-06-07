@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docs.nowdoing.app/sitemap-index.xml
+Sitemap: https://docs.clessira.app/sitemap-index.xml

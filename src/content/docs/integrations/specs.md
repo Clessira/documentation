@@ -3,12 +3,12 @@ title: Spezifikationen
 description: OpenAPI- und JSON-Schema-Dateien für die HTTP-API und das Save-File-Format — zum Generieren eigener Clients und Validieren der Datendatei.
 ---
 
-Wer eigene Clients, Editor-Plugins oder Export-Tools gegen NowDoing baut, soll dafür nicht den Swift-Quelltext lesen müssen. Zwei maschinenlesbare Specs beschreiben die beiden stabilen Außenflächen der App.
+Wer eigene Clients, Editor-Plugins oder Export-Tools gegen Clessira baut, soll dafür nicht den Swift-Quelltext lesen müssen. Zwei maschinenlesbare Specs beschreiben die beiden stabilen Außenflächen der App.
 
 | Datei | Beschreibt | Format |
 |---|---|---|
-| [`openapi.yaml`](https://nowdoing.app/specs/openapi.yaml) | Lokale [HTTP-API](/integrations/http-api/) (UDS + 127.0.0.1 TCP) | OpenAPI 3.1 |
-| [`data-schema.json`](https://nowdoing.app/specs/data-schema.json) | Save-File `data.json` | JSON Schema (Draft 2020-12) |
+| [`openapi.yaml`](https://clessira.app/specs/openapi.yaml) | Lokale [HTTP-API](/integrations/http-api/) (UDS + 127.0.0.1 TCP) | OpenAPI 3.1 |
+| [`data-schema.json`](https://clessira.app/specs/data-schema.json) | Save-File `data.json` | JSON Schema (Draft 2020-12) |
 
 ## OpenAPI-Spec der HTTP-API
 
@@ -23,11 +23,11 @@ Anzeigen oder Client generieren — jedes OpenAPI-Tooling reicht:
 
 ```sh
 # Im Browser ansehen
-npx @redocly/cli preview-docs https://nowdoing.app/specs/openapi.yaml
+npx @redocly/cli preview-docs https://clessira.app/specs/openapi.yaml
 
 # TypeScript-Client erzeugen
 npx @openapitools/openapi-generator-cli generate \
-  -i https://nowdoing.app/specs/openapi.yaml \
+  -i https://clessira.app/specs/openapi.yaml \
   -g typescript-fetch \
   -o ./client
 ```
@@ -47,19 +47,19 @@ Eine vorhandene Datendatei prüfen:
 
 ```sh
 npx ajv-cli@5 validate \
-  -s https://nowdoing.app/specs/data-schema.json \
-  -d ~/Library/Application\ Support/NowDoing/data.json \
+  -s https://clessira.app/specs/data-schema.json \
+  -d ~/Library/Application\ Support/Clessira/data.json \
   --spec=draft2020
 ```
 
-Bei aktivem iCloud-Sync liegt die Datei stattdessen unter `iCloud.com.mattes.nowdoing/Documents/data.json`. Mehr zum Speicherort steht in [Daten & Datenschutz](/reference/data-privacy/).
+Bei aktivem iCloud-Sync liegt die Datei stattdessen unter `iCloud.com.mattes.clessira/Documents/data.json`. Mehr zum Speicherort steht in [Daten & Datenschutz](/reference/data-privacy/).
 
 ## In CI gegen die Schemas prüfen
 
 Wenn dein Tool eigene `data.json`-Fixtures committet oder eine OpenAPI-konforme Antwort serialisiert, lohnt sich ein CI-Schritt, der bei jedem Push prüft, ob die Specs noch passen. Beispiel für GitHub Actions:
 
 ```yaml
-name: validate-against-nowdoing-specs
+name: validate-against-clessira-specs
 
 on: [push, pull_request]
 
@@ -76,9 +76,9 @@ jobs:
         run: |
           mkdir -p .specs
           curl -fsSL -o .specs/openapi.yaml \
-            https://nowdoing.app/specs/openapi.yaml
+            https://clessira.app/specs/openapi.yaml
           curl -fsSL -o .specs/data-schema.json \
-            https://nowdoing.app/specs/data-schema.json
+            https://clessira.app/specs/data-schema.json
 
       - name: Lint OpenAPI spec
         run: npx --yes @redocly/cli@latest lint .specs/openapi.yaml

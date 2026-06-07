@@ -3,7 +3,7 @@ title: Export scripts
 description: Sandboxed JavaScript editor for custom export formats — CSV variants, JSON, Markdown reports, billing payloads.
 ---
 
-When the built-in [CSV export](/en/features/csv-export/) isn't enough, NowDoing lets you write **your own export scripts in JavaScript**. Use it for any output format: CSV variants, JSON, JSON Lines, Markdown daily notes, HTML reports or billing payloads for your accounting system.
+When the built-in [CSV export](/en/features/csv-export/) isn't enough, Clessira lets you write **your own export scripts in JavaScript**. Use it for any output format: CSV variants, JSON, JSON Lines, Markdown daily notes, HTML reports or billing payloads for your accounting system.
 
 ## Opening the editor
 

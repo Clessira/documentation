@@ -1,9 +1,9 @@
 ---
 title: App Intents & Services
-description: NowDoing in Shortcuts, Spotlight, Siri, and the macOS Services menu.
+description: Clessira in Shortcuts, Spotlight, Siri, and the macOS Services menu.
 ---
 
-NowDoing ships **seven App Intents** and **three macOS Services**. Together they let you drive tracking from the Shortcuts app, from Spotlight, via Siri, and right inside the context menu of any app — without bringing NowDoing to the foreground.
+Clessira ships **seven App Intents** and **three macOS Services**. Together they let you drive tracking from the Shortcuts app, from Spotlight, via Siri, and right inside the context menu of any app — without bringing Clessira to the foreground.
 
 If you prefer scripts, look at [AppleScript](/en/integrations/applescript/) or the [CLI](/en/integrations/cli/). The HTTP API for external tools is documented under [HTTP API](/en/integrations/http-api/).
 
@@ -29,25 +29,25 @@ For common actions, German and English phrases are pre-defined:
 
 | Phrase | Action |
 |---|---|
-| "Start tracking in NowDoing" | Opens activity picker |
-| "Pause NowDoing" | Toggle pause |
-| "Stop tracking in NowDoing" | Stop tracking |
-| "How many hours today in NowDoing" | Reads today's hours |
-| „Starte Tracking in NowDoing" | Activity picker (DE) |
-| „Pause NowDoing" / „Stoppe Tracking in NowDoing" | Toggle / stop (DE) |
-| „Wie viele Stunden heute in NowDoing" | Today's hours (DE) |
+| "Start tracking in Clessira" | Opens activity picker |
+| "Pause Clessira" | Toggle pause |
+| "Stop tracking in Clessira" | Stop tracking |
+| "How many hours today in Clessira" | Reads today's hours |
+| „Starte Tracking in Clessira" | Activity picker (DE) |
+| „Pause Clessira" / „Stoppe Tracking in Clessira" | Toggle / stop (DE) |
+| „Wie viele Stunden heute in Clessira" | Today's hours (DE) |
 
-These phrases work with Siri (when enabled) and in global Spotlight input. Rename or extend them under **Shortcuts app → App Shortcuts → NowDoing**.
+These phrases work with Siri (when enabled) and in global Spotlight input. Rename or extend them under **Shortcuts app → App Shortcuts → Clessira**.
 
 ### Check availability
 
-If the intents do not appear, open the **Shortcuts app**, select **App Shortcuts** in the sidebar and scroll to **NowDoing**. macOS sometimes indexes new apps with a delay — a restart resolves it.
+If the intents do not appear, open the **Shortcuts app**, select **App Shortcuts** in the sidebar and scroll to **Clessira**. macOS sometimes indexes new apps with a delay — a restart resolves it.
 
 ## macOS Services
 
-The context menu of any standard app (Mail, Notes, TextEdit, Safari, …) shows three NowDoing entries under **Services** whenever text is selected:
+The context menu of any standard app (Mail, Notes, TextEdit, Safari, …) shows three Clessira entries under **Services** whenever text is selected:
 
-### "Log as note in NowDoing"
+### "Log as note in Clessira"
 
 Appends the selected text as a **note** to the most recent entry of your current activity. If no entry exists yet but tracking is running, a small entry with the note is created.
 
@@ -55,7 +55,7 @@ Handy for: ticket descriptions from the browser, Slack quotes, meeting notes.
 
 ### "Create as new activity"
 
-Turns the selected text into a **new activity**. NowDoing first checks case-insensitively whether it already exists and reports back via system notification if so.
+Turns the selected text into a **new activity**. Clessira first checks case-insensitively whether it already exists and reports back via system notification if so.
 
 ### "Start tracking"
 

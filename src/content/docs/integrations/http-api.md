@@ -1,14 +1,14 @@
 ---
 title: HTTP-API
-description: Lokaler HTTP-Listener auf 127.0.0.1, mit dem eigene Tools NowDoing steuern können.
+description: Lokaler HTTP-Listener auf 127.0.0.1, mit dem eigene Tools Clessira steuern können.
 ---
 
-NowDoing kann auf Wunsch einen kleinen **HTTP-Server auf `127.0.0.1`** starten. Damit lassen sich eigene Skripte, Editor-Plugins oder CLIs an die App andocken — die laufende Aktivität abfragen, eine neue starten oder einen Branch-Wechsel melden. Standardmäßig ist der Listener aus.
+Clessira kann auf Wunsch einen kleinen **HTTP-Server auf `127.0.0.1`** starten. Damit lassen sich eigene Skripte, Editor-Plugins oder CLIs an die App andocken — die laufende Aktivität abfragen, eine neue starten oder einen Branch-Wechsel melden. Standardmäßig ist der Listener aus.
 
 ## So aktivierst du sie
 
 1. Öffne in der Mac-App **Einstellungen → Integrationen → HTTP-API**.
-2. Aktiviere **HTTP-API einschalten**. Bei der ersten Aktivierung legt NowDoing ein Token im Schlüsselbund an — bestätige den macOS-Prompt mit **Immer erlauben**.
+2. Aktiviere **HTTP-API einschalten**. Bei der ersten Aktivierung legt Clessira ein Token im Schlüsselbund an — bestätige den macOS-Prompt mit **Immer erlauben**.
 3. Wähle bei Bedarf einen anderen **Port** (Standard `39847`, erlaubt sind `1024–65535`).
 4. Kopiere unter **Token** den geheimen Wert in deine Umgebung oder dein Tool.
 

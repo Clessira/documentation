@@ -3,7 +3,7 @@ title: Menu bar & popover
 description: How the status icon, popover, and context-sensitive display work.
 ---
 
-NowDoing lives entirely in the macOS menu bar — no Dock icon, no Finder entry, no full-screen window breaking your flow.
+Clessira lives entirely in the macOS menu bar — no Dock icon, no Finder entry, no full-screen window breaking your flow.
 
 ## The status icon
 
@@ -37,7 +37,7 @@ A right-click (or Ctrl-click) on the icon opens a classic macOS context menu:
 - **Timesheet** — opens the day + week window.
 - **Settings** — all options.
 - **Pause** — pauses tracking until you actively confirm again.
-- **Quit NowDoing**.
+- **Quit Clessira**.
 
 ## Display mode
 

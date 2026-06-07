@@ -1,9 +1,9 @@
 ---
 title: Import activities
-description: Bring existing tickets or tasks from Jira, Excel, Markdown, or plain text into NowDoing as activities.
+description: Bring existing tickets or tasks from Jira, Excel, Markdown, or plain text into Clessira as activities.
 ---
 
-If you already have a list of tickets or tasks, you don't need to retype them. NowDoing detects four input formats and turns them into activities. Import is available in the [welcome wizard](/en/getting-started/first-run/) at step 7 and any time later under **Settings → Management → Import**.
+If you already have a list of tickets or tasks, you don't need to retype them. Clessira detects four input formats and turns them into activities. Import is available in the [welcome wizard](/en/getting-started/first-run/) at step 7 and any time later under **Settings → Management → Import**.
 
 ## Supported sources
 
@@ -27,7 +27,7 @@ INFRA-9  CI flake on macOS runners
 
 Tab-, comma-, or semicolon-separated with a **header row**. The activity-name column is detected automatically. Optional columns (project, group) are picked up as activity metadata if they map cleanly.
 
-UTF-8 is expected. NowDoing detects the separator automatically — you don't need to specify it.
+UTF-8 is expected. Clessira detects the separator automatically — you don't need to specify it.
 
 ### Markdown lists
 
@@ -50,7 +50,7 @@ One activity per line. Blank lines are ignored. The simplest mode, when you only
 ## How the import flows
 
 1. **Import…** in the wizard or under **Settings → Management**.
-2. Paste your list — NowDoing detects the format automatically.
+2. Paste your list — Clessira detects the format automatically.
 3. A **preview** shows the detected activities; you can deselect rows.
 4. Confirm — the activities land in [manage activities](/en/features/activities/).
 
@@ -59,5 +59,5 @@ Existing activities with the same name are **not** duplicated.
 ## What is not imported
 
 - **Times** — import creates activities only, no time entries. You still build out the Timesheet yourself.
-- **Tickets API** — NowDoing does not query Jira live. You paste the list manually (copy from a Jira backlog or a JQL export).
+- **Tickets API** — Clessira does not query Jira live. You paste the list manually (copy from a Jira backlog or a JQL export).
 - **Attachments or descriptions** — only the activity name comes along.

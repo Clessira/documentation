@@ -1,15 +1,15 @@
 ---
 title: CLI
-description: Den nowdoing-Befehl im Terminal nutzen, um Tracking zu starten, Einträge nachzutragen und den Tagesstand abzufragen.
+description: Den clessira-Befehl im Terminal nutzen, um Tracking zu starten, Einträge nachzutragen und den Tagesstand abzufragen.
 ---
 
-NowDoing bringt einen kleinen Terminal-Befehl mit: **`nowdoing`**. Damit startest und stoppst du Tracking, trägst Zeit nach, fragst den heutigen Stand ab — alles ohne die App in den Vordergrund zu holen.
+Clessira bringt einen kleinen Terminal-Befehl mit: **`clessira`**. Damit startest und stoppst du Tracking, trägst Zeit nach, fragst den heutigen Stand ab — alles ohne die App in den Vordergrund zu holen.
 
 Der Befehl spricht intern mit der laufenden Mac-App über die [AppleScript-Schnittstelle](/integrations/applescript/). Die App muss also laufen (Menüleisten-Icon sichtbar).
 
 ## Installieren
 
-In der Mac-App: **Einstellungen → Integrationen → CLI → Install in PATH**. NowDoing legt den Befehl nach `~/.local/bin/nowdoing` und zeigt dir im Status-Bereich, ob `~/.local/bin` schon im `PATH` ist. Falls nicht, hängt die App dir den passenden `export`-Schnipsel für deine Shell aus, den du in `~/.zshrc` (oder `~/.bashrc`) übernimmst.
+In der Mac-App: **Einstellungen → Integrationen → CLI → Install in PATH**. Clessira legt den Befehl nach `~/.local/bin/clessira` und zeigt dir im Status-Bereich, ob `~/.local/bin` schon im `PATH` ist. Falls nicht, hängt die App dir den passenden `export`-Schnipsel für deine Shell aus, den du in `~/.zshrc` (oder `~/.bashrc`) übernimmst.
 
 **Deinstallieren** geht im selben Bereich über **Deinstallieren**.
 
@@ -18,12 +18,12 @@ Nach einem App-Update genügt ein erneutes **Install in PATH**, um die CLI auf d
 ## Befehle
 
 ```text
-nowdoing start <activity> [--create-if-missing]
-nowdoing stop
-nowdoing log <activity> --duration <minutes|Xm|Xh|XhYm> [--note <text>] [--create-if-missing]
-nowdoing today
-nowdoing status
-nowdoing help
+clessira start <activity> [--create-if-missing]
+clessira stop
+clessira log <activity> --duration <minutes|Xm|Xh|XhYm> [--note <text>] [--create-if-missing]
+clessira today
+clessira status
+clessira help
 ```
 
 ### `start`
@@ -31,13 +31,13 @@ nowdoing help
 Startet das Tracking für eine vorhandene Aktivität:
 
 ```sh
-nowdoing start "Refactor"
+clessira start "Refactor"
 ```
 
-Mit `--create-if-missing` legt NowDoing die Aktivität an, falls sie nicht existiert:
+Mit `--create-if-missing` legt Clessira die Aktivität an, falls sie nicht existiert:
 
 ```sh
-nowdoing start "PROJ-123 Review" --create-if-missing
+clessira start "PROJ-123 Review" --create-if-missing
 ```
 
 Der Name muss exakt mit einer **aktiven** Aktivität übereinstimmen — archivierte werden ignoriert.
@@ -47,7 +47,7 @@ Der Name muss exakt mit einer **aktiven** Aktivität übereinstimmen — archivi
 Beendet die laufende Sitzung:
 
 ```sh
-nowdoing stop
+clessira stop
 ```
 
 Wenn nichts läuft, ist der Aufruf trotzdem erfolgreich (no-op).
@@ -57,9 +57,9 @@ Wenn nichts läuft, ist der Aufruf trotzdem erfolgreich (no-op).
 Trägt einen Zeitblock **rückwirkend** nach. Die Dauer kann als Minuten oder in Kurzform geschrieben werden:
 
 ```sh
-nowdoing log "Standup" --duration 15
-nowdoing log "Deep Work" --duration 1h30m --note "API-Refactor"
-nowdoing log "Pairing" --duration 2h --create-if-missing
+clessira log "Standup" --duration 15
+clessira log "Deep Work" --duration 1h30m --note "API-Refactor"
+clessira log "Pairing" --duration 2h --create-if-missing
 ```
 
 Akzeptierte Dauer-Formate: `30` (Minuten), `45m`, `2h`, `1h30m`. Der Eintrag endet **jetzt** und beginnt entsprechend früher.
@@ -69,7 +69,7 @@ Akzeptierte Dauer-Formate: `30` (Minuten), `45m`, `2h`, `1h30m`. Der Eintrag end
 Gibt die heute insgesamt erfasste Zeit in Stunden aus:
 
 ```sh
-$ nowdoing today
+$ clessira today
 3.75
 ```
 
@@ -80,7 +80,7 @@ Die Ausgabe ist eine Dezimalzahl — praktisch für Shell-Pipelines.
 Gibt einen kompakten Statusblock aus:
 
 ```sh
-$ nowdoing status
+$ clessira status
 isTracking=true
 currentActivity=Refactor
 todayHours=3.75
@@ -93,29 +93,29 @@ Drei Zeilen im `key=value`-Format — direkt mit `grep` / `awk` weiterverarbeitb
 **Mittagspause als Eintrag nachtragen:**
 
 ```sh
-nowdoing log "Mittag" --duration 45m --create-if-missing
+clessira log "Mittag" --duration 45m --create-if-missing
 ```
 
 **Aktive Aktivität in der Shell-Prompt anzeigen:**
 
 ```sh
-nowdoing status | awk -F= '/currentActivity/ {print $2}'
+clessira status | awk -F= '/currentActivity/ {print $2}'
 ```
 
 **Tracking per Hotkey aus dem Terminal-Multiplexer starten:**
 
 ```sh
-nowdoing start "Tickets" --create-if-missing && tmux display-message "tracking gestartet"
+clessira start "Tickets" --create-if-missing && tmux display-message "tracking gestartet"
 ```
 
 ## Fehler & Exit-Codes
 
-`nowdoing` beendet sich mit Exit-Code `0` bei Erfolg und `1` bei Fehlern. Typische Ursachen:
+`clessira` beendet sich mit Exit-Code `0` bei Erfolg und `1` bei Fehlern. Typische Ursachen:
 
 - **`Activity '…' not found`** — Aktivität fehlt oder ist archiviert. Mit `--create-if-missing` lösen.
 - **`TrackingManager not available`** — Mac-App läuft nicht. Starte sie und versuche es erneut.
-- **`NowDoing is locked: no valid license installed`** — Lizenz fehlt oder ist abgelaufen. Sichtbar in **Einstellungen → Lizenz**.
-- **AppleScript-Berechtigung** — beim ersten Aufruf fragt macOS, ob das Terminal NowDoing steuern darf. Mit **OK** bestätigen. Falls versehentlich abgelehnt, in **Systemeinstellungen → Datenschutz & Sicherheit → Automation** wieder erlauben.
+- **`Clessira is locked: no valid license installed`** — Lizenz fehlt oder ist abgelaufen. Sichtbar in **Einstellungen → Lizenz**.
+- **AppleScript-Berechtigung** — beim ersten Aufruf fragt macOS, ob das Terminal Clessira steuern darf. Mit **OK** bestätigen. Falls versehentlich abgelehnt, in **Systemeinstellungen → Datenschutz & Sicherheit → Automation** wieder erlauben.
 
 ## Was die CLI **nicht** kann
 

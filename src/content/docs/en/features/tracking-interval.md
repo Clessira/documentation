@@ -1,9 +1,9 @@
 ---
 title: Tracking interval
-description: How often NowDoing asks — and how to tune the interval to your rhythm.
+description: How often Clessira asks — and how to tune the interval to your rhythm.
 ---
 
-The tracking interval controls how often NowDoing automatically asks: **"What did you just work on?"**
+The tracking interval controls how often Clessira automatically asks: **"What did you just work on?"**
 
 ## Default: 45 minutes
 
@@ -24,7 +24,7 @@ Available values: **5, 10, 15, 20, 30, 45, 60 minutes**.
 
 ## How is each entry calculated?
 
-When you confirm an activity, NowDoing writes the entry **from the previous entry (or app start) up to now** into the database.
+When you confirm an activity, Clessira writes the entry **from the previous entry (or app start) up to now** into the database.
 
 Example with a 45-minute interval:
 

@@ -3,7 +3,7 @@ title: CSV export
 description: Export a day or a week as CSV — Excel-compatible, UTF-8 BOM, semicolon-separated.
 ---
 
-NowDoing can export your day or your week as **CSV** — for example, to pull hours into an invoice or build a weekly report.
+Clessira can export your day or your week as **CSV** — for example, to pull hours into an invoice or build a weekly report.
 
 ## Start the export
 

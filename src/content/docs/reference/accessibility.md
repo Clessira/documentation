@@ -1,9 +1,9 @@
 ---
 title: Barrierefreiheit
-description: Wie NowDoing mit VoiceOver, Tastatur-Navigation, dynamischen Schriftgrößen und den macOS-Bedienungshilfen zusammenspielt.
+description: Wie Clessira mit VoiceOver, Tastatur-Navigation, dynamischen Schriftgrößen und den macOS-Bedienungshilfen zusammenspielt.
 ---
 
-NowDoing ist auf die macOS-Bordmittel zur Barrierefreiheit abgestimmt. Statt eigene Schalter zu erfinden, folgt die App den System-Einstellungen unter `Systemeinstellungen → Bedienungshilfen` — du konfigurierst einmal zentral, NowDoing zieht nach.
+Clessira ist auf die macOS-Bordmittel zur Barrierefreiheit abgestimmt. Statt eigene Schalter zu erfinden, folgt die App den System-Einstellungen unter `Systemeinstellungen → Bedienungshilfen` — du konfigurierst einmal zentral, Clessira zieht nach.
 
 ## VoiceOver
 
@@ -23,7 +23,7 @@ Das aktuell fokussierte Element ist immer sichtbar markiert — die macOS-System
 
 ## Dynamische Schriftgrößen
 
-NowDoing respektiert die **macOS-System-Textgröße** (`Systemeinstellungen → Anzeige → größere Texte`). Tabellen, Listen und Popover skalieren mit; das Layout passt sich an, ohne dass Inhalte abgeschnitten werden.
+Clessira respektiert die **macOS-System-Textgröße** (`Systemeinstellungen → Anzeige → größere Texte`). Tabellen, Listen und Popover skalieren mit; das Layout passt sich an, ohne dass Inhalte abgeschnitten werden.
 
 ## Reduzierte Bewegung
 
@@ -39,7 +39,7 @@ Aktivitätsfarben sind nie das einzige Erkennungsmerkmal — daneben stehen imme
 
 ## Bedienungshilfen-Settings im Überblick
 
-| macOS-Einstellung | Wirkung in NowDoing |
+| macOS-Einstellung | Wirkung in Clessira |
 | :--- | :--- |
 | VoiceOver (<kbd>⌘F5</kbd>) | Labels, Hints und Custom-Actions auf allen Elementen. |
 | Tastatur-Navigation | Vollständige Bedienung via Tab, Pfeiltasten und Shortcuts. |
@@ -52,6 +52,6 @@ Aktivitätsfarben sind nie das einzige Erkennungsmerkmal — daneben stehen imme
 
 Die Heatmap-Visualisierungen (Monatsansicht im Stundenzettel, Heatmap-Widget) bleiben primär grafisch. Als Alternative gibt es überall textuelle Listen mit den gleichen Daten — z. B. die Liste-Ansicht im Tag oder die Pivot-Ansicht im Stundenzettel.
 
-Feedback zu Lücken oder Wünschen: [hello@nowdoing.app](mailto:hello@nowdoing.app).
+Feedback zu Lücken oder Wünschen: [hello@clessira.app](mailto:hello@clessira.app).
 
 Siehe auch [Menüleiste & Popover](/features/menu-bar/) und die Schwesterseite [Lokalisierung](/reference/localization/).

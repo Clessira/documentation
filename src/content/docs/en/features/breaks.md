@@ -1,9 +1,9 @@
 ---
 title: Breaks
-description: Pause manually, set the default duration — when NowDoing skips entries.
+description: Pause manually, set the default duration — when Clessira skips entries.
 ---
 
-NowDoing knows two kinds of breaks: a **manual pause** you trigger, and a **default duration** that is pre-filled for that manual pause. Set the duration under **Settings → General → Break** or in the [welcome wizard](/en/getting-started/first-run/) at step 3.
+Clessira knows two kinds of breaks: a **manual pause** you trigger, and a **default duration** that is pre-filled for that manual pause. Set the duration under **Settings → General → Break** or in the [welcome wizard](/en/getting-started/first-run/) at step 3.
 
 ## Manual pause
 

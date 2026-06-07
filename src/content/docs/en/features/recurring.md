@@ -1,6 +1,6 @@
 ---
 title: Recurring activities
-description: Templates for standups, daily checks, or meetings — NowDoing fills in missing entries automatically.
+description: Templates for standups, daily checks, or meetings — Clessira fills in missing entries automatically.
 ---
 
 Some activities happen every day or every week: the 9:15 standup, lunch, the weekly team sync. With **recurring templates** you define them once and apply them to days that are still missing the matching entries.

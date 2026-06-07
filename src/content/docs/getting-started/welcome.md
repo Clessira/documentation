@@ -1,13 +1,13 @@
 ---
 title: Willkommen
-description: Was NowDoing ist, für wen es gedacht ist und wie diese Doku aufgebaut ist.
+description: Was Clessira ist, für wen es gedacht ist und wie diese Doku aufgebaut ist.
 ---
 
-NowDoing ist eine schlanke macOS-Menüleisten-App, die dir hilft, deinen Tag ehrlich zu erfassen — ohne dich zu überwachen.
+Clessira ist eine schlanke macOS-Menüleisten-App, die dir hilft, deinen Tag ehrlich zu erfassen — ohne dich zu überwachen.
 
 ## Die Idee
 
-Die meisten Zeiterfassungs-Tools wollen dir einen kompletten Workflow aufzwingen: Projekte, Aufgaben, Stempelkarten, Kategorien. NowDoing dreht das um. Statt dich vorab zu organisieren, fragt es dich alle 20 Minuten (oder in deinem Wunschintervall): **Was hast du gerade gemacht?**
+Die meisten Zeiterfassungs-Tools wollen dir einen kompletten Workflow aufzwingen: Projekte, Aufgaben, Stempelkarten, Kategorien. Clessira dreht das um. Statt dich vorab zu organisieren, fragt es dich alle 20 Minuten (oder in deinem Wunschintervall): **Was hast du gerade gemacht?**
 
 Du tippst eine Aktivität an, der Eintrag landet im Tageslog, du arbeitest weiter. Am Ende des Tages siehst du, wofür du deine Zeit wirklich verwendet hast.
 

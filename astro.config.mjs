@@ -5,15 +5,15 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://docs.nowdoing.app',
+  site: 'https://docs.clessira.app',
   integrations: [
     // Emit /sitemap-index.xml + /sitemap-0.xml covering every doc page.
     // Starlight already injects per-page hreflang alternates into <head>.
     sitemap(),
     starlight({
-      title: 'NowDoing',
+      title: 'Clessira',
       description:
-        'Dokumentation für NowDoing — die schlanke macOS-Menüleisten-App für ehrliche Zeiterfassung.',
+        'Dokumentation für Clessira — die schlanke macOS-Menüleisten-App für ehrliche Zeiterfassung.',
       logo: {
         src: './src/assets/logo.svg',
         replacesTitle: false,
@@ -28,13 +28,13 @@ export default defineConfig({
       social: [
         {
           icon: 'external',
-          label: 'nowdoing.app',
-          href: 'https://nowdoing.app',
+          label: 'clessira.app',
+          href: 'https://clessira.app',
         },
         {
           icon: 'github',
           label: 'GitHub',
-          href: 'https://github.com/NowDoingApp',
+          href: 'https://github.com/ClessiraApp',
         },
       ],
       sidebar: [
@@ -105,7 +105,7 @@ export default defineConfig({
         Head: './src/components/Head.astro',
       },
       editLink: {
-        baseUrl: 'https://github.com/NowDoingApp/documentation/edit/main/',
+        baseUrl: 'https://github.com/ClessiraApp/documentation/edit/main/',
       },
       lastUpdated: true,
       pagination: true,

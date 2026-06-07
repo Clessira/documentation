@@ -1,9 +1,9 @@
 ---
 title: Keyboard shortcuts
-description: All NowDoing keyboard shortcuts at a glance.
+description: All Clessira keyboard shortcuts at a glance.
 ---
 
-NowDoing is designed so you rarely need the mouse. Key shortcuts:
+Clessira is designed so you rarely need the mouse. Key shortcuts:
 
 ## In the popover
 
@@ -20,7 +20,7 @@ NowDoing is designed so you rarely need the mouse. Key shortcuts:
 
 ## In the prompt (global)
 
-These shortcuts work as soon as the tracking prompt is open — even if another app has focus. You don't need to switch to NowDoing first.
+These shortcuts work as soon as the tracking prompt is open — even if another app has focus. You don't need to switch to Clessira first.
 
 | Action | Shortcut |
 |---|---|
@@ -41,13 +41,13 @@ As long as no text field has focus, you can log pinned activities directly with 
 
 The open-prompt shortcut is configurable under **Settings → Keyboard**.
 
-## App menu (NowDoing focused)
+## App menu (Clessira focused)
 
 | Action | Shortcut |
 |---|---|
 | Settings | <kbd>⌘,</kbd> |
 | Timesheet | <kbd>⌘1</kbd> |
-| Quit NowDoing | <kbd>⌘Q</kbd> |
+| Quit Clessira | <kbd>⌘Q</kbd> |
 
 ## In the timesheet window
 
