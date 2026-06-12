@@ -34,7 +34,7 @@ export default defineConfig({
         {
           icon: 'github',
           label: 'GitHub',
-          href: 'https://github.com/ClessiraApp',
+          href: 'https://github.com/Clessira',
         },
       ],
       sidebar: [
@@ -106,7 +106,7 @@ export default defineConfig({
         Head: './src/components/Head.astro',
       },
       editLink: {
-        baseUrl: 'https://github.com/ClessiraApp/documentation/edit/main/',
+        baseUrl: 'https://github.com/Clessira/documentation/edit/main/',
       },
       lastUpdated: true,
       pagination: true,

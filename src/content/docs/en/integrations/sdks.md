@@ -144,4 +144,4 @@ All HTTP failures map to typed exceptions that inherit from `ClessiraError`:
 
 ## Source
 
-Both SDKs live in the [`ClessiraApp/sdk`](https://github.com/ClessiraApp/sdk) monorepo and are published to npm / PyPI from GitHub Actions on tag. File bugs and feature requests there.
+Both SDKs live in the [`Clessira/sdk`](https://github.com/Clessira/sdk) monorepo and are published to npm / PyPI from GitHub Actions on tag. File bugs and feature requests there.
