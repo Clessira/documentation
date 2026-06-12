@@ -54,3 +54,6 @@ Edit `src/styles/theme.css` for token overrides; the rest comes from Starlight d
 - Central promise: **"Data stays on your Mac."** Never imply cloud/account/telemetry.
 - Beta is **free**; release is a **one-time purchase** — never "subscription".
 - No emojis in body copy. Inline glyphs (✓, ✕, →, ⌘) where they already appear are fine.
+- Write all prose as if the current feature set went live today and nobody
+  knows a previous state: never "now", "new", "jetzt", "inzwischen", or any
+  reference to what the app used to (not) do.

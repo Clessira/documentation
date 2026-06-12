@@ -66,6 +66,7 @@ export default defineConfig({
             { label: 'Arbeitszeiten & Wochenziel', translations: { en: 'Working hours & target' }, slug: 'features/working-hours' },
             { label: 'Pausen', translations: { en: 'Breaks' }, slug: 'features/breaks' },
             { label: 'Widgets', slug: 'features/widgets' },
+            { label: 'iPhone, iPad & Apple Watch', slug: 'features/companion-apps' },
             { label: 'CSV-Export', translations: { en: 'CSV export' }, slug: 'features/csv-export' },
             { label: 'Export-Skripte', translations: { en: 'Export scripts' }, slug: 'features/export-scripts' },
           ],

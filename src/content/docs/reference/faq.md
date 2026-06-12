@@ -11,7 +11,7 @@ Während der Beta-Phase ist Clessira **kostenlos**. Aktuelle Preise und Konditio
 
 ### Auf welchen Plattformen läuft Clessira?
 
-Aktuell nur **macOS** (ab Version 26.4). Begleit-Apps für iPhone, iPad und Apple Watch sind in Entwicklung, aber noch nicht verfügbar.
+Auf dem **Mac** (macOS ab 26.4) — plus Begleit-Apps für **iPhone, iPad und Apple Watch** in derselben TestFlight-Beta. Der Mac bleibt die Zentrale für Auswertung, Exporte und Einstellungen. Details unter [iPhone, iPad & Apple Watch](/features/companion-apps/).
 
 ### Wo sind meine Daten?
 
