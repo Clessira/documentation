@@ -2,6 +2,12 @@
 
 Per-session log of substantive doc changes. Newest on top.
 
+## 2026-06-12 — companion-apps-page
+
+- New page `features/companion-apps` (DE + EN): the iPhone/iPad companion app (start/stop, backfill, create/rename/pin/archive activities, edit/delete entries, per-activity stats, backups), cross-device live sessions over iCloud (live card/banner, stale-session trim sheet + "Trackst du noch?" notification), opt-in interval reminders, the Apple Watch remote-control app, and known limits. Lifts the deliberate "not documented yet" hold from 2026-05-29 — the companions now ship in the TestFlight beta.
+- `astro.config.mjs`: registered `features/companion-apps` (label "iPhone, iPad & Apple Watch") under Funktionen / Features, after Widgets.
+- `reference/faq` (DE + EN): platform answer rewritten — no longer "in development but not yet available"; now points to the new companion-apps page.
+
 ## 2026-05-29 — app-sync-accuracy-review
 
 - Cross-device/iCloud-sync accuracy pass after comparing the docs against the Mac app's CHANGELOG/source (analysis + a 4-role doc review: architect / developer / user / designer). No new pages — companion iPhone/iPad and Apple Watch apps exist in the codebase but aren't released, so they are deliberately *not* documented yet.
