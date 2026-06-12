@@ -144,4 +144,4 @@ Alle HTTP-Fehler werden auf typisierte Exceptions abgebildet, die von `ClessiraE
 
 ## Quellcode
 
-Beide SDKs leben im Monorepo [`ClessiraApp/sdk`](https://github.com/ClessiraApp/sdk) und werden über GitHub Actions per Tag auf npm bzw. PyPI veröffentlicht. Bugs und Feature-Wünsche bitte dort.
+Beide SDKs leben im Monorepo [`Clessira/sdk`](https://github.com/Clessira/sdk) und werden über GitHub Actions per Tag auf npm bzw. PyPI veröffentlicht. Bugs und Feature-Wünsche bitte dort.

@@ -76,7 +76,7 @@ Per-session log of substantive doc changes. Newest on top.
 ## 2026-05-25 — http-api-and-sdks
 
 - New page `integrations/http-api` (DE + EN): documents the opt-in loopback HTTP listener — how to enable it in **Einstellungen → Integrationen → HTTP-API**, the port (default `39847`), the shared token, the five endpoints, and HMAC/nonce/rate-limit semantics.
-- New page `integrations/sdks` (DE + EN): introduces `@clessira/sdk` (npm, TS, Node ≥ 20 / Bun / Deno) and `clessira-sdk` (PyPI, sync + async, `httpx`). Covers install, quickstart per language, the shared API surface, and the typed error hierarchy. Links to the npm page and the [`ClessiraApp/sdk`](https://github.com/ClessiraApp/sdk) monorepo.
+- New page `integrations/sdks` (DE + EN): introduces `@clessira/sdk` (npm, TS, Node ≥ 20 / Bun / Deno) and `clessira-sdk` (PyPI, sync + async, `httpx`). Covers install, quickstart per language, the shared API surface, and the typed error hierarchy. Links to the npm page and the [`Clessira/sdk`](https://github.com/Clessira/sdk) monorepo.
 - `astro.config.mjs`: added both pages to the Integrationen / Integrations sidebar group.
 
 ## 2026-05-25 — vscode-uds-rewrite
